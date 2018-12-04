@@ -1,4 +1,9 @@
+/* Init 
+------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* Global styles 
+------------------------------------*/
 body {
     font-family: 'Open Sans',serif;
     background: #D3D3D3;
@@ -12,3 +17,17 @@ img.cv-portrait {
     border-color: #41c4ab99;
 
 }
+
+
+/* Header & Footer 
+------------------------------------*/
+
+
+
+/* Work Experience
+------------------------------------*/
+
+
+
+/* Education
+------------------------------------*/
