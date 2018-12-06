@@ -3,6 +3,14 @@
 
 /* Global styles 
 ------------------------------------*/
+/* border box fix */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
     font-family: 'Open Sans',sans-serif;
 }
@@ -14,52 +22,109 @@ text-decoration: none;
 }
 h1, h2 {
 font-family: 'Open Sans:600',sans-serif;}
-h2 {
-    font-size: 35px;
-}
+
 h1 {
 font-size: 55px;
 }
+h2 {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 25px;
+    overflow: hidden;
+  }
   
+  .column-narrow {
+    width: 32%;
+    float: left;
+    padding-right: 3%;
+    margin: 15px;
+    min-height: 175px;
+  }
+  .column-wide {
+    width: 62%;
+    float: left;
+    min-height: 175px;
+  }  
+
+  main {
+    padding-top: 25px;
+}
+img {
+    width: 100%;
+}
+
+/* Header & Footer 
+------------------------------------*/
 
 
-img.cv-portrait {
+.profile-img {
 
     border-radius: 50%;
     border-style: solid;
     border-width: 10px;
     border-color: #41c4ab99;
+    padding:unset;
 
 }
 
-/* Header & Footer 
-------------------------------------*/
 header, 
 footer {
   background-color: #f5f5f5;
   color: #000000;
-  border-bottom: 10px solid #41c4ab;
 }
+
+
+
 header h1{
   color: #000000;
+  margin: 0;
 
 }
 header h2 {
   color: #6d6d6d;
+  margin: 0;
 }
 
+/* Header styles only */
+header {
+    border-bottom: 10px solid #7bd6c5;
+  }
 
-
+/* Footer styles only */
+footer {
+    border-bottom: 10px solid #818181;
+  }
+footer {
+    text-align: center;
+    
+}
+.contact-info a {
+    padding: 10px;
+    display: inline-block;
+}
+  
 /* Work Experience
 ------------------------------------*/
-.work {
-  background: #EDF2F4;
-}
+.work h2 span{
+    border-bottom:10px solid #7bd6c5;
 
+}
 
 
 /* Education
 ------------------------------------*/
+
 .education {
+    background: #f8f8f8;
+}
+
+
+.education h2 span{
+  border-bottom:10px solid #d67bba;
 
 }
