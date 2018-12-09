@@ -239,3 +239,33 @@ nav a {
 #social ul li a {
   width: 50px;
 }
+
+
+
+
+/* Media Queries
+-------------------------*/
+
+@media (max-width: 830px){
+  header {
+    text-align: center;
+    padding-top: 100px;
+  }
+  .col-narrow {
+    width: auto;
+    float: none;
+  }
+  .col-wide {
+    width: auto;
+  }
+  
+div.col-narrow a img {
+  width: 50%;
+}
+
+  .profile-img {
+    width: 200px;
+  }
+
+
+}
