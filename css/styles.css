@@ -36,8 +36,8 @@ font-size: 55px;
 }
 h2 {
     font-size: 35px;
-    margin-top: 0;
-}
+    margin-top: 35px;
+  }
 
 quoteline {
   font-size: 35px;
@@ -52,11 +52,11 @@ a:hover {
 .content-wrap {
   max-width: 950px;
   margin: 0 auto;
-  padding: 50px;
+  padding: 20px;
   overflow: hidden;
 }
 .content-wrap.slim {
-  padding: 0 50px;
+  padding: 0 20px;
 }
 .col-narrow {
   width: 30%;
@@ -114,6 +114,8 @@ header h2 {
 
 /* Header styles only */
 header {
+    padding-top: 60px;
+    position: relative;
     border-bottom: 10px solid #7bd6c5;
   }
 
@@ -129,6 +131,25 @@ footer {
 .contact-info a {
     padding: 10px;
     display: inline-block;
+}
+
+
+
+/* Navigation
+-------------------------*/
+nav {
+  text-align: center;
+  background: #fffc;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+nav a {
+  display: inline-block;
+  padding: 15px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
 }
   
 /* Work Experience
