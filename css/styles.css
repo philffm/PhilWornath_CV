@@ -139,7 +139,7 @@ footer {
 -------------------------*/
 nav {
   text-align: center;
-  background: #fffc;
+  background: #e0e0e0cc;
   position: fixed;
   top: 0;
   width: 100%;
@@ -150,6 +150,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
+  color: #353535;
 }
   
 /* Work Experience
