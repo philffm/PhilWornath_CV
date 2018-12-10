@@ -208,6 +208,13 @@ nav a {
   border-bottom:10px solid #818181;
 
 }
+.publications {
+  background: linear-gradient(rgba(252, 252, 252, 0.81), rgba(123, 214, 197, 0.37)) 40%, url(../img/publication.jpg) no-repeat fixed;
+  background-size: auto auto, auto auto;
+  background-size: auto auto, auto auto;
+  background-size: cover;
+}
+
 /* Buttons
 ------------------------------------*/
 
