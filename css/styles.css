@@ -270,6 +270,10 @@ nav a {
   .col-wide {
     width: auto;
   }
+
+h2 span {
+  line-height: 1.5em;
+}
   
 div.col-narrow a img {
   width: 50%;
