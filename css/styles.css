@@ -123,6 +123,11 @@ header {
     padding-top: 60px;
     position: relative;
     border-bottom: 10px solid #7bd6c5;
+    background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.1))50%, url(../img/frankfurt.jpg) no-repeat;
+    background-size: auto auto, auto auto;
+    background-size: auto auto, auto auto;
+    background-size: auto auto, auto auto;
+    background-size: cover;
   }
 
 /* Footer styles only */
@@ -159,6 +164,26 @@ nav a {
   color: #353535;
 }
   
+
+.worknav:hover {
+
+  border-bottom: 10px solid #7bd6c5;
+
+}
+
+.edunav:hover {
+
+  border-bottom: 10px solid #d67bba;
+
+}
+
+.pubnav:hover {
+
+  border-bottom: 10px solid #818181;
+
+}
+
+
 /* Work Experience
 ------------------------------------*/
 .work h2 span{
@@ -227,7 +252,7 @@ nav a {
 
 }
 .publications {
-  background: linear-gradient(rgba(252, 252, 252, 0.81), rgba(123, 214, 197, 0.17)) 20%, url(../img/publication.jpg) no-repeat fixed;
+  background: linear-gradient(rgb(248, 248, 248), rgba(123, 214, 197, 0.17)) 20%, url(../img/publication.jpg) no-repeat fixed;
   background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
