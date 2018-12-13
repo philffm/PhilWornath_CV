@@ -32,11 +32,11 @@ h1, h2 {
 font-family: 'Open Sans:600',sans-serif;}
 
 h1 {
-font-size: 55px;
+font-size: 50px;
 }
 h2 {
     font-size: 35px;
-    margin-top: 35px;
+    margin-top: 25px;
   }
 
 quoteline {
@@ -44,6 +44,11 @@ quoteline {
 }
 quote {
   font-style: italic;
+  font-size: 1.2em;
+}
+
+.button.cta span {
+  margin-right: 10px;
 }
 
 a:hover {
@@ -98,6 +103,7 @@ img {
 header, 
 footer {
   background-color: #f5f5f5;
+  
   color: #000000;
 }
 
@@ -161,11 +167,19 @@ nav a {
 }
 
 
-.job-description {
-  margin-bottom: 25px;
-}
+
 .job-description p:first-of-type {
   margin-top: 0;
+}
+
+#card-work {
+
+  box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.2),0 2px 5px 0 rgba(0,0,0,0.10) !important;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+.col-wide.padding.job-description {
+  padding-top: 20px;
 }
 
 
@@ -213,7 +227,8 @@ nav a {
 
 }
 .publications {
-  background: linear-gradient(rgba(252, 252, 252, 0.81), rgba(123, 214, 197, 0.37)) 40%, url(../img/publication.jpg) no-repeat fixed;
+  background: linear-gradient(rgba(252, 252, 252, 0.81), rgba(123, 214, 197, 0.17)) 20%, url(../img/publication.jpg) no-repeat fixed;
+  background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
   background-size: cover;
@@ -223,19 +238,25 @@ nav a {
 ------------------------------------*/
 
 .button {
-  background: #E0E0E0;
-  color: #353535;
+  background: #0009;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 25px;
   font-weight: 500;
-  padding: 16px 40px;
+  padding: 10px 30px;
   width: auto;
   text-decoration: none;
-
+  border-radius: 30px;
+  font-variant: all-small-caps;
+  margin: 0 0 5px 0;
 }
+
 .button.social {
-  font-size: 40px;
+  font-size: 30px;
+  padding: 12px 39px;
+  border-radius: 14px;
+
 }
 
 .button:hover {
@@ -263,6 +284,10 @@ nav a {
     text-align: center;
     padding-top: 100px;
   }
+
+  
+
+  
   .col-narrow {
     width: auto;
     float: none;
@@ -270,6 +295,9 @@ nav a {
   .col-wide {
     width: auto;
   }
+  .col-wide.padding {
+    padding: 0px;
+}
 
 h2 span {
   line-height: 1.5em;
