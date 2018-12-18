@@ -114,7 +114,7 @@ header h1{
 
 }
 header h2 {
-  color: #6d6d6d;
+  color: #595959;
   margin: 0;
 }
 
@@ -123,7 +123,7 @@ header {
     padding-top: 60px;
     position: relative;
     border-bottom: 10px solid #7bd6c5;
-    background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.1))50%, url(../img/frankfurt.jpg) no-repeat;
+    background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat;
     background-size: auto auto, auto auto;
     background-size: auto auto, auto auto;
     background-size: auto auto, auto auto;
@@ -308,10 +308,15 @@ nav a {
   header {
     text-align: center;
     padding-top: 100px;
+
   }
 
   
+  .aboutnav, .contactnav {
 
+    display: none;
+
+}
   
   .col-narrow {
     width: auto;
@@ -338,3 +343,5 @@ div.col-narrow a img {
 
 
 }
+
+
