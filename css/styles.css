@@ -241,7 +241,7 @@ nav a {
 }
 
 .card-cert img {
-  width: 65%;
+  width: 25%;
 }
 
 /* Publications 
@@ -310,7 +310,10 @@ nav a {
     padding-top: 100px;
 
   }
-
+  h2 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
   
   .aboutnav, .contactnav {
 
@@ -324,11 +327,18 @@ nav a {
   }
   .col-wide {
     width: auto;
+    float: none;
+
   }
   .col-wide.padding {
     padding: 0px;
 }
-
+.card-cert {
+  flex-direction: column;
+}
+.card-cert img {
+  width: 20%;
+}
 h2 span {
   line-height: 1.5em;
 }
