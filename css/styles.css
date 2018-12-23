@@ -199,9 +199,11 @@ nav a {
 
 #card-work {
 
-  box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.2),0 2px 5px 0 rgba(0,0,0,0.10) !important;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
   margin: 20px auto;
   border-radius: 10px;
+  
+}
 }
 .col-wide.padding.job-description {
   padding-top: 20px;
@@ -333,6 +335,16 @@ nav a {
   .col-wide.padding {
     padding: 0px;
 }
+
+
+#card-work {
+  border: rgba(0,0,0,0.2);
+  border-width: 1px;
+  border-style: solid;
+  margin: 20px 10px;
+  border-radius: 10px;
+}
+
 .card-cert {
   flex-direction: column;
 }
