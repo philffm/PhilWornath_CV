@@ -80,6 +80,7 @@ a:hover {
 
 main {
   padding-top: 25px;
+  background: #f8f8f8;
 }
 img {
     width: 100%;
@@ -102,7 +103,7 @@ img {
 
 header, 
 footer {
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
   
   color: #000000;
 }
@@ -150,10 +151,11 @@ footer {
 -------------------------*/
 nav {
   text-align: center;
-  background: #e0e0e0cc;
+  background: #0009;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 11;
 }
 nav a {
   display: inline-block;
@@ -161,7 +163,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  color: #353535;
+  color: #fff;
 }
   
 
@@ -203,6 +205,7 @@ nav a {
   margin: 20px auto;
   border-radius: 10px;
   
+  background: white;
 }
 }
 .col-wide.padding.job-description {
