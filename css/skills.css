@@ -52,7 +52,7 @@ li.skills.html:after {
 
 li.skills.css:after {
     animation-name: css;
-    content: "MS (W, E, PP) ";
+    content: "MS (Word, Excel, PP) ";
 }
 
 @keyframes css {

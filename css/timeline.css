@@ -116,9 +116,8 @@
   
   .time-wrapper {
     display: inline;
-    line-height: 1em;
     font-size: 0.8em;
-    color: rgb(68, 68, 68);
+    color: rgb(0, 0, 0);
     vertical-align: middle;
   }
   
@@ -133,15 +132,15 @@
   .time {
     display: inline-block;
     padding: 4px 6px;
-    background: rgb(248,248,248);
+    background: rgb(228, 228, 228);
+    border-radius: 4px;
+    margin: 0 5px;
   }
   
   .desc {
-    margin: 1em 0.75em 0 0;
-    
+    margin: 1em 0.75em 0 0;    
     font-size: 0.77777em;
-    font-style: italic;
-    line-height: 1.5em;
+
   }
   .desc li {
     padding: 0em;
@@ -156,16 +155,15 @@
 
 
 
-    .direction-r .flag:before,.timeline:before{
-            /*display: none;*/
-        }
-
-
     .flag-wrapper {
         display: flex;
         flex-flow: column;
     }
-        .timeline li {
-            /*padding: auto;*/
-        }
+        
+
+
+    .time-wrapper {
+        margin: .5em 0;
+      }
+
     }
