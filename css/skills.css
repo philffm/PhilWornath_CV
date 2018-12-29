@@ -37,6 +37,7 @@ li.skills:after {
     text-indent: 10px;
     display: flex;
     align-items: center;
+    font-size: .8em;
 }
 
 li.skills.html:after {

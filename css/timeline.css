@@ -29,7 +29,7 @@
   }
   
   .timeline li {
-    padding: 1em 2em;
+    padding: .5em 1em;
   }
   
   .timeline li:after {
@@ -48,7 +48,7 @@
   }
   
   .direction-r {
-    position: relative;
+    position: inherit;
     /* width: 300px; */
     float: left;
   }
@@ -79,10 +79,9 @@
     box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   }
   
-  .direction-r .flag:before {
+  .direction-r .flag-wrapper::before {
     position: absolute;
     top: 50%;
-    right: -40px;
     content: ' ';
     display: block;
     width: 12px;
@@ -92,10 +91,11 @@
     border-radius: 10px;
     border: 11px solid rgb(219, 134, 194);
     z-index: 10;
+    left: -25px;
   }
   
   .direction-r .flag:before {
-    left: -40px;
+    left: -129px;
   }
   
 
@@ -126,7 +126,7 @@
   }
   
   .direction-r .time-wrapper {
-    float: right;
+    float: left;
   }
   
   .time {
