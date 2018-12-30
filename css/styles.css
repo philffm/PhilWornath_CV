@@ -481,6 +481,9 @@ nav a {
 }
 
 
+.portfolio-info.float-r {
+  float: none;
+}
 
 .certificates {
   flex-direction: column;
