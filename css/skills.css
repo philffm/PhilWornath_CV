@@ -3,8 +3,14 @@
     padding: 5px 0 0 0;
 
     margin: 0 auto;
-    min-height: 50px;
+    min-height: 40px;
+    font-size: .95em;
 
+}
+
+.skills h3{
+
+    margin: 7px 0;
 }
 li.skills {
     position: relative;
@@ -18,7 +24,7 @@ li.skills:before {
     content: "";
     left: 0;
     width: 100%;
-    height: 40px;
+    height: 30px;
     background-color: #e0e0e0cc;
     border-radius: 1000px;
     position: absolute;
@@ -28,48 +34,93 @@ li.skills:after {
     position: absolute;
     left: 0;
     width: 200px;
-    height: 40px;
+    height: 30px;
     background-color: #7bd6c5;
     border-radius: 1000px;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     text-indent: 10px;
     display: flex;
     align-items: center;
-    font-size: .8em;
 }
 
-li.skills.html:after {
-    animation-name: html;
+li.skills.adobe:after {
+    animation-name: adobe;
     content: "Adobe (PS, AI, XD)";
 }
 
-@keyframes html {
+@keyframes adobe {
     to {
         width: 90%;
     }
 }
 
-li.skills.css:after {
-    animation-name: css;
+li.skills.office:after {
+    animation-name: office;
     content: "MS (Word, Excel, PP) ";
 }
 
-@keyframes css {
+@keyframes office {
     to {
         width: 80%;
     }
 }
 
-li.skills.js:after {
-    animation-name: js;
+li.skills.coding:after {
+    animation-name: coding;
     content: "Coding (HTML, CSS, JS)";
 }
 
-@keyframes js {
+@keyframes coding {
     to {
         width: 75%;
+    }
+}
+
+li.skills.german:after {
+    animation-name: german;
+    content: "German: C2";
+}
+
+@keyframes german {
+    to {
+        width: 100%;
+    }
+}
+
+
+li.skills.english:after {
+    animation-name: english;
+    content: "English: B2";
+}
+
+@keyframes english {
+    to {
+        width: 75%;
+    }
+}
+
+li.skills.french:after {
+    animation-name: french;
+    content: "French: A2";
+}
+
+@keyframes french {
+    to {
+        width: 45%;
+    }
+}
+
+
+li.skills.dutch:after {
+    animation-name: dutch;
+    content: "Dutch";
+}
+
+@keyframes dutch {
+    to {
+        width: 29%;
     }
 }
 

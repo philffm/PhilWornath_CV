@@ -79,8 +79,8 @@ a:hover {
 }
 
 main {
-  padding-top: 25px;
   background: #f8f8f8;
+  margin-top: -50px;
 }
 img {
     width: 100%;
@@ -248,6 +248,9 @@ nav a {
 
 /* Certificates
 ------------------------------------*/
+.certificates {
+  display: flex;
+}
 
 .card-cert {
   display: flex;
@@ -271,11 +274,11 @@ nav a {
 /* Publications 
 ------------------------------------*/
 
-.publications h2 span{
+#publications h2 span{
   border-bottom:10px solid #818181;
 
 }
-.publications {
+#publications {
   background: linear-gradient(rgb(248, 248, 248), rgba(123, 214, 197, 0.17)) 20%, url(../img/publication.jpg) no-repeat fixed;
   background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
@@ -289,47 +292,44 @@ nav a {
 /* Portfolio
 -------------------------*/
 
-.card-portfolio {
-
+.portfolio-section {
   position: relative;
   overflow: hidden;
   z-index: 0;
-  padding-top: 50px;
-  margin-top: 10px;
 }
 
-.card-portfolio::before {
+.portfolio-section::before {
 
   z-index: -1;
-  top: 0%;
-  left: 0;
-  width: 100%;
-  height: 60%;
+  top: 180px;
+  left: -50%;
+  width: 200%;
+  height: 400px;
   content: "";
   position: absolute;
   filter: brightness(100%) blur(2px);
-  mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0,0,0,0));
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0,0,0,0)); 
+  transform: rotate(5deg);
 
 }
 /* Background definition */
 
 #pfx::before {
 
-  background: url(../img/agency.jpg) 0 0 repeat;
-
+  background: url(../img/agency.jpg) 0 0 repeat-x;
 }
 
 
 #philwornath::before {
 
-  background: url(../img/freelance.jpg) 0 0 repeat;
-
+  background: url(../img/freelance.jpg) 0 0 repeat-x;
+  transform: rotate(-5deg);
 }
 
 
 #thuas::before {
 
-  background: url(../img/university.jpg) 0 0 repeat;
+  background: url(../img/university.jpg) 0 0 repeat-x;
 
 }
 
@@ -355,8 +355,8 @@ nav a {
 
 
 
-.portfolio-info{
-
+.portfolio-section,.cv-section {
+  padding-top: 50px;
 }
 
 
@@ -385,6 +385,12 @@ nav a {
   color: white;
   text-justify: auto;
   margin: 0 0 0 10px;
+}
+
+.portfolio-info {
+
+  margin-top: 25px;
+
 }
 
 .portfolio-info.float-r {
@@ -463,9 +469,7 @@ nav a {
     float: none;
 
   }
-  .col-wide.padding {
-    padding: 0px;
-}
+ 
 
 
 #card-work {
@@ -476,12 +480,12 @@ nav a {
   border-radius: 10px;
 }
 
-.card-cert {
+
+
+.certificates {
   flex-direction: column;
 }
-.card-cert img {
-  width: 20%;
-}
+
 h2 span {
   line-height: 1.5em;
 }
