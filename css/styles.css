@@ -145,6 +145,31 @@ footer {
     display: inline-block;
 }
 
+.profile {
+  display: flex;
+  margin: 0 0 5px;
+
+
+}
+
+.profile-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  padding: 0 10px;
+  background: #ffffffb3;
+  border-radius: 10px;
+  box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.2);
+  font-size: .9em;
+  
+}
+
+.profile-contact h3, p {
+
+  margin: 5px 0;
+
+}
 
 
 
@@ -454,6 +479,9 @@ nav a {
     margin-top: 20px;
   }
   
+  .portfolio-section,.cv-section {
+    padding-top: 100px;
+  }
   .aboutnav, .contactnav {
 
     display: none;
@@ -470,8 +498,27 @@ nav a {
 
   }
  
+  .profile {
+    flex-direction: column;
+    margin: 0 0 20px;
 
+  }
 
+  .profile-contact {
+
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    
+  }
+
+  .profile-contact h3{
+
+    display: none;
+
+  }
+
+  
 #card-work {
   border: rgba(0,0,0,0.2);
   border-width: 1px;
