@@ -244,17 +244,20 @@ nav a {
 }
 
 #card-work {
-
-  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.2);
   margin: 20px auto;
   border-radius: 10px;
-  
   background: white;
+  transition: box-shadow 1s;
+
 }
+#card-work:hover {
+  box-shadow: 5px 5px 7px 4px rgba(0,0,0,0.25);
+  transition: box-shadow .5s;
 }
-.col-wide.padding.job-description {
-  padding-top: 20px;
-}
+
+
+
 
 
 /* Education
@@ -332,7 +335,8 @@ nav a {
   height: 400px;
   content: "";
   position: absolute;
-  filter: brightness(100%) blur(2px);
+  opacity: .7;
+  filter: brightness(100%) blur(5px);
   mask-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0,0,0,0)); 
   transform: rotate(5deg);
 
@@ -367,8 +371,17 @@ nav a {
   border-radius: 8px;
   filter: opacity(90%);
   padding: 0 20px;
-
+  box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.2);
+  transition: box-shadow 1s;
 }
+
+
+.portfolio-description:hover {
+  box-shadow: 5px 5px 7px 4px rgba(0,0,0,0.25);
+  transition: box-shadow .5s;
+}
+
+
 .project-description {
 
   border-bottom: grey;
