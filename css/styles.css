@@ -121,7 +121,7 @@ header h2 {
 
 /* Header styles only */
 header {
-    padding-top: 60px;
+    padding-top: 50px;
     position: relative;
     border-bottom: 10px solid #7bd6c5;
     background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat;
@@ -352,13 +352,14 @@ nav a {
 #philwornath::before {
 
   background: url(../img/freelance.jpg) 0 0 repeat-x;
-  transform: rotate(-5deg);
 }
 
 
 #thuas::before {
 
   background: url(../img/university.jpg) 0 0 repeat-x;
+  transform: rotate(-5deg);
+
 
 }
 
@@ -391,7 +392,9 @@ nav a {
 
 }
 
-
+.project-description img {
+  padding: 10px 0;
+}
 
 .portfolio-section,.cv-section {
   padding-top: 50px;
@@ -435,6 +438,17 @@ nav a {
 
   float: right;
 
+}
+
+.portfolio-img {
+  margin: 0 15px;
+  width: 90%;
+}
+
+  
+.project-sidewrapper {
+  width: 30%;
+  float: right;
 }
 /* Buttons
 ------------------------------------*/
@@ -516,6 +530,8 @@ nav a {
     margin: 0 0 20px;
 
   }
+
+
 
   .profile-contact {
 
