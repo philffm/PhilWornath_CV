@@ -25,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.profile-contact [class^="socicon-"], [class*=" socicon-"] {
+  padding-right: 4px;
+}
+
 .socicon-internet:before {
   content: "\e957";
 }

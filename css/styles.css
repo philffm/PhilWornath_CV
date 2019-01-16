@@ -263,10 +263,6 @@ nav a {
 /* Education
 ------------------------------------*/
 
-.education {
-    background: #f8f8f8;
-}
-
 
 .education h2 span{
   border-bottom:10px solid #d67bba;
@@ -391,6 +387,12 @@ nav a {
   border-width: 2px;
 
 }
+
+.project-description:last-child {
+  border-style: none;
+  padding-bottom: 15px;
+}
+
 
 .project-description img {
   padding: 10px 0;
@@ -525,6 +527,10 @@ nav a {
 
   }
  
+
+/* Profile area
+------------------------------------*/
+
   .profile {
     flex-direction: column;
     margin: 0 0 20px;
