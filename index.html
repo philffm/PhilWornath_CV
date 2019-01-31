@@ -42,9 +42,10 @@
             <span class="portfolionav"><a href="portfolio.html">Portfolio ❯</a></span>
 
         </nav>
-        
+
         <div class="content-wrap">
             <img class="profile-img col-narrow" src="img/phil.jpg" alt="Phil Wornath">
+            <!-- REVIEW: images should always contain the title attribute, and use the figure tag around it for semantic HTML5 -->
             <div class="col-wide padding">
                 <div class="profile">
                     <div class="profile-info">
@@ -64,16 +65,17 @@
 
         </div>
     </header>
-    
-    <main> 
+
+    <main>
         <!-- // Work Experience -->
         <section id="work" class="cv-section">
             <div class="content-wrap slim work">
                 <h2><span>Work Experience</span></h2>
+                <!-- REVIEW: why a span? -->
             </div>
                 <!-- Job 1 Details -->
                         <div id="card-work" class="content-wrap slim">
-                            <div class="col-narrow">    
+                            <div class="col-narrow">
                                 <h3>Online Marketing Manager - SEA</h3>
                                 <a href="https://performics.de" target="_blank" ><img src="img/logo_pfx.png"></a>
                                 <p>Performics (Publicis Groupe S.A.), Berlin</p>
@@ -82,6 +84,7 @@
                             <div class="col-wide padding job-description">
 
                             <h3><b>Key roles:</b></h3>
+                            <!-- REVIEW: <b> is inline styling and not allowed. Use CSS -->
                                 <ul>
                                     <li>SEA / Google Ads, Tracking , Conversion Optimization</li>
                                     <li>Managing different accounts and clients with online shops</li>
@@ -95,16 +98,16 @@
 
                             </div>
                         </div>
-                <p></p>
+                <p></p><!-- REVIEW: why? -->
                     <div id="card-work" class="content-wrap slim">
 
                         <!-- Job 2 Details -->
-                        <div class="col-narrow">    
+                        <div class="col-narrow">
                             <h3>Online Marketing (Apprenticeship / Dual Study)</h3>
                             <a href="https://performics.de" target="_blank" ><img src="img/logo_pfx.png"></a>
                             <p>Performics (Publicis Groupe S.A.), Berlin</p>
                             <p>August 2015 - December 2017</p>
-                        </div>    
+                        </div>
                         <div class="col-wide padding job-description">
 
                         <h3><b>Key roles:</b></h3>
@@ -126,20 +129,20 @@
                             <li>Agency Marketing & Event</li>
                             <li>Human Resources (HR)</li>
                         </ul>
-                    
+
                         </div>
                     </div>
 
-                
+
                     <div id="card-work" class="content-wrap slim">
                         <!-- Job 3 Details -->
-                        <div class="col-narrow">    
+                        <div class="col-narrow">
                             <h3>Consultant - Digital Web Solutions</h3>
                             <a href="https://bratista.com" target="_blank" ><img src="img/logo_bratista.png"></a>
                             <p>BRATISTA media network, Frankfurt & Berlin</p>
                             <p>Januar 2015 - December 2015</p>
                         </div>
-                        <div class="col-wide padding job-description">    
+                        <div class="col-wide padding job-description">
 
                         <h3><b>Key roles:</b></h3>
                             <ul>
@@ -158,7 +161,7 @@
             <div class="content-wrap slim education">
                     <h2><span>Education & Qualifications</span></h2>
                         <div class='col-wide'>
-                        
+
 <!-- The Timeline -->
 
 <ul class="timeline">
@@ -168,17 +171,17 @@
 		<div class="direction-r">
 			<div class="flag-wrapper">
 				<span class="flag">The Hague University of Applied Sciences, Den Haag, NL</span>
-				<span class="time-wrapper"><span class="time">2018 - present</span></span>
+				<span class="time-wrapper"><span class="time">2018 - present</span></span><!-- REVIEW: why a double span? -->
 			</div>
 			<div class="desc">
                <p><b>Study Programme:</b> User Experience Design (B.Sc.)</p>
                <p><b>Modules:</b> Interaction Design / Programming Bootcamp (Java) / Digital Skills (HTML/CSS/JS) / Psychology for Design / Research for Design</p>
 
-  
+
             </div>
 		</div>
 	</li>
-  
+
     <!-- Item 1 -->
 	<li>
 		<div class="direction-r">
@@ -206,21 +209,22 @@
             </div>
 		</div>
 	</li>
-  
+
 </ul>
 
                     </div>
 
-                   
 
-                    <div class='col-narrow'>                        
-                        
+
+                    <div class='col-narrow'>
+
                         <div class="skills">
                             <h3>Skillset</h3>
                                 <ul class="skills">
                                     <li class="skills adobe"></li>
                                     <li class="skills office"> </li>
                                     <li class="skills coding"></li>
+                                    <!-- REVIEW: You should give the list items content, and perhaps make it invisible.  -->
                         </div>
 
 
@@ -232,7 +236,7 @@
                                     <li class="skills french"></li>
                                     <li class="skills dutch"></li>
                             </div>
-                            
+
                      </div>
                 </div>
 
@@ -256,7 +260,7 @@
                         <div class="card-cert">
                             <img src="img/certificates/ganalytics.png">
                             <p>Analytics Individual Certification</p>
-                        </div>    
+                        </div>
                     </div>
                 </div>
             </section>
@@ -269,6 +273,7 @@
                     <!-- School 1 details. -->
                         <div class="card-publication">
                             <p><quoteline>The perfect landing page - strategic, ux-centered optimization</quoteline></p>
+                            <!-- REVIEW: quoteline and quote are not existing html tags -->
                             <p><quote>"What role do landing pages play in the customer journey? [...] A recent study by Google on the topic says that 53% of page views are canceled due to a load time of more than 3 seconds [...] The user's interaction on the page can be tracked using various tools: For example, the scroll depth indicates how far a user has scrolled on the page [...]"</quote></p>
                             <a class="button cta" href="https://translate.google.com/translate?sl=auto&tl=en&u=https%3A%2F%2Fwww.performics.de%2Fblog%2Fdie-optimale-landingpage-einblicke-in-die-strategische-landingpage-optimierung" target="_blank"><span class="socicon-ghost"></span><span class="btntext">read article</span></a>
 
@@ -277,7 +282,7 @@
                        
             </section>
     </main>
-    
+
 
     <!-- // Footer & contact info -->
     <footer id="contact">
@@ -286,7 +291,7 @@
         <h2>Let's get in Touch!</h2>
 
 
-        
+
         <!-- Social media links. Add or remove any networks. -->
         <div id="social">
                 <li><a class="button social" href="https://www.linkedin.com/in/phw/" target="_blank"><span class="socicon-linkedin"></span></a></li>
