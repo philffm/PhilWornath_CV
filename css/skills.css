@@ -45,47 +45,52 @@ li.skills:after {
     align-items: center;
 }
 
+
 li.skills.adobe:after {
     animation-name: adobe;
     content: "Adobe (PS, AI, XD)";
+    width: 90%;
+
 }
 
 @keyframes adobe {
     to {
-        width: 90%;
     }
 }
 
 li.skills.office:after {
     animation-name: office;
     content: "MS (Word, Excel, PP) ";
+    width: 80%;
+
 }
 
 @keyframes office {
     to {
-        width: 80%;
     }
 }
 
 li.skills.coding:after {
     animation-name: coding;
     content: "Coding (HTML, CSS, JS)";
+    width: 75%;
+
 }
 
 @keyframes coding {
     to {
-        width: 75%;
     }
 }
 
 li.skills.german:after {
     animation-name: german;
-    content: "German: C2";
+    content: "German: Native speaker";
+    width: 100%;
+
 }
 
 @keyframes german {
     to {
-        width: 100%;
     }
 }
 
@@ -93,22 +98,25 @@ li.skills.german:after {
 li.skills.english:after {
     animation-name: english;
     content: "English: C1";
+    width: 85%;
+
 }
 
 @keyframes english {
     to {
-        width: 85%;
     }
 }
 
 li.skills.french:after {
     animation-name: french;
     content: "French: A2";
+    width: 45%;
+
 }
 
 @keyframes french {
+    
     to {
-        width: 45%;
     }
 }
 
@@ -116,11 +124,17 @@ li.skills.french:after {
 li.skills.dutch:after {
     animation-name: dutch;
     content: "Dutch";
+    background-color:  #d67bba;
 }
 
 @keyframes dutch {
+
+    from {
+
+        width: 30%;
+    }
     to {
-        width: 29%;
+        width: 45%;
     }
 }
 
