@@ -43,6 +43,12 @@ h2 {
     margin-top: 25px;
   }
 
+  h3 {
+    font-size: 1.4em;
+}
+
+
+
 quoteline {
   font-size: 35px;
 }
@@ -603,4 +609,9 @@ div.col-narrow a img {
   }
 
 
+}
+
+.projectinfo {
+  display: flex;
+  justify-content: space-between;
 }
