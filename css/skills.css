@@ -48,8 +48,8 @@ li.skills:after {
 
 li.skills.adobe:after {
     animation-name: adobe;
-    content: "Adobe (PS, AI, XD)";
-    width: 90%;
+    content: "Design (PS, AI)";
+    width: 85%;
 
 }
 
@@ -61,7 +61,7 @@ li.skills.adobe:after {
 li.skills.office:after {
     animation-name: office;
     content: "MS (Word, Excel, PP) ";
-    width: 80%;
+    width: 75%;
 
 }
 
@@ -73,7 +73,15 @@ li.skills.office:after {
 li.skills.coding:after {
     animation-name: coding;
     content: "Coding (HTML, CSS, JS)";
-    width: 75%;
+    width: 80%;
+
+}
+
+
+li.skills.prototyping:after {
+    animation-name: coding;
+    content: "UX Tools (XD, Balsamiq)";
+    width: 90%;
 
 }
 
