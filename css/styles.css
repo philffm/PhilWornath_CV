@@ -583,6 +583,12 @@ h2 {
 
 }
 
+div#social {
+  margin: 5px 0rem 0px;
+}
+.button.social {
+  margin: .3rem .3rem;
+}
 
 /* Profile area
 ------------------------------------*/
@@ -597,7 +603,7 @@ h2 {
 
 .profile-contact {
 
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
   justify-content: space-evenly;
   
@@ -638,6 +644,7 @@ width: 50%;
 .profile-img {
   width: 200px;
 }
+
 
 
 }
