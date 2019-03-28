@@ -588,6 +588,8 @@ div#social {
 }
 .button.social {
   margin: .3rem .3rem;
+  font-size: 35px;
+  padding: 10px 35px;
 }
 
 /* Profile area
