@@ -48,7 +48,7 @@ li.skills:after {
 
 li.skills.adobe:after {
     animation-name: adobe;
-    content: "Design (PS, AI)";
+    content: "Design (AI, AE, PR, PS)";
     width: 85%;
 
 }

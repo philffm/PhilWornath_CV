@@ -135,6 +135,9 @@ img {
 }
 
 
+img.eilogo {
+  width: 30%;
+}
 /* Header & Footer 
 ------------------------------------*/
 
@@ -303,7 +306,7 @@ box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.2);
 margin: 20px auto;
 border-radius: 10px;
 background: white;
-transition: box-shadow 1s;
+transition: all .3s ease;
 
 }
 #card-work:hover {
