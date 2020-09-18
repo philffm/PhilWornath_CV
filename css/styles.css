@@ -214,15 +214,15 @@ margin: 0 0 5px;
 }
 
 .profile-contact {
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-padding: 0 10px;
-background: #ffffffb3;
-box-shadow: 5px 5px  #7bd6c5;
-font-size: .9em;
-
+  padding: 0 10px;
+  background: #ffffff;
+  box-shadow: 5px 5px #7bd6c5;
+  font-size: .9em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
+
 
 .profile-contact h3, p {
 
@@ -259,14 +259,21 @@ color: #fff;
 
 }
 
+
+
 .navi.portfolionav a, .navi.cvnav a {
 
 background: #7bd6c5;
+transition: all .3s cubic-bezier(.17, .65, .25, .90);
+
 
 }
 .navi.portfolionav a:hover, .navi.cvnav a:hover{
 
 background: #62b2a3;
+transform: rotateX(30deg);
+transition: all .3s cubic-bezier(.17, .65, .25, .90);
+transform: translate3D(0,-1px,0) scale(1.2);
 
 }
 
@@ -290,7 +297,7 @@ border-bottom: 15px solid #818181;
 
 }
 
-.navi.aboutnav:hover, .navi.contactnav:hover, .navi.portfolionav:hover {
+.navi.aboutnav:hover, .navi.contactnav:hover {
 
 border-bottom: 15px solid #fff;
 
@@ -310,18 +317,20 @@ margin-top: 0;
 }
 
 #card-work, .portfolio-description {
-	box-shadow: 6px 6px 0px rgba(0,0,0,0.35);
-	margin: 30px auto;
-	border-radius: 0px;
-	background: white;
-	transition: all .3s ease;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.35);
+  margin: 20px auto;
+      margin-bottom: 20px;
+  border-radius: 0px;
+  background: white;
+  transition: all .3s ease;
+  margin-bottom: 40px;
 }
 
 #card-work:hover {
-box-shadow: 9px 9px 0px rgba(0,0,0,0.25);
+box-shadow: 10px 10px 0px  rgba(0,0,0,0.2);
 transition: box-shadow .5s;
 transition: all .3s ease;
-transform: translate3D(0,-1px,0) scale(1.02);
+transform: translate3D(0,-1px,0) scale(1.05);
 
 }
 
@@ -557,6 +566,7 @@ width: auto;
 text-decoration: none;
 font-variant: all-small-caps;
 margin: 0 0 5px 0;
+transition: all .3s ease;
 
 }
 
@@ -568,6 +578,8 @@ margin: 0 .3rem;
 .button:hover {
 background: #41c4ab;
 color: #FFFFFF;
+transition: all .3s ease;
+
 box-shadow: 7px 7px 0px rgba(0,0,0,0.8);
 
 }
