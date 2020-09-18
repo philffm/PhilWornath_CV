@@ -16,20 +16,19 @@ html {
   box-sizing: inherit;
 }
 
-div#social {
-  background: #d6d6d6;
-  padding: 1rem 0;
-  border-radius: 3rem;
-  margin: 0 14rem 0;
-  
-}
 
 body {
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Roboto',sans-serif;
   margin: 0;
 }
 a {
   color: #41c4ab;
+}
+
+p,a {
+  font-size: 12;
+  font-weight: 400;
+
 }
 
 video { 
@@ -41,18 +40,24 @@ a:hover {
 text-decoration: none;
 }
 h1, h2 {
-font-family: 'Open Sans:600',sans-serif;}
+font-family: 'Roboto',sans-serif;}
+
 
 h1 {
-font-size: 40px;
+  font-size: 40px;
+  font-weight: 400;
 }
 h2 {
   font-size: 30px;
   margin-top: 25px;
+  font-weight: 200;
+
 }
 
 h3 {
   font-size: 1.4em;
+  font-weight: 200;
+
 }
 
 
@@ -75,7 +80,7 @@ text-decoration: none;
 .content-wrap {
 max-width: 950px;
 margin: 0 auto;
-padding: 20px;
+padding: 15px;
 overflow: hidden;
 }
 .content-wrap.slim {
@@ -127,7 +132,7 @@ padding-left: 26px;
 }
 
 main {
-background: #f8f8f8;
+background: #f7f7f7;
 margin-top: -50px;
 }
 img {
@@ -149,8 +154,14 @@ img.eilogo {
   border-width: 10px;
   border-color: #7bd6c5;
   padding:unset;
+  overflow: hidden;
 
 }
+.profile-img img {
+  filter: grayscale(100%);
+
+}
+
 
 header, 
 footer {
@@ -172,7 +183,7 @@ margin: 0;
 
 /* Header styles only */
 header {
-  padding-top: 50px;
+  padding-top: 65px;
   position: relative;
   border-bottom: 10px solid #7bd6c5;
   background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat;
@@ -206,11 +217,9 @@ margin: 0 0 5px;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
-margin: 0 10px;
 padding: 0 10px;
 background: #ffffffb3;
-border-radius: 10px;
-box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.2);
+box-shadow: 5px 5px  #7bd6c5;
 font-size: .9em;
 
 }
@@ -229,7 +238,7 @@ margin: 5px 0;
 -------------------------*/
 nav {
 text-align: center;
-background: #0009;
+background: rgba(0, 0, 0, 0.8);
 position: fixed;
 top: 0;
 width: 100%;
@@ -237,7 +246,7 @@ z-index: 11;
 }
 nav a {
 display: inline-block;
-padding: 15px 20px;
+padding: 20px 20px;
 text-decoration: none;
 text-transform: uppercase;
 color: #fff;
@@ -264,26 +273,26 @@ background: #62b2a3;
 
 .navi.worknav:hover {
 
-border-bottom: 10px solid #7bd6c5;
+border-bottom: 15px solid #7bd6c5;
 
 
 }
 
 .navi.edunav:hover {
 
-border-bottom: 10px solid #d67bba;
+border-bottom: 15px solid #d67bba;
 
 }
 
 .navi.pubnav:hover {
 
-border-bottom: 10px solid #818181;
+border-bottom: 15px solid #818181;
 
 }
 
 .navi.aboutnav:hover, .navi.contactnav:hover, .navi.portfolionav:hover {
 
-border-bottom: 10px solid #fff;
+border-bottom: 15px solid #fff;
 
 }
 
@@ -300,16 +309,16 @@ border-bottom: 10px solid #fff;
 margin-top: 0;
 }
 
-#card-work {
-box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.2);
-margin: 20px auto;
-border-radius: 10px;
-background: white;
-transition: all .3s ease;
-
+#card-work, .portfolio-description {
+	box-shadow: 6px 6px 0px rgba(0,0,0,0.35);
+	margin: 30px auto;
+	border-radius: 0px;
+	background: white;
+	transition: all .3s ease;
 }
+
 #card-work:hover {
-box-shadow: 5px 5px 7px 4px rgba(0,0,0,0.25);
+box-shadow: 9px 9px 0px rgba(0,0,0,0.25);
 transition: box-shadow .5s;
 transition: all .3s ease;
 transform: translate3D(0,-1px,0) scale(1.02);
@@ -450,19 +459,14 @@ z-index: 1;
 background: white;
 border: 1px lightgrey;
 border-style: solid;
-border-radius: 8px;
+border-radius: 2px;
 filter: opacity(90%);
 padding: 0 20px;
-box-shadow: 2px 2px 5px 3px rgba(0,0,0,0.2);
-transition: box-shadow 1s;
-transform: translate3D(0,-1px,0) scale(1.0);
 
 }
 
 
 .portfolio-description:hover {
-box-shadow: 5px 5px 7px 4px rgba(0,0,0,0.25);
-transition: box-shadow .5s;
 
 }
 
@@ -487,41 +491,38 @@ padding: 10px 0;
 }
 
 .portfolio-section,.cv-section {
-padding-top: 50px;
+padding-top: 65px;
 
 }
 
 
 .info-wrapper {
 background: #fff6;
-border-radius: 10px;
-margin: 8px 15px;
+margin: 10px 15px auto ;
 padding: 1px 10px;
 }
 
 .logo-wrapper {
 
-background: #ffffffb3;
-border-radius: 10px;
-margin: 0 15px;
+background: #ffffffd3;
+margin: 10px 15px auto ;
 padding: 10px;
 }
 
 
 .project-category {
-background: #80808099;
-float: right;
-border-radius: 12px;  
-padding: 10px;
-font-size: .8em;  
-color: white;
-text-justify: auto;
-margin: 0 0 0 10px;
+  background: #5b5b5be6;
+  float: right;
+  padding: 10px;
+  font-size: .8em;  
+  color: white;
+  text-justify: auto;
+  margin: 0 0 0 10px;
 }
 
 .portfolio-info {
 
-margin-top: 25px;
+  margin-top: 20px;
 
 }
 
@@ -545,31 +546,39 @@ float: right;
 ------------------------------------*/
 
 .button {
-background: #0009;
+background: rgba(0, 0, 0, 0.8);
 color: #fff;
 cursor: pointer;
 display: inline-block;
 font-size: 20px;
 font-weight: 500;
-padding: 7px 25px;
+padding: 7px 30px;
 width: auto;
 text-decoration: none;
-border-radius: 30px;
 font-variant: all-small-caps;
 margin: 0 0 5px 0;
+
 }
 
 .button.social {
-font-size: 35px;
-padding: 7px 30px;
-border-radius: 34px;
+font-size: 30px;
 margin: 0 .3rem;
 }
 
 .button:hover {
 background: #41c4ab;
 color: #FFFFFF;
+box-shadow: 7px 7px 0px rgba(0,0,0,0.8);
+
 }
+.button:active {
+  transition: all .1s ease;
+
+  background: black;
+  transform: translate(7px, 7px);
+  box-shadow: none;
+
+  }
 
 
 #social li {
@@ -650,13 +659,12 @@ div#social {
 
 }
 
-
 #card-work {
-border: rgba(0,0,0,0.2);
-border-width: 1px;
-border-style: solid;
-margin: 20px 10px;
-border-radius: 10px;
+	box-shadow: 7px 7px 0px rgba(0,0,0,0.2);
+	margin: 20px auto;
+	border-radius: 0px;
+	background: white;
+	transition: all .3s ease;
 }
 
 
@@ -678,6 +686,7 @@ width: 50%;
 
 .profile-img {
   width: 200px;
+  
 }
 
 
