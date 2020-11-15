@@ -1,29 +1,28 @@
-//import {} from 'koiosf_util.mjs';
 
 var slotState=false;
 window.addEventListener('DOMContentLoaded', initAsync);  // load
-s
+
 
 
 
 async function initAsync() {
   //asyncCall(  checkElements('nav','MENU',adjustMenu) );
   //asyncCall(  checkElements('.slot-handle','SLUT',slotInit));
-waitForStuff();
-slotInit();
+  waitForStuff('nav',adjustMenu);
+  waitForStuff('.slot',slotInit);
+
 }
 
 
-
-async function waitForStuff(){
-    waitForElement('nav').then(function(element) {
-      adjustMenu();
-
+ function waitForStuff(selector, execFunction){
+    waitForElement(selector).then(function(element) {
+      execFunction();
     });
-    
 }
 
-function waitForElement(selector) {
+
+
+async function waitForElement(selector) {
   return new Promise(function(resolve, reject) {
     var element = document.querySelector(selector);
   
