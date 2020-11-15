@@ -1,0 +1,27 @@
+{
+  "name": "PhilWornath_CV",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "snowpack": "^2.15.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philffm/PhilWornath_CV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philffm/PhilWornath_CV/issues"
+  },
+  "homepage": "https://github.com/philffm/PhilWornath_CV#readme"
+}

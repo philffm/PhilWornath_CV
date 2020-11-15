@@ -149,20 +149,27 @@ img.eilogo {
 
 .profile-img {
 
-  border-radius: 50%;
+  border-radius: 11px;
   border-style: solid;
   border-width: 10px;
   border-color: #7bd6c5;
   padding:unset;
   overflow: hidden;
-
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  align-self: center; 
 }
 .profile-img img {
   filter: grayscale(100%);
 
 }
 
-
+.profile-info {
+  max-width: 400px;
+  margin: 20px;
+  transition: all .3s ease;
+}
 header, 
 footer {
 background-color: #f8f8f8;
@@ -230,19 +237,92 @@ margin: 5px 0;
 
 }
 
+/* Slot Machine
+-------------------------*/
 
+.slot {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 
+.slot-handle {
+  display: flex;
+  flex: ;
+  transform-origin: bottom;
+  align-items: end;
+  display: flex;
+  transition: all .3s ease;
 
+}
+
+.slot-handle:hover{
+  transform: rotateX(-50deg);
+  transition: all .3s ease;
+
+}
+.slot-handle:active{
+  transform: rotateX(-120deg);
+  transition: all .1s ease;
+
+}
+
+.slotheader {
+  background-color: #f8f8f8;
+
+}
+.slotresults {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: inherit;
+  transition: all .3s ease;
+
+}
+
+.result {
+  align-self: center;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  background-color: rgba(255,255,255,1);
+  box-sizing: border-box;
+  border-width: 1px;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  justify-content: center;
+  padding: 15px;
+}
+
+.result p {
+  font-size: x-large;
+  text-align: center;
+}
+.item {
+    box-sizing: border-box;
+    border-width: 1px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.item .label {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: large;
+}
 
 /* Navigation
 -------------------------*/
 nav {
-text-align: center;
-background: rgba(0, 0, 0, 0.8);
-position: fixed;
-top: 0;
-width: 100%;
-z-index: 11;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 11;
 }
 nav a {
 display: inline-block;
@@ -251,6 +331,8 @@ text-decoration: none;
 text-transform: uppercase;
 color: #fff;
 }
+
+
 
 .navi {
 
@@ -475,9 +557,6 @@ padding: 0 20px;
 }
 
 
-.portfolio-description:hover {
-
-}
 
 
 .project-description {
@@ -551,6 +630,8 @@ width: 90%;
 width: 30%;
 float: right;
 }
+
+
 /* Buttons
 ------------------------------------*/
 
@@ -568,6 +649,9 @@ font-variant: all-small-caps;
 margin: 0 0 5px 0;
 transition: all .3s ease;
 
+}
+.button #learnmore{
+  background: #41c4ab;
 }
 
 .button.social {
@@ -592,7 +676,12 @@ box-shadow: 7px 7px 0px rgba(0,0,0,0.8);
 
   }
 
-
+.buttonwrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
 #social li {
 display: inline;
 }
@@ -698,7 +787,7 @@ width: 50%;
 
 .profile-img {
   width: 200px;
-  
+
 }
 
 

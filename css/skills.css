@@ -116,7 +116,7 @@ li.skills.english:after {
 li.skills.french:after {
     animation-name: french;
     content: "French: A2";
-    width: 45%;
+    width: 40%;
 
 }
 
@@ -140,7 +140,7 @@ li.skills.dutch:after {
         width: 30%;
     }
     to {
-        width: 45%;
+        width: 50%;
     }
 }
 
