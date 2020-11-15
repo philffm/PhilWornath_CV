@@ -27,6 +27,7 @@ li.skills:before {
     height: 30px;
     background-color: #e0e0e0cc;
     position: absolute;
+    border-radius: 0.25em;
 }
 
 li.skills:after {
@@ -41,6 +42,7 @@ li.skills:after {
     text-indent: 10px;
     display: flex;
     align-items: center;
+    border-radius: 0.25em;
 }
 
 
