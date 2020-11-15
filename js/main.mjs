@@ -2,15 +2,20 @@
 var slotState=false;
 window.addEventListener('DOMContentLoaded', initAsync);  // load
 
+var myActivities = [["Coding and", "☕️","🍵"], ["Listening to ", "UX Podcasts", "Tech Podcasts"],["Reading ", "Stackoverflow", "dev.to posts", "Hackernoon.com news"]];
+var myLocations = [["Den Haag","Beach 🏖","At home 🏡", "Cycling 🚲"], ["Frankfurt","Main river"], ];
 
 
+function appendStuff(where,what){
+  document.getElementsByTagName(where)[0].appendChild(what);
 
+}
 async function initAsync() {
   //asyncCall(  checkElements('nav','MENU',adjustMenu) );
   //asyncCall(  checkElements('.slot-handle','SLUT',slotInit));
   waitForStuff('nav',adjustMenu);
   waitForStuff('.slot',slotInit);
-
+  appendStuff('nav','<nav id="cv" style="display:none;"');
 }
 
 
