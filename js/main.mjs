@@ -6,53 +6,38 @@ var myActivities = [["Coding and", "☕️","🍵"], ["Listening to ", "UX Podca
 var myLocations = [["Den Haag","Beach 🏖","At home 🏡", "Cycling 🚲"], ["Frankfurt","Main river"], ];
 
 
+
 function appendStuff(where,what){
   document.getElementsByTagName(where)[0].appendChild(what);
 
 }
+
+
 async function initAsync() {
   //asyncCall(  checkElements('nav','MENU',adjustMenu) );
   //asyncCall(  checkElements('.slot-handle','SLUT',slotInit));
-  waitForStuff('nav',adjustMenu);
-  waitForStuff('.slot',slotInit);
-  appendStuff('nav','<nav id="cv" style="display:none;"');
-}
+   
+  (function() {
 
-
- function waitForStuff(selector, execFunction){
-    waitForElement(selector).then(function(element) {
-      execFunction();
-    });
-}
-
-
-
-async function waitForElement(selector) {
-  return new Promise(function(resolve, reject) {
-    var element = document.querySelector(selector);
-  
-    if(element) {
-      resolve(element);
-      return;
+      // monitor the page for changes and reapply if necessary
+      // use 'observer.disconnect()' in 'fnCheckChanges()' to stop monitoring
+    
+      var alvo = document.querySelector('nav');
+      var observer = new MutationObserver(fnCheckChanges);
+      observer.observe(alvo, { attributes: true, characterData: true, childList: true, subtree: true });
+    
+    })();
+    
+    function fnCheckChanges(changes, observer) {
+    
+      console.log('page changed');
+      adjustMenu();
     }
-  
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        var nodes = Array.from(mutation.addedNodes);
-        for(var node of nodes) {
-          if(node.matches && node.matches(selector)) {
-            observer.disconnect();
-            resolve(node);
-            return;
-          }
-        };
-      });
-    });
-  
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-  });
-  }
-  
+    
+    
+}
+
+
 
   function slotInit(){
     //w3.hide('.profile-info')
@@ -67,15 +52,15 @@ async function waitForElement(selector) {
 
 
 
-function adjustMenu(){
-  if (docTitle.includes("Resume")){
-      document.querySelector('nav#cv').style.display="";
-  }else if (docTitle.includes("Portfolio")) {
-      document.querySelector('nav#portfolio').style.display="";
-  }else{}
-  console.log("NAV Element Added", element);
-
-}
+  async function adjustMenu(){
+    if (docTitle.includes("Resume")){
+        document.querySelector('nav#cv').style.display="";
+    }else if (docTitle.includes("Portfolio")) {
+        document.querySelector('nav#portfolio').style.display="";
+    }else{}
+    console.log("NAV Element Added", element);
+  }
+  
 
 
 function myfunction(){
@@ -124,3 +109,30 @@ async function initFonts(){
     LoadCSS("https://fonts.gstatic.com");
     LoadCSS("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap");
 }
+
+
+function waitingFor (delay = 200, tries = 10) {
+  var el = document.querySelector('nav');
+
+  setTimeout(function () {
+      tries--;
+      if (el && el.length) {
+          adjustMenu();
+          // we have a match, do your stuff
+          console.log('Yeah, match after: ' + tries);
+      } else if (tries > 0) {
+          // we are not ready, let's try again
+          setTimeout(function () {
+              waitingFor(delay, tries)
+              adjustMenu();
+
+          }, delay);
+          console.log('Try: ' + tries);
+      } else {
+          // ok... we give up, maybe inform the client now
+          // or execute alternative stuff
+          console.log('Sorry, no match');
+      }
+  }, delay);
+}
+waitingFor(100, 20);
