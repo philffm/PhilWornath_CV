@@ -1,10 +1,8 @@
-
 var slotState=false;
 window.addEventListener('DOMContentLoaded', initAsync);  // load
 
 var myActivities = [["Coding and", "☕️","🍵"], ["Listening to ", "UX Podcasts", "Tech Podcasts"],["Reading ", "Stackoverflow", "dev.to posts", "Hackernoon.com news"]];
 var myLocations = [["Den Haag","Beach 🏖","At home 🏡", "Cycling 🚲"], ["Frankfurt","Main river"], ];
-
 
 
 function appendStuff(where,what){
@@ -16,24 +14,8 @@ function appendStuff(where,what){
 async function initAsync() {
   //asyncCall(  checkElements('nav','MENU',adjustMenu) );
   //asyncCall(  checkElements('.slot-handle','SLUT',slotInit));
-   
-  (function() {
+  waitingFor(100, 20, 'nav', adjustMenu);
 
-      // monitor the page for changes and reapply if necessary
-      // use 'observer.disconnect()' in 'fnCheckChanges()' to stop monitoring
-    
-      var alvo = document.querySelector('nav');
-      var observer = new MutationObserver(fnCheckChanges);
-      observer.observe(alvo, { attributes: true, characterData: true, childList: true, subtree: true });
-    
-    })();
-    
-    function fnCheckChanges(changes, observer) {
-    
-      console.log('page changed');
-      adjustMenu();
-    }
-    
     
 }
 
@@ -41,7 +23,6 @@ async function initAsync() {
 
   function slotInit(){
     //w3.hide('.profile-info')
-    waitForElement('.profile-info');
 
     document.querySelector('.profile-info').style.display= "none";
     console.log('SLOT SUCCESS');
@@ -52,14 +33,7 @@ async function initAsync() {
 
 
 
-  async function adjustMenu(){
-    if (docTitle.includes("Resume")){
-        document.querySelector('nav#cv').style.display="";
-    }else if (docTitle.includes("Portfolio")) {
-        document.querySelector('nav#portfolio').style.display="";
-    }else{}
-    console.log("NAV Element Added", element);
-  }
+ 
   
 
 
@@ -74,7 +48,6 @@ function myfunction(){
 
 
   }
-
 
 
   
@@ -111,20 +84,20 @@ async function initFonts(){
 }
 
 
-function waitingFor (delay = 200, tries = 10) {
-  var el = document.querySelector('nav');
-
-  setTimeout(function () {
+async function waitingFor(delay=100, tries=10, selector, runFunction) {
+  selector = selector;
+  var el = document.querySelector(selector);
+  setTimeout( function () {
       tries--;
-      if (el && el.length) {
-          adjustMenu();
+      if (el) {
+        runFunction();
           // we have a match, do your stuff
           console.log('Yeah, match after: ' + tries);
+          tries=0;
       } else if (tries > 0) {
           // we are not ready, let's try again
           setTimeout(function () {
-              waitingFor(delay, tries)
-              adjustMenu();
+              waitingFor(delay, tries, selector, runFunction);
 
           }, delay);
           console.log('Try: ' + tries);
@@ -135,4 +108,22 @@ function waitingFor (delay = 200, tries = 10) {
       }
   }, delay);
 }
-waitingFor(100, 20);
+
+
+async function adjustMenu(){
+  if (docTitle.includes("Resume")){
+      document.querySelector('nav#cv').style.display="";
+  }else if (docTitle.includes("Portfolio")) {
+      document.querySelector('nav#portfolio').style.display="";
+  }else{}
+  console.log("NAV Element Added", element);
+}
+
+
+const headerPlaceholder = document.querySelector('#about');
+
+headerPlaceholder.innerHTML = `
+<progress
+  class="hero-list progress is-medium is-info" max="100"
+></progress>
+`;

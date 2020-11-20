@@ -1,4 +1,11 @@
 
+<head>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.mjs" async defer  ></script>
+
+</head>
+
 <header id="about" class="slotheader">
     <div class="slot">
         <div class="profile-img col-narrow">
@@ -32,10 +39,8 @@
                 </div>
             </div>
         </div>
-        <div class="slot-handle" id="slot-handle"  >
-            <img src="img/slothandle.svg" alt="">
+        <img src="img/slothandle.svg" id="slot-handle"  >
 
-        </div>
     </div>
     <div class="buttonwrap" style="display: none;">  
         <h3>Now you know, what I am doing right now. Want to see my actual projects?</h3>
@@ -43,4 +48,15 @@
     <div class="profile"></div>
 
     </header>
+
+    <script>
+        const p = document.querySelector('#slot-handle'); // Find the paragraph element in the page
+        p.onclick = slotInit; // Add onclick function to element
+            
+        function showAlert(event) {
+            alert("onclick Event triggered!");
+        }
+
+
+    </script>
 

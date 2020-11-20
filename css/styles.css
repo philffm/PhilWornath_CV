@@ -252,23 +252,23 @@ margin: 5px 0;
   justify-content: center;
 }
 
-.slot-handle {
+#slot-handle  {
   display: flex;
-  flex: ;
   transform-origin: bottom;
   align-items: flex-end;
   display: flex;
   transition: all .3s ease;
-
+  max-height: 300px;
+  width: 100px;
 }
 
-.slot-handle:hover{
-  transform: rotateX(-50deg);
+#slot-handle:hover{
+  transform: rotateX(20deg);
   transition: all .3s ease;
 
 }
-.slot-handle:active{
-  transform: rotateX(-120deg);
+#slot-handle:active{
+  transform: rotateX(50deg);
   transition: all .1s ease;
 
 }
@@ -541,10 +541,8 @@ transform: rotate(-5deg);
 z-index: 1;
 background: white;
 border: 0px;
-border-radius: 0.25em;
-
+border-radius: 7px;
 border-style: solid;
-border-radius: 2px;
 filter: opacity(90%);
 padding: 0 20px;
 

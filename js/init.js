@@ -20,9 +20,5 @@ function renderPage() {
 
 }
 
-function adjustments(){
-    adjustMenu();    
-}
 prereqs();
 renderPage();
-adjustments();
