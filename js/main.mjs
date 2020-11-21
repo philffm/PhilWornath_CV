@@ -2,7 +2,7 @@ var slotState=0;
 var slotTriggerCount=0;
 
 var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "Rapid Prototypes", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
-var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", ""];
+var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", "Santa Cruz Tenerife", "Amsterdam"];
 var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
 var currentWeather = 'Cloudy';
 var currentLocation;
