@@ -2,8 +2,8 @@ var slotState=0;
 var slotTriggerCount=0;
 
 var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "Rapid Prototypes", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Visiting ", "Tech Meetups", "Design Meetups", "Tech Conferences"]];
-var myLocations = [["Den Haag","Beach 🏖","At home 🏡", "Cycling 🚲"], ["Frankfurt","Main river"], ];
-var currentCity = 'DEN HAAG';
+var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", ""];
+var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
 var currentWeather = 'Cloudy';
 var currentLocation;
 const API_KEY_WEATHER = '79e426a88a82a92f97b3758741d3d619';
@@ -110,13 +110,14 @@ async function slotInit(){
 
       case 1:
 
-        document.querySelector('#location p').innerText = currentLocation;
+        document.querySelector('#location p').innerText = currentWeather.name + ', ' + currentWeather.sys.country ;
+        // document.querySelector('#location p').innerText = currentLocation;
         slotState++;
       break;
       case 2:
 
         
-        document.querySelector('#conditions p').innerText = Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C';
+        document.querySelector('#conditions p').innerText = Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C' ;
         slotState++;
 
       break;

@@ -162,13 +162,11 @@ img {
 
   border-radius: 7px;
   border-style: solid;
+  
   border-width: 10px;
   border-color: #7bd6c5;
-  padding:unset;
-  overflow: hidden;
   max-width: 200px;
   max-height: 200px;
-  display: flex;
   align-self: center; 
 }
 .profile-img img {
@@ -215,11 +213,10 @@ header {
 /* Footer styles only */
 footer {
   border-bottom: 10px solid #818181;
-}
-footer {
   text-align: center;
-  
+
 }
+
 .contact-info a {
   padding: 10px;
   display: inline-block;
@@ -284,6 +281,9 @@ margin: 5px 0;
   display: flex;
  justify-content: center;
 
+}
+.slotlogo{
+  padding: 20px;
 }
 .slotresults {
   display: flex;
@@ -352,13 +352,18 @@ text-transform: uppercase;
 color: rgb(0, 0, 0);
 background: #f7f7f7a1;
 }
+
+nav .min {
+  display: none;
+}
+
 .minlogo {
   margin: 5px 15px;
   padding: 0;
   width: 50px;
   height: 50px;
   background: none;
-
+display: flex;
 }
 .minlogo:active {
   transform: scale(.9);
@@ -372,15 +377,14 @@ background: #f7f7f7a1;
 }
 
 
-.portfolionav a  {
-background:(var(--cyanlight));
-transition: all .3s cubic-bezier(.17, .65, .25, .90);
-color: white;
-background:var(--cyanlight);
 
-}
-
- .portfolionav a:hover{
+a#portfolio{
+  background:(var(--cyanlight));
+  transition: all .3s cubic-bezier(.17, .65, .25, .90);
+  color: white;
+  background:var(--cyanlight);
+  }
+ a#portfolio:hover{
 background: var(--cyanlight);
 transform: rotateX(30deg);
 transition: all .3s cubic-bezier(.17, .65, .25, .90);
@@ -388,16 +392,16 @@ transform: translate3D(0,-1px,0) scale(1.2);
 }
 
 
-.navi a:hover {
+a.navi:hover {
   padding: 20px 20px 5px;  
   border-bottom: 15px solid var(--cyanlight);
 }
 
-.navi#edu a:hover{
+a#edu:hover{
   border-bottom: 15px solid var(--pink);
 }
 
-.navi#pub a:hover {
+a#pub:hover {
   padding: 20px 20px 5px;  
   border-bottom: 15px solid #9b9b9b;
 
@@ -631,10 +635,6 @@ float: right;
 
 }
 
-.portfolio-img {
-margin: 0 15px;
-width: 90%;
-}
 
 
 .project-sidewrapper {
@@ -712,6 +712,8 @@ header {
   padding-top: 100px;
 
 }
+.minlogo{
+}
 .slotheader{
   padding-top: 100px;
   flex-direction: column;
@@ -743,7 +745,13 @@ h2 {
 .portfolio-section,.cv-section {
   padding-top: 100px;
 }
-.navi#pub, .navi#contact{
+
+nav .full {
+  display: none;
+}nav .min {
+  display: flex;
+}
+.navi#pub{
 
   display: none;
 
@@ -780,9 +788,10 @@ div#social {
 
 .profile-img{
   border-style: inherit;
-  max-width: 30%;
-  max-height: 30%;
+  display: flex;
 
+  width: 100px;
+  width: 100px;
 }
 
 .profile-contact {
@@ -832,10 +841,7 @@ div.col-narrow a img {
 width: 50%;
 }
 
-.profile-img {
-  width: 200px;
 
-}
 
 
 
