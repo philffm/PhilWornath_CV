@@ -1,7 +1,6 @@
 var slotState=false;
-window.addEventListener('DOMContentLoaded', initAsync);  // load
 
-var myActivities = [["Coding and", "☕️","🍵"], ["Listening to ", "UX Podcasts", "Tech Podcasts"],["Reading ", "Stackoverflow", "dev.to posts", "Hackernoon.com news"]];
+var myActivities = [["Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "Rapid Prototypes", "with ESP32"], ["Watching 👀", "You", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup"]];
 var myLocations = [["Den Haag","Beach 🏖","At home 🏡", "Cycling 🚲"], ["Frankfurt","Main river"], ];
 
 
@@ -10,24 +9,62 @@ function appendStuff(where,what){
 
 }
 
-
 async function initAsync() {
   //asyncCall(  checkElements('nav','MENU',adjustMenu) );
-  //asyncCall(  checkElements('.slot-handle','SLUT',slotInit));
-  waitingFor(100, 20, 'nav', adjustMenu);
+  //asyncCall(  checkElements('.slot-handle','',slotInit));
+  waitingFor(100, 5, 'nav', adjustMenu);
+  var slotBtn = function(){ dropEvent('#slot-handle', slotInit);};
+  waitingFor(100, 5, '#slot-handle', slotBtn );
 
-    
+
+}
+
+async function dropEvent(eventSelector, eventFunction ){
+  const selector = document.querySelector(eventSelector); // Find the paragraph element in the page
+  selector.onclick = eventFunction;
+  
+}
+
+function showAlert(event) {
+    alert("onclick Event triggered!");
 }
 
 
 
-  function slotInit(){
+async function slotInit(){
     //w3.hide('.profile-info')
 
-    document.querySelector('.profile-info').style.display= "none";
-    console.log('SLOT SUCCESS');
-    document.querySelector('.slotresults').style.display="";
+    if (slotState == false) {
+      document.querySelector('.profile-info').style.transition = "all .5s"; 
+      document.querySelector('.profile-info').style.opacity = "0"; 
+      document.querySelector('.slotresults').style.opacity = "0"; 
 
+      setTimeout(function(){ 
+      document.querySelector('.profile-info').style.display= "none";     
+      document.querySelector('.slotresults').style.display="";    
+      },500);
+
+      setTimeout(function(){ 
+        document.querySelector('.slotresults').style.opacity = "0"; 
+        document.querySelector('.slotresults').style.transition = "all 1s"; 
+        document.querySelector('.slotresults').style.opacity = "1"; 
+          },500);
+
+      
+      console.log('SLOT SUCCESS');
+      slotState = true;
+
+    }else if (slotState == true) {
+      var randActivity = Math.floor(Math.random() * myActivities.length);
+      var newActivity = myActivities[randActivity][0] ;
+      var s = [Math.floor(Math.random() * myActivities[randActivity].length)];
+      if (s == 0){s++}; 
+      var subActivity = myActivities[randActivity][s];
+      document.querySelector('#activity p').innerText = newActivity + subActivity;
+    }
+
+
+    var slotBtn = function(){ dropEvent('#slot-handle', slotInit);};
 
   }
 
@@ -37,7 +74,7 @@ async function initAsync() {
   
 
 
-function myfunction(){
+function getAPI(){
 
   var xhr = new XMLHttpRequest();
 
@@ -120,10 +157,4 @@ async function adjustMenu(){
 }
 
 
-const headerPlaceholder = document.querySelector('#about');
-
-headerPlaceholder.innerHTML = `
-<progress
-  class="hero-list progress is-medium is-info" max="100"
-></progress>
-`;
+initAsync();

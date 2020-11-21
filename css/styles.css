@@ -146,9 +146,6 @@ img {
 }
 
 
-img.eilogo {
-  width: 30%;
-}
 /* Header & Footer 
 ------------------------------------*/
 
@@ -199,7 +196,7 @@ header {
   padding-top: 65px;
   position: relative;
   border-bottom: 10px solid #7bd6c5;
-  background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat;
+  /* background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat; */
   background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
@@ -255,10 +252,10 @@ margin: 5px 0;
 #slot-handle  {
   display: flex;
   transform-origin: bottom;
-  align-items: flex-end;
+  align-self: flex-end;
   display: flex;
   transition: all .3s ease;
-  max-height: 300px;
+  max-height: 200px;
   width: 100px;
 }
 
@@ -275,6 +272,8 @@ margin: 5px 0;
 
 .slotheader {
   background-color: #f8f8f8;
+  display: flex;
+ justify-content: center;
 
 }
 .slotresults {
@@ -303,6 +302,7 @@ margin: 5px 0;
 .result p {
   font-size: x-large;
   text-align: center;
+  align-self: inherit;
 }
 .item {
     box-sizing: border-box;
@@ -324,18 +324,21 @@ margin: 5px 0;
 -------------------------*/
 nav {
   text-align: center;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 11;
+  display: flex;
+justify-content: center;
 }
 nav a {
 display: inline-block;
 padding: 20px 20px;
 text-decoration: none;
 text-transform: uppercase;
-color: #fff;
+color: rgb(0, 0, 0);
+background: #f7f7f7a1;
 }
 
 
@@ -353,8 +356,7 @@ color: #fff;
 
 background: #7bd6c5;
 transition: all .3s cubic-bezier(.17, .65, .25, .90);
-
-
+color: white;
 }
 .navi.portfolionav a:hover, .navi.cvnav a:hover{
 
@@ -368,26 +370,26 @@ transform: translate3D(0,-1px,0) scale(1.2);
 
 .navi.worknav:hover {
 
-border-bottom: 15px solid #7bd6c5;
+  border-top: 15px solid #7bd6c5;
 
 
 }
 
 .navi.edunav:hover {
 
-border-bottom: 15px solid #d67bba;
+  border-top: 15px solid #d67bba;
 
 }
 
 .navi.pubnav:hover {
 
-border-bottom: 15px solid #818181;
+  border-top: 15px solid #818181;
 
 }
 
 .navi.aboutnav:hover, .navi.contactnav:hover {
 
-border-bottom: 15px solid #fff;
+  border-top: 15px solid #fff;
 
 }
 
@@ -689,9 +691,19 @@ width: 50px;
 
 @media (max-width: 830px){
 header {
-  text-align: center;
   padding-top: 100px;
 
+}
+.slotheader{
+  padding-top: 100px;
+  flex-direction: column;
+}
+.result {
+  width: 100px;
+  height:100px;
+}
+.result p {
+  font-size: smaller;
 }
 h2 {
   font-size: 30px;
@@ -719,6 +731,7 @@ h2 {
 
 div#social {
   margin: 5px 0rem 0px;
+  display: flex;
 }
 .button.social {
   margin: .3rem .3rem;
@@ -735,7 +748,12 @@ div#social {
 
 }
 
+.profile-img{
+  border-style: inherit;
+  max-width: 30%;
+  max-height: 30%;
 
+}
 
 .profile-contact {
 
@@ -753,12 +771,21 @@ div#social {
 
 #card-work {
 	box-shadow: 7px 7px 0px rgba(0,0,0,0.2);
-	margin: 20px auto;
+	margin: 20px 25px;
 	border-radius: 0px;
 	background: white;
-	transition: all .3s ease;
+	transition: all 0s ease;
 }
 
+#card-work img {
+  max-height: 50%;
+max-width: 50%;
+}
+
+
+.portfolio-info  {
+  display: flex;
+}
 
 .portfolio-info.float-r {
 float: none;
