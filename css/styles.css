@@ -152,7 +152,7 @@ img {
 
 .profile-img {
 
-  border-radius: 11px;
+  border-radius: 7px;
   border-style: solid;
   border-width: 10px;
   border-color: #7bd6c5;
@@ -697,6 +697,10 @@ header {
 .slotheader{
   padding-top: 100px;
   flex-direction: column;
+}
+
+.label span:nth-child(2) {
+  display: none;
 }
 .result {
   width: 100px;

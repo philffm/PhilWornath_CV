@@ -42,6 +42,7 @@ async function slotInit(){
       setTimeout(function(){ 
       document.querySelector('.profile-info').style.display= "none";     
       document.querySelector('.slotresults').style.display="";    
+      LoadCSS('dm.css')
       },500);
 
       setTimeout(function(){ 
