@@ -17,12 +17,20 @@ html {
 }
 
 
+:root {
+  --cyan: #41c4ab;
+  --cyanlight: #7bd6c5;
+  --pink: #d67bba;
+  --white: #ffffff;
+}
+
+
 body {
   font-family: 'Roboto',sans-serif;
   margin: 0;
 }
 a {
-  color: #41c4ab;
+  color: var(--cyan);
 }
 
 p,a {
@@ -193,6 +201,7 @@ margin: 0;
 
 /* Header styles only */
 header {
+  z-index: 2;
   padding-top: 65px;
   position: relative;
   border-bottom: 10px solid #7bd6c5;
@@ -319,6 +328,9 @@ margin: 5px 0;
   margin: 10px;
   font-size: large;
 }
+.winselection {
+  margin: 10px;
+}
 
 /* Navigation
 -------------------------*/
@@ -340,56 +352,61 @@ text-transform: uppercase;
 color: rgb(0, 0, 0);
 background: #f7f7f7a1;
 }
+.minlogo {
+  margin: 5px 15px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  background: none;
 
-
+}
+.minlogo:active {
+  transform: scale(.9);
+}
+.minlogo:hover {
+  transform: scale(1.1);
+}
 
 .navi {
-
   transition: all .3s cubic-bezier(.17, .65, .25, .90);
-
-
 }
 
 
-
-.navi.portfolionav a, .navi.cvnav a {
-
-background: #7bd6c5;
+.portfolionav a  {
+background:(var(--cyanlight));
 transition: all .3s cubic-bezier(.17, .65, .25, .90);
 color: white;
-}
-.navi.portfolionav a:hover, .navi.cvnav a:hover{
+background:var(--cyanlight);
 
-background: #62b2a3;
+}
+
+ .portfolionav a:hover{
+background: var(--cyanlight);
 transform: rotateX(30deg);
 transition: all .3s cubic-bezier(.17, .65, .25, .90);
 transform: translate3D(0,-1px,0) scale(1.2);
-
 }
 
 
-.navi.worknav:hover {
+.navi a:hover {
+  padding: 20px 20px 5px;  
+  border-bottom: 15px solid var(--cyanlight);
+}
 
-  border-top: 15px solid #7bd6c5;
+.navi#edu a:hover{
+  border-bottom: 15px solid var(--pink);
+}
 
+.navi#pub a:hover {
+  padding: 20px 20px 5px;  
+  border-bottom: 15px solid #9b9b9b;
 
 }
 
-.navi.edunav:hover {
+.navi.aboutnav a:hover, .navi.contactnav a:hover {
 
-  border-top: 15px solid #d67bba;
-
-}
-
-.navi.pubnav:hover {
-
-  border-top: 15px solid #818181;
-
-}
-
-.navi.aboutnav:hover, .navi.contactnav:hover {
-
-  border-top: 15px solid #fff;
+  padding: 20px 20px 5px;  
+  border-bottom: 15px solid #9b9b9b;
 
 }
 
@@ -406,26 +423,27 @@ transform: translate3D(0,-1px,0) scale(1.2);
 margin-top: 0;
 }
 
-#card-work, .portfolio-description {
-  box-shadow: 6px 6px 0px rgba(0,0,0,0.35);
+.card-work, .portfolio-description {
+  
   margin: 20px auto;
       margin-bottom: 20px;
   background: white;
   transition: all .3s ease;
   margin-bottom: 40px;
-  border-radius: 0.25em;
+  border-radius: 7px;
 }
 
-#card-work:hover {
-box-shadow: 10px 10px 0px  rgba(0,0,0,0.2);
+.card-work:hover {
+box-shadow: 0 10px 0px  rgba(0, 0, 0, 0.445);
 transition: box-shadow .5s;
 transition: all .3s ease;
 transform: translate3D(0,-1px,0) scale(1.05);
 
 }
 
-
-
+#eilogo {
+  width: auto;
+}
 
 
 /* Education
@@ -653,7 +671,7 @@ font-size: 30px;
 margin: 1rem .5rem;}
 
 .button:hover {
-background: #41c4ab;
+background:var(--cyan);
 color: #FFFFFF;
 transition: all .3s ease;
 
@@ -699,6 +717,14 @@ header {
   flex-direction: column;
 }
 
+.slot{
+  flex-flow: wrap;
+}
+
+.winselection {
+  margin: 20px;
+}
+
 .label span:nth-child(2) {
   display: none;
 }
@@ -717,7 +743,7 @@ h2 {
 .portfolio-section,.cv-section {
   padding-top: 100px;
 }
-.aboutnav, .contactnav {
+.navi#pub, .navi#contact{
 
   display: none;
 
@@ -773,15 +799,14 @@ div#social {
 
 }
 
-#card-work {
-	box-shadow: 7px 7px 0px rgba(0,0,0,0.2);
+.card-work {
 	margin: 20px 25px;
 	border-radius: 0px;
 	background: white;
 	transition: all 0s ease;
 }
 
-#card-work img {
+.card-work img {
   max-height: 50%;
 max-width: 50%;
 }

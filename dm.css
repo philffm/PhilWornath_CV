@@ -7,8 +7,18 @@
     filter: invert(1);
   }
    */
+
+
+
+:root {
+  --cyan: #41c4ab;
+  --cyanlight: #7bd6c5;
+  --pink: #d67bba;
+  --white: #ffffff;
+}
+
 .slotheader{
-    -webkit-animation: rainbow 4s steps(36) infinite;
+    -webkit-animation: rainbow 2s steps(36) loop;
 
 }
 
@@ -18,13 +28,9 @@
       to { -webkit-filter:hue-rotate(360deg); }
  }
  
- @keyframes rainbow {
-  from {
-     -webkit-filter:hue-rotate(10deg);
-             filter:hue-rotate(10deg);
-     }
-   to {
-     -webkit-filter:hue-rotate(360deg);
-             filter:hue-rotate(360deg);
-     }
- }
+@-webkit-keyframes cyanergy {
+  from { background-color: var(--cyan) ; }
+  to { background-color: var(--pink); }
+
+}
+ 
