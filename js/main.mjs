@@ -1,7 +1,7 @@
 var slotState=0;
 var slotTriggerCount=0;
 
-var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "Rapid Prototypes", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Visiting ", "Tech Meetups", "Design Meetups", "Tech Conferences"]];
+var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "Rapid Prototypes", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
 var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", ""];
 var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
 var currentWeather = 'Cloudy';
@@ -116,8 +116,14 @@ async function slotInit(){
       break;
       case 2:
 
+        var timeEpoch = currentWeather.dt + currentWeather.timezone;
         
-        document.querySelector('#conditions p').innerText = Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C' ;
+        var date = new Date( timeEpoch *1000);
+
+        var time = date.getHours() + ':' + date.getMinutes();
+  
+       
+        document.querySelector('#conditions p').innerHTML = "⛅️" +"<br>" + Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C' +"<br>" + currentWeather.weather[0].main +"<br>"+ time  ;
         slotState++;
 
       break;
