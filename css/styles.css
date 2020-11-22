@@ -492,7 +492,7 @@ border-bottom:10px solid #818181;
 
 }
 #publications {
-background: linear-gradient(rgb(248, 248, 248), rgba(123, 214, 197, 0.17)) 20%, url(../img/publication.jpg) no-repeat fixed;
+background: linear-gradient(rgb(242, 242, 242), rgba(123, 214, 197, 0.17)) 20%, url(../img/publication.jpg) no-repeat fixed
 background-size: auto auto, auto auto;
 background-size: auto auto, auto auto;
 background-size: auto auto, auto auto;
