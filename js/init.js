@@ -9,6 +9,8 @@ function renderPage() {
 
     document.write('<div w3-include-html="header.html"></div>');
     document.write('<div w3-include-html="headernew.html"></div>');
+
+    
     if (docTitle.includes("Resume")){
         document.write ('<div w3-include-html="cv.html"></div>');
     }else{

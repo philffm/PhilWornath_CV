@@ -133,7 +133,7 @@ width: 200px;
 
 .cta-portfolio:hover,.cta-resume:hover {
   transition: all .3s ease;
-  transform: translate3D(0,-1px,0) scale(1.3);
+  transform: translate3D(0,-1px,0) scale(1.);
 
 }
 
@@ -180,7 +180,7 @@ img {
   transition: all .3s ease;
 }
 header, 
-footer {
+footer, .cta-bottom {
 background-color: #f8f8f8;
 
 color: #000000;
@@ -343,6 +343,9 @@ nav {
   z-index: 11;
   display: flex;
 justify-content: center;
+backdrop-filter: blur(5px);
+background: #f7f7f7c7;
+
 }
 nav a {
 display: inline-block;
@@ -350,7 +353,7 @@ padding: 20px 20px;
 text-decoration: none;
 text-transform: uppercase;
 color: rgb(0, 0, 0);
-background: #f7f7f7a1;
+/* background: #f7f7f7a1; */
 }
 
 nav .min {
@@ -714,6 +717,7 @@ header {
 }
 .minlogo{
 }
+
 .slotheader{
   padding-top: 100px;
   flex-direction: column;
@@ -770,11 +774,12 @@ nav .full {
 div#social {
   margin: 5px 0rem 0px;
   display: flex;
+  justify-content: center;
+
 }
 .button.social {
-  margin: .3rem .3rem;
-  font-size: 35px;
-  padding: 10px 35px;
+
+  padding: 10px 15px;
 }
 
 /* Profile area
@@ -791,7 +796,7 @@ div#social {
   display: flex;
 
   width: 100px;
-  width: 100px;
+  height:100px;
 }
 
 .profile-contact {
