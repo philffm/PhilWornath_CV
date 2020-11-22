@@ -184,11 +184,9 @@ async function slotInit(){
 
 
 function getAPI(){
-
-  var xhr = new XMLHttpRequest();
-
       // Call the API
     fetch('https://hass.philwornath.com/api/states/sensor.redmi_note_9s_geocoded_location', {
+      mode: 'no-cors', // 'cors' by default
       method: 'GET',
       headers: {
         'Authorization': authData.token_type + ' ' + authData.access_token	}
