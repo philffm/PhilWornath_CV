@@ -110,7 +110,6 @@ overflow:visible;
 text-align: center;
 
 transition: all .3s ease;
-transform: translate3D(0,-1px,0) scale(1.0);
 }
 
 .cta-portfolio {
@@ -119,7 +118,6 @@ margin-top: -75px;
 margin-bottom: 30px;
 
 transition: all .3s ease;
-transform: translate3D(0,-1px,0) scale(1.0);
 }
 
 .cta-resume{
@@ -133,7 +131,7 @@ width: 200px;
 
 .cta-portfolio:hover,.cta-resume:hover {
   transition: all .3s ease;
-  transform: translate3D(0,-1px,0) scale(1.);
+  transform: translate3D(0,-1px,0) scale(1.2);
 
 }
 

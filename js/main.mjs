@@ -190,7 +190,7 @@ function getAPI(){
       headers: {
         'Authorization': authData.token_type + ' ' + authData.access_token
       },
-      mode: 'no-cors', // 'cors' by default
+      // mode: 'no-cors', // 'cors' by default
 
     }).then(function (resp) {
 
