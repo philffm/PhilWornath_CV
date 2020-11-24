@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "slug": "flasq",
+      "title": "Flasq - your hydration assistant",
+      "description": "Inspired by the circumstances in a global pandemic, Flasq was created to improve the life of possibly billions of people in their home office situation or cheer it up when returning to your physical workplace. ",
+      "website": "https://openflasq.github.io",
+      "github": "https://github.com/openflasq",
+      "logo": "flasq.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "July 2020 - Ongoing",
+      "content": "<h2>Test</h2>\n<p>A challenge - a simple solution! </p>",
+      "type": "Self-initiated"
+    }
+  ]
+}

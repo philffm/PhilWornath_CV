@@ -6,7 +6,27 @@ var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", "Ams
 var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
 var currentWeather = 'Cloudy';
 var currentLocation;
+var projectID;
 const API_KEY_WEATHER = '79e426a88a82a92f97b3758741d3d619';
+
+// project page stuff
+var projectdata;
+const queryString = window.location.search;
+var projectUrl = queryString;
+projectUrl=projectUrl.replace(/\?/g, '');
+console.log(projectUrl);
+
+
+var projectTitle;
+var projectSlug;
+var projectDesc;
+var projectWebsite;
+var projectGitHub;
+var projectLogo;
+var projectCategory;
+var projectPeriod;
+var projectContent;
+var projectType;
 
 var authData = {
 	access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5ZTNmYjVmNTY1MDI0ZDY3OTI2Nzk1NmU0ZTY4MTJjYiIsImlhdCI6MTYwMzQwNDMxMCwiZXhwIjoxOTE4NzY0MzEwfQ.XkyN-LGT6EC_nB0HcZaeipXL_mnkNxuzQ8wDAifXiVw",
@@ -56,7 +76,14 @@ async function initAsync() {
   waitingFor(100, 5, 'nav', adjustMenu);
   var slotBtn = function(){ dropEvent('#slot-handle', slotInit);};
   waitingFor(100, 5, '#slot-handle', slotBtn );
-
+  waitingFor(100, 5, '#slot-handle', slotBtn );
+  fetchProject();
+  if (projectUrl){
+    waitingFor(100, 5, '.project-header', loadProject );    
+  }else if(docTitle.includes("Projects")) {
+    // Simulate a mouse click:
+    window.location.href = "./";
+  }
 }
 
 async function dropEvent(eventSelector, eventFunction ){
@@ -64,11 +91,6 @@ async function dropEvent(eventSelector, eventFunction ){
   selector.onclick = eventFunction;
   
 }
-
-function showAlert(event) {
-    alert("onclick Event triggered!");
-}
-
 
 
 async function slotInit(){
@@ -285,9 +307,77 @@ async function adjustMenu(){
       document.querySelector('nav#cv').style.display="";
   }else if (docTitle.includes("Portfolio")) {
       document.querySelector('nav#portfolio').style.display="";
-  }else{}
+  }else{
+    document.querySelector('nav#portfolio').style.display="";
+
+  }
   console.log("NAV Element Added", element);
 }
 
+
+async function fetchProject(){
+  fetch('./projects.json')
+  .then(response => response.json())
+  .then(projects => {
+      // Do something with your data
+      console.log(projects);
+      projectdata = projects;
+
+      for(var i = 0; i < projectdata.projects.length; i++)
+      {
+        if(projectdata.projects[i].slug == projectUrl)
+        {
+          projectID = i;
+        }
+      }
+
+  });
+}
+
+async function loadProject(){
+  // definitions
+  
+  document.querySelector("#NOTFOUND").outerHTML="";
+  projectTitle = projectdata.projects[projectID].title;
+  projectDesc = projectdata.projects[projectID].description;
+  projectLogo = './img/' + projectdata.projects[projectID].logo;
+  projectWebsite = projectdata.projects[projectID].website;
+  projectGitHub = projectdata.projects[projectID].github;
+  projectType = projectdata.projects[projectID].type;
+
+  projectPeriod = projectdata.projects[projectID].period;
+  projectContent = projectdata.projects[projectID].content;
+  document.title = projectTitle ;
+
+  document.querySelector('div h2 span').innerText = projectTitle;
+
+  document.querySelector('.period').innerHTML = "<strong>Period: </strong>" +projectPeriod;
+  document.querySelector('.type').innerHTML = "<strong>Type: </strong>" +projectType;
+
+  document.querySelector('.project-header img.logo').src  = projectLogo;
+  document.querySelector('.project-header a.cta').href = projectWebsite;
+  if(projectGitHub){
+    cloneElement('.project-header .button', 'github', "", projectGitHub,'GitHub Repo');
+    
+  }
+  document.querySelector('.project-description').innerHTML = projectDesc;
+  document.querySelector('.project-content').innerHTML = projectContent;
+
+
+}
+
+async function cloneElement(selector,cid,cclass, href, text ){
+
+  var ele = document.querySelector(selector);
+  var clone = ele.cloneNode(true);
+  clone.id = cid;
+  if(cclass){
+    clone.classList.add(cclass);
+  }
+  clone.href = href;
+  clone.innerText = text;
+  // Inject it into the DOM
+  ele.after(clone);
+}
 
 initAsync();

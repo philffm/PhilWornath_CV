@@ -22,6 +22,7 @@ html {
   --cyanlight: #7bd6c5;
   --pink: #d67bba;
   --white: #ffffff;
+  --basegrey: #f2f2f2;
 }
 
 
@@ -144,7 +145,7 @@ padding-left: 26px;
 }
 
 main {
-background: #f2f2f2;
+background: var(--basegrey);
 margin-top: -50px;
 }
 img {
@@ -179,7 +180,7 @@ img {
 }
 header, 
 footer, .cta-bottom {
-background-color: #f8f8f8;
+background-color: var(--basegrey);
 
 color: #000000;
 }
@@ -202,8 +203,6 @@ header {
   position: relative;
   border-bottom: 10px solid #7bd6c5;
   /* background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat; */
-  background-size: auto auto, auto auto;
-  background-size: auto auto, auto auto;
   background-size: auto auto, auto auto;
   background-size: cover;
 }
@@ -418,7 +417,12 @@ a#pub:hover {
 /* Work Experience
 ------------------------------------*/
 .work h2 span{
-  border-bottom:10px solid #7bd6c5;
+  border-bottom:10px solid var(--cyanlight);
+
+}
+
+.project h2 span{
+  border-bottom:10px solid var(--cyanlight);
 
 }
 
@@ -561,7 +565,7 @@ transform: rotate(-5deg);
 
 }
 
-.portfolio-description {
+.portfolio-description, .project {
 
 z-index: 1;
 background: white;
@@ -577,11 +581,11 @@ padding: 0 20px;
 
 
 .project-description {
-
-border-bottom: grey;
-    border-bottom-style: dashed;
-    border-bottom-width: medium;
-border-width: 2px;
+  padding-bottom: 10px;
+  border-bottom: grey;
+  border-bottom-style: dashed;
+  border-bottom-width: medium;
+  border-width: 2px;
 
 }
 
@@ -657,9 +661,11 @@ font-weight: 500;
 padding: 7px 30px;
 border-radius: 0.25em;
 width: auto;
+white-space: nowrap;
+
 text-decoration: none;
 font-variant: all-small-caps;
-margin: 0 0 5px 0;
+margin:  10px 0 ;
 transition: all .3s ease;
 
 }
@@ -703,6 +709,38 @@ width: 50px;
 }
 
 
+/* Project
+-------------------------*/
+
+
+.project-header {
+  display: flex;
+  max-height: 120px;
+  margin-top: 10px;
+  align-items: center;
+  justify-items: stretch;
+
+}
+
+a.back {
+  padding: 20px;
+}
+
+.project-header img.logo {
+  max-height: 50px;
+  max-width: max-content;
+}
+
+.buttonwrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+
+}
+.linkarea {
+  display: flex;
+  margin-left: auto;
+}
 
 
 /* Media Queries
