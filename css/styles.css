@@ -105,6 +105,10 @@ width: 75%;
 float: left;
 min-height: 175px;
 }
+.cta.center {
+  display: flex;
+  flex-direction: column;
+}
 
 .cta-bottom {
 overflow:visible;
@@ -589,11 +593,24 @@ padding: 0 20px;
 
 }
 
+
+
 .project-description:last-child {
 border-style: none;
 padding-bottom: 15px;
 }
 
+
+.project .project-description {
+  border: none;
+}
+.project-content header {
+  display: flex;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  margin: 15px 0px;
+}
 
 .project-description img {
 padding: 10px 0;
@@ -658,7 +675,7 @@ cursor: pointer;
 display: inline-block;
 font-size: 20px;
 font-weight: 500;
-padding: 7px 30px;
+padding: 7px 20px;
 border-radius: 0.25em;
 width: auto;
 white-space: nowrap;
@@ -675,6 +692,8 @@ transition: all .3s ease;
 
 .button.social {
 font-size: 30px;
+padding: 7px 30px;
+
 margin: 1rem .5rem;}
 
 .button:hover {
@@ -721,6 +740,10 @@ width: 50px;
   justify-items: stretch;
 
 }
+.description {
+  display: flex;
+  align-items: center;
+}
 
 a.back {
   padding: 20px;
@@ -728,8 +751,11 @@ a.back {
 
 .project-header img.logo {
   max-height: 50px;
-  max-width: max-content;
+  max-width: 25vw;
+  width: auto;
 }
+
+
 
 .buttonwrapper {
   display: flex;
@@ -742,6 +768,13 @@ a.back {
   margin-left: auto;
 }
 
+
+.dynheader {
+  display: flex;
+  position: absolute;
+  height: 300px;
+  width: 100%;
+}
 
 /* Media Queries
 -------------------------*/
@@ -782,6 +815,10 @@ h2 {
   margin-top: 20px;
 }
 
+.info-wrapper{
+  display: none;
+}
+
 .portfolio-section,.cv-section {
   padding-top: 100px;
 }
@@ -794,7 +831,10 @@ nav .full {
 .navi#pub{
 
   display: none;
+}
 
+.linkarea img {
+  display: none;
 }
 
 .col-narrow {
@@ -887,6 +927,7 @@ width: 50%;
 
 
 }
+
 
 .projectinfo {
 display: flex;

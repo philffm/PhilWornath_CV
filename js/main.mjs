@@ -76,12 +76,12 @@ async function initAsync() {
   waitingFor(100, 5, 'nav', adjustMenu);
   var slotBtn = function(){ dropEvent('#slot-handle', slotInit);};
   waitingFor(100, 5, '#slot-handle', slotBtn );
-  waitingFor(100, 5, '#slot-handle', slotBtn );
+  // waitingFor(100, 5, '#slot-handle', slotBtn );
   fetchProject();
   if (projectUrl){
     waitingFor(100, 5, '.project-header', loadProject );    
   }else if(docTitle.includes("Projects")) {
-    // Simulate a mouse click:
+    // redirect when no project:
     window.location.href = "./";
   }
 }
@@ -337,17 +337,26 @@ async function fetchProject(){
 async function loadProject(){
   // definitions
   
-  document.querySelector("#NOTFOUND").outerHTML="";
+  // document.querySelector("#NOTFOUND").outerHTML="";
+  var projectPath = './project/'+ projectUrl + '/';
   projectTitle = projectdata.projects[projectID].title;
   projectDesc = projectdata.projects[projectID].description;
-  projectLogo = './img/' + projectdata.projects[projectID].logo;
+  projectLogo = projectPath + projectdata.projects[projectID].logo;
   projectWebsite = projectdata.projects[projectID].website;
   projectGitHub = projectdata.projects[projectID].github;
   projectType = projectdata.projects[projectID].type;
+  var dynHeader = projectdata.projects[projectID].headhtml;
+  var customJS = projectdata.projects[projectID].customjs;
+
 
   projectPeriod = projectdata.projects[projectID].period;
   projectContent = projectdata.projects[projectID].content;
   document.title = projectTitle ;
+
+  LoadJS(customJS);
+  LoadCSS('/css/notion.css');
+
+  document.querySelector('.dynheader').innerHTML = dynHeader;
 
   document.querySelector('div h2 span').innerText = projectTitle;
 
@@ -356,12 +365,24 @@ async function loadProject(){
 
   document.querySelector('.project-header img.logo').src  = projectLogo;
   document.querySelector('.project-header a.cta').href = projectWebsite;
+  document.querySelector('.project-header a.cta').innerHTML = '<span class="socicon-internet"></span> Website';
+
   if(projectGitHub){
-    cloneElement('.project-header .button', 'github', "", projectGitHub,'GitHub Repo');
+    cloneElement('.project-header .button', 'github', "", projectGitHub,'<span class="socicon-github"></span> GitHub');
     
   }
   document.querySelector('.project-description').innerHTML = projectDesc;
-  document.querySelector('.project-content').innerHTML = projectContent;
+  // document.querySelector('.project-content').innerHTML = projectContent;
+  var content  = document.querySelector('.project-content');
+  window.history.pushState("", "", '/project/'+projectUrl + '/');
+  content.innerHTML += '<div w3-include-html="'  + basePath +  '/'+ projectContent + '.html"></div>';
+  // document.write('<div w3-include-html="'  + basePath + 'project/' + projectUrl +'/index.html"></div>');
+  w3.includeHTML();
+  waitingFor(100, 5, '.project-content style', function(){
+    document.querySelector('.project-content style').innerHTML="";
+
+  });
+  
 
 
 }
@@ -375,7 +396,7 @@ async function cloneElement(selector,cid,cclass, href, text ){
     clone.classList.add(cclass);
   }
   clone.href = href;
-  clone.innerText = text;
+  clone.innerHTML = text;
   // Inject it into the DOM
   ele.after(clone);
 }

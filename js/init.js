@@ -16,7 +16,7 @@ if (docTitle.includes("Resume")){
 }else if (docTitle.includes("Portfolio")){
     renderPage('portfolio_content.html');
 }else if (docTitle.includes("Project")){
-    renderPage('project_content.html')
+    renderPage('project_content.html');
 }
 
 

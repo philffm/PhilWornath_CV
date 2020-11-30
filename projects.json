@@ -1,6 +1,8 @@
 {
   "projects": [
     {
+      "customjs": "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js",
+      "headhtml": "<lottie-player src=\"https://assets3.lottiefiles.com/private_files/lf30_c7yhrgse.json\" background=\"transparent\" speed=\".5\" style=\"width: 500px; height: 500px;\" loop=\"\" autoplay=\"\"></lottie-player>",
       "slug": "flasq",
       "title": "Flasq - your hydration assistant",
       "description": "Inspired by the circumstances in a global pandemic, Flasq was created to improve the life of possibly billions of people in their home office situation or cheer it up when returning to your physical workplace. ",
@@ -13,8 +15,44 @@
         "marketing"
       ],
       "period": "July 2020 - Ongoing",
-      "content": "<h2>Test</h2>\n<p>A challenge - a simple solution! </p>",
+      "content": "Flasq XXXXXXXX",
       "type": "Self-initiated"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "fwdpay",
+      "title": "FWDpay - Redefining employee expense management",
+      "description": "Inspired by the circumstances in a global pandemic, Flasq was created to improve the life of possibly billions of people in their home office situation or cheer it up when returning to your physical workplace. ",
+      "website": "https://fwdpay.to",
+      "github": "",
+      "logo": "fwdpay.png",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "April 2019 - June 2019",
+      "content": "FWDPay 0529607821ce48089898a27f7ed316d4",
+      "type": "University"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "uber",
+      "title": "Uber - Fears on arrival",
+      "description": "During my application process at Uber for an internship in product design, I got challenged with a nice take-home assignment.  ",
+      "website": "https://uber.com",
+      "github": "",
+      "logo": "uber.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "April 2019 - June 2019",
+      "content": "Uber ad8f0078ded3462cb670f7f2a317984f",
+      "type": "Internship (Take-home assignment)"
     }
   ]
 }
