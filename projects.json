@@ -53,6 +53,26 @@
       "period": "April 2019 - June 2019",
       "content": "Uber ad8f0078ded3462cb670f7f2a317984f",
       "type": "Internship (Take-home assignment)"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "human-technologies",
+      "title": "Human Technologies: 8 Weeks of Tinkering",
+      "description": "During my application process at Uber for an internship in product design, I got challenged with a nice take-home assignment.  ",
+      "website": "https://uber.com",
+      "github": "",
+      "logo": "uber.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "May 2020 - July 2020",
+      "content": "Human Technologies 8 Weeks of Tinkering 423eb02d71584eb185b8cc11636466b8",
+      "type": "Internship (Take-home assignment)"
     }
   ]
 }
+
+

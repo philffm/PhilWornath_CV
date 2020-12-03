@@ -376,13 +376,13 @@ async function loadProject(){
   var content  = document.querySelector('.project-content');
   window.history.pushState("", "", '/project/'+projectUrl + '/');
   content.innerHTML += '<div w3-include-html="'  + basePath +  '/'+ projectContent + '.html"></div>';
-  // document.write('<div w3-include-html="'  + basePath + 'project/' + projectUrl +'/index.html"></div>');
   w3.includeHTML();
   waitingFor(100, 5, '.project-content style', function(){
     document.querySelector('.project-content style').innerHTML="";
 
   });
   
+  waitingFor(100,5,'article',replaceStuff);
 
 
 }
