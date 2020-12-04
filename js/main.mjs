@@ -133,6 +133,7 @@ async function slotInit(){
       case 1:
 
         document.querySelector('#location p').innerText = currentWeather.name + ', ' + currentWeather.sys.country ;
+
         // document.querySelector('#location p').innerText = currentLocation;
         slotState++;
       break;
@@ -158,6 +159,7 @@ async function slotInit(){
         if (s == 0){s++}; 
         var subActivity = myActivities[randActivity][s];
         document.querySelector('#activity p').innerText = newActivity + subActivity;
+        
         if (slotTriggerCount>10){
           slotTriggerCount=0;
           slotState++;
@@ -168,6 +170,7 @@ async function slotInit(){
           if(slotTriggerCount < 2){
             document.querySelector('.slotresults').style.display="none";    
             document.querySelector('.bigwin').style.display="";   
+            document.querySelector('.slot #explain').style.display="none";
 
           }else{
 

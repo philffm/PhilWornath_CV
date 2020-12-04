@@ -261,11 +261,15 @@ margin: 5px 0;
   align-content: center;
   justify-content: center;
 }
-
+.handle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 #slot-handle  {
   display: flex;
   transform-origin: bottom;
-  align-self: flex-end;
+  align-self: center;
   display: flex;
   transition: all .3s ease;
   max-height: 200px;
