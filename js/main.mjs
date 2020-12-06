@@ -1,7 +1,7 @@
 var slotState=0;
 var slotTriggerCount=0;
 
-var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "Rapid Prototypes", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
+var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "with the soldering iron", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
 var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", "Amsterdam", "Santa Cruz de Tenerife", "Zoetermeer", "Utrecht", "Delft", "Rotterdam", "Kijkduin"];
 var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
 var currentWeather = 'Cloudy';
@@ -11,22 +11,13 @@ const API_KEY_WEATHER = '79e426a88a82a92f97b3758741d3d619';
 
 // project page stuff
 var projectdata;
-const queryString = window.location.search;
-var projectUrl = queryString;
-projectUrl=projectUrl.replace(/\?/g, '');
+var projectUrl = window.location.search.replace(/\?/g, '');
 console.log(projectUrl);
 
+const slotBtn = function(){ dropEvent('#activity-slot-handle', slotInit);};
+const newProjectBtn = function(){ dropEvent('#newproject', newProject);};
+const shareBtn = function(){ dropEvent('#share', writeClipboard("test"));};
 
-var projectTitle;
-var projectSlug;
-var projectDesc;
-var projectWebsite;
-var projectGitHub;
-var projectLogo;
-var projectCategory;
-var projectPeriod;
-var projectContent;
-var projectType;
 
 var authData = {
 	access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5ZTNmYjVmNTY1MDI0ZDY3OTI2Nzk1NmU0ZTY4MTJjYiIsImlhdCI6MTYwMzQwNDMxMCwiZXhwIjoxOTE4NzY0MzEwfQ.XkyN-LGT6EC_nB0HcZaeipXL_mnkNxuzQ8wDAifXiVw",
@@ -40,6 +31,11 @@ const request = async url => {
   return response.ok ? response.json() : Promise.reject({error: 500});
 };
 
+
+
+async function writeClipboard(clipBoardText){
+  navigator.clipboard.writeText(newClipText);
+}
 
 function weatherBalloon( cityName ) {
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName+ '&appid=' + API_KEY_WEATHER)  
@@ -73,10 +69,12 @@ function appendStuff(where,what){
 async function initAsync() {
   //asyncCall(  checkElements('nav','MENU',adjustMenu) );
   //asyncCall(  checkElements('.slot-handle','',slotInit));
-  waitingFor(100, 5, 'nav', adjustMenu);
-  var slotBtn = function(){ dropEvent('#slot-handle', slotInit);};
-  waitingFor(100, 5, '#slot-handle', slotBtn );
-  // waitingFor(100, 5, '#slot-handle', slotBtn );
+  waitingFor(10,30, 'nav', adjustMenu);
+  waitingFor(100, 5, '#activity-slot-handle', slotBtn );
+  waitingFor(100, 5, '#newproject',  newProjectBtn);
+  waitingFor(100, 5, '#share',  shareBtn);
+
+
   fetchProject();
   if (projectUrl){
     waitingFor(100, 5, '.project-header', loadProject );    
@@ -87,8 +85,11 @@ async function initAsync() {
 }
 
 async function dropEvent(eventSelector, eventFunction ){
-  const selector = document.querySelector(eventSelector); // Find the paragraph element in the page
-  selector.onclick = eventFunction;
+  let selector = document.querySelectorAll(eventSelector); // Find the paragraph element in the page
+  
+  for (i=0; i < selector.length; i++){
+    selector[i].onclick = eventFunction;
+  }
   
 }
 
@@ -146,7 +147,8 @@ async function slotInit(){
         var time = date.getHours() + ':' + date.getMinutes();
   
        
-        document.querySelector('#conditions p').innerHTML = "⛅️" +"<br>" + Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C' +"<br>" + currentWeather.weather[0].main +"<br>"+ time  ;
+        // document.querySelector('#conditions p').innerHTML = "⛅️" +"<br>" + Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C' +"<br>" + currentWeather.weather[0].main +"<br>"+ time  ;
+        document.querySelector('#conditions p').innerHTML = "⛅️" +"<br>" + Math.round((currentWeather.main.temp-273) * 10) / 10 + '°C' +"<br>" + currentWeather.weather[0].main   ;
         slotState++;
 
       break;
@@ -198,7 +200,6 @@ async function slotInit(){
 
 
 
-    var slotBtn = function(){ dropEvent('#slot-handle', slotInit);};
 
   }
 
@@ -310,10 +311,12 @@ async function adjustMenu(){
       document.querySelector('nav#cv').style.display="";
   }else if (docTitle.includes("Portfolio")) {
       document.querySelector('nav#portfolio').style.display="";
-  }else{
-    document.querySelector('nav#portfolio').style.display="";
+  }else if(docPath.includes('project')){
+    document.querySelector('nav#project').style.display="";
+  }else{document.querySelector('nav#portfolio').style.display="";
+}
 
-  }
+
   console.log("NAV Element Added", element);
 }
 
@@ -337,19 +340,36 @@ async function fetchProject(){
   });
 }
 
+async function newProject(){
+  
+  let lenProj = projectdata.projects.length;
+  let randProj = Math.floor(Math.random()*(lenProj));
+  
+  if(projectdata.projects[randProj].slug != projectUrl){
+    var newProj =  projectdata.projects[randProj].slug;
+    var newurl = '/project.html?' + newProj;
+    location.replace(newurl);
+
+  }else{newProject()}
+
+  
+}
+
 async function loadProject(){
   // definitions
-  
+  LoadCSS('/css/notion.css');
+  document.querySelector('main').style.marginTop = "25px";
+  let dataSource = projectdata.projects[projectID];
   // document.querySelector("#NOTFOUND").outerHTML="";
-  var projectPath = './project/'+ projectUrl + '/';
-  projectTitle = projectdata.projects[projectID].title;
-  projectDesc = projectdata.projects[projectID].description;
-  projectLogo = projectdata.projects[projectID].logo;
-  projectWebsite = projectdata.projects[projectID].website;
-  projectGitHub = projectdata.projects[projectID].github;
-  projectType = projectdata.projects[projectID].type;
-  var dynHeader = projectdata.projects[projectID].headhtml;
-  var customJS = projectdata.projects[projectID].customjs;
+  var projectPath = '/../../project/'+ projectUrl + '/';
+  let projectTitle = dataSource.title;
+  let projectDesc = dataSource.description;
+  let projectLogo = projectPath + dataSource.logo;
+  let projectWebsite = dataSource.website;
+  let projectGitHub = dataSource.github;
+  let projectType = dataSource.type;
+  var dynHeader = dataSource.headhtml;
+  var customJS = dataSource.customjs;
 
 
   projectPeriod = projectdata.projects[projectID].period;
@@ -357,8 +377,6 @@ async function loadProject(){
   document.title = projectTitle ;
 
   LoadJS(customJS);
-  LoadCSS('/css/notion.css');
-
   document.querySelector('.dynheader').innerHTML = dynHeader;
 
   document.querySelector('div h2 span').innerText = projectTitle;
@@ -384,8 +402,9 @@ async function loadProject(){
     document.querySelector('.project-content style').innerHTML="";
 
   });
-  
-  waitingFor(100,5,'article',replaceStuff);
+  waitingFor(10,30,'article',replaceStuff);
+  waitingFor(10,30,'article',document.querySelector('.content-wrap').style.display = "");
+
 
 
 }

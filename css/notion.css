@@ -38,6 +38,12 @@
 		font-size: x-large;
     }
 
+
+.source{
+	justify-content: center;
+	display: flex;
+}
+
 /* Notion pure */
 
 .source {
