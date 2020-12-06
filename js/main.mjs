@@ -344,7 +344,7 @@ async function loadProject(){
   var projectPath = './project/'+ projectUrl + '/';
   projectTitle = projectdata.projects[projectID].title;
   projectDesc = projectdata.projects[projectID].description;
-  projectLogo = projectPath + projectdata.projects[projectID].logo;
+  projectLogo = projectdata.projects[projectID].logo;
   projectWebsite = projectdata.projects[projectID].website;
   projectGitHub = projectdata.projects[projectID].github;
   projectType = projectdata.projects[projectID].type;
