@@ -11,24 +11,33 @@ const ytEmbed = (sourceID) => {
 
 function replaceStuff(){
 
-var amountSources = document.querySelectorAll('.source').length;
-var amountProperties = document.querySelector('.properties').firstChild.querySelectorAll('tr').length;
+var elSources = document.querySelectorAll('.source');
+var elProperties = document.querySelector('.properties').firstChild.querySelectorAll('tr');
+var elCode = document.querySelectorAll('code');
 
-
-
-    for(i=0;i < amountProperties;i++){
-        let propContent = document.querySelector('.properties').firstChild.querySelectorAll('tr')[i].lastChild.innerHTML;
+    for(i=0;i < elProperties.length;i++){
+        let propContent = elProperties[i].lastChild.innerHTML;
         if (propContent == ''){
-            document.querySelector('.properties').firstChild.querySelectorAll('tr')[i].innerHTML="";
+            elProperties[i].innerHTML="";
         }
         
     }
     
-    for(i=0;i < amountSources;i++){
-        let sourceID = document.querySelectorAll('.source')[i].firstChild.attributes.href.value.split("=")[1];
-        let includesYT = document.querySelectorAll('.source')[i].firstChild.attributes.href.value.split("=")[0].includes('yout'); 
+    for(i=0;i < elSources.length;i++){
+        let sourceID = elSources[i].firstChild.attributes.href.value.split("=")[1];
+        let includesYT = elSources[i].firstChild.attributes.href.value.split("=")[0].includes('yout'); 
         if (sourceID && includesYT == true){
-            includesYT = document.querySelectorAll('.source')[i].firstChild.innerHTML = ytEmbed(sourceID);
+            includesYT = elSources[i].firstChild.innerHTML = ytEmbed(sourceID);
+        }
+        
+    }
+
+    for(i=0;i < elCode.length;i++){
+        let code = elCode[i].innerText;
+        let includeCode = code.includes('@include'); 
+        let codeClean = code.replaceAll('@include','');
+        if (includeCode){
+            elCode[i].parentElement.outerHTML=codeClean;
         }
         
     }
@@ -37,7 +46,7 @@ var amountProperties = document.querySelector('.properties').firstChild.querySel
 
 
 
-document.querySelectorAll('.source')[1].firstChild.attributes.href.value.split("=")[1];
+// document.querySelectorAll('.source')[1].firstChild.attributes.href.value.split("=")[1];
 
 
 // if

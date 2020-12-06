@@ -34,7 +34,8 @@
         font-size: 1.25em;
         margin: 2em 0;
         padding-left: 1em;
-        border-left: 4px solid rgb(135, 217, 201);
+		border-left: 4px solid rgb(135, 217, 201);
+		font-size: x-large;
     }
 
 /* Notion pure */
