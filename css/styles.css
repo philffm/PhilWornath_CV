@@ -575,7 +575,8 @@ border-bottom:10px solid #d67bba;
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
-  margin: 25px 0;
+  margin: 0;
+  height: 225px;
 }
 .hackathon .logo {
   padding: 25px;
@@ -609,7 +610,17 @@ border-bottom:10px solid #d67bba;
 background-color: var(--cyanlight);
 }
 
+#ediya .catlabel.job {
+  background-color:var(--pink);
+}
 
+#hackatrain .catlabel.job {
+  background-color: var(--darkgrey);
+}
+
+#aoc .catlabel.job {
+  background-color: var(--darkgrey);
+}
 /* Certificates
 ------------------------------------*/
 .certificates {
