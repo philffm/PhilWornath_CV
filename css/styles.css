@@ -23,6 +23,9 @@ html {
   --pink: #d67bba;
   --white: #ffffff;
   --basegrey: #f2f2f2;
+  --midgrey: #A1A1A1;
+  --darkgrey: #444444;
+
 }
 
 
@@ -526,6 +529,87 @@ border-bottom:10px solid #d67bba;
 }
 
 
+
+/* Hackathons
+------------------------------------*/
+
+.hackathon.wrapper {
+  max-width: 1000px;
+  overflow: auto;
+    display: flex;
+}
+
+
+#hackathons h2 span{
+  border-bottom:10px solid #d67bba;
+  
+  }
+
+  .hackathon h3 {
+    font-weight: bold;
+}
+  
+  .hackathon .item {
+    width: 350px;
+    background: white;
+    padding: 10px 0 40px 0;
+    border-radius: .5rem;
+    margin: 2rem 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 2rem;
+}
+
+
+
+  .hackathon .properties {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin: 5px 10px ;
+
+}
+
+.hackathon .desc{
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 25px 0;
+}
+.hackathon .logo {
+  padding: 25px;
+  height: 150px;
+  align-items: center;
+  display: flex;
+}
+.item .catlabel{
+
+  background: var(--midgrey);
+  font-size: medium;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: white;
+  border-radius: 3px;
+
+}
+.hackathon .cta.hor {
+  margin-bottom: -35px;
+}
+.challenge {
+  background: var(--basegrey);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+}
+
+
+.hackathon .job{
+background-color: var(--cyanlight);
+}
+
+
 /* Certificates
 ------------------------------------*/
 .certificates {
@@ -743,14 +827,14 @@ cursor: pointer;
 display: inline-block;
 font-size: 20px;
 font-weight: 500;
-padding: 7px 20px;
+padding: 12px 20px;
 border-radius: 0.25em;
 width: auto;
 white-space: nowrap;
 
 text-decoration: none;
 font-variant: all-small-caps;
-margin:  10px  ;
+margin: 10px 5px;
 transition: all .3s ease;
 
 }

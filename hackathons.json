@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "aoc",
+      "title": "Advent of Code",
+      "description": "Working on daily challenges really got me excited and helped me to improve my coding skills on a daily basis with the clear objection to find a solution in the end of the day. ",
+      "website": "https://adventofcode.com/",
+      "slides": "https://github.com/philffm",
+      "github": "",
+      "logo": "aoc.jpg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "job": [
+        "Sharpen my Dev skills"
+       
+      ],
+      "period": "Dec 2020",
+      "content": "",
+      "type": ""
+    },
+    
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "anwb",
+      "title": "Dutch Mobility Hackathon",
+      "description": "On our journey in finding solutions to <strong>disentangle the public transport network in The Netherlands</strong> we decided to focus on the role of <strong>private car pooling</strong> in the future of mobility and how to <strong>make it more accessible</strong> ",
+      "website": "https://www.dutchmobilityhackathon.nl/",
+      "slides": "dmh_pitch.pdf",
+      "github": "",
+      "logo": "dutchmobhack.jpg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "job": [
+        "UX Designer"
+       
+      ],
+      "period": "Nov 2019",
+      "content": "",
+      "type": ""
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "safelocal",
+      "title": "WevsVirus Hackathon",
+      "description": "Minimizing the number of customers in grocery stores during the pandemic was the core problem we were focussing during #WirVsVirus.  ",
+      "website": "https://wirvsvirus.org/",
+      "slides": "https://devpost.com/software/safe-local",
+      "github": "",
+      "logo": "WirVsVirus.png",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "job": [
+        "UX Designer"
+       
+      ],
+      "period": "Mar 2020",
+      "content": "Challenge 3 Project MagicFlask 2a12b219bb954c74b71efb41fc72bb58",
+      "type": ""
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "ediya",
+      "title": "Hackthecrisis",
+      "description": "In this Hackathon, my team chose to pursue the <strong>EduTech challenge</strong>. We came up with an approach to <strong>motivate low-and middle school students</strong> during the pandemic.",
+      "website": "https://www.hackthecrisis.nl/en",
+      "slides": "https://coronacommunitycare.nl/en/initiatives/details/120/challengly",
+      "github": "",
+      "logo": "HTC_logo_header.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "job": [
+        "The only Techie"
+       
+      ],
+      "period": "April 2020",
+      "content": "Challenge 3 Project MagicFlask 2a12b219bb954c74b71efb41fc72bb58",
+      "type": ""
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "hackatrain",
+      "title": "HACKATRAIN",
+      "description": "In our vision we are using <strong>low-latency 5G for in-train passsenger communcation on an autonomous train</strong> that can detect dangerous blaadjes on the tracks.",
+      "website": "https://www.hackatrain.nl/",
+      "slides": "PITCH.pdf",
+      "github": "",
+      "logo": "logo.png",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "job": [
+        "UX Designer & Facilitator"
+       
+      ],
+      "period": "Jun 2019",
+      "content": "Challenge 3 Project MagicFlask 2a12b219bb954c74b71efb41fc72bb58",
+      "type": ""
+    }
+  ]
+}
+
+
+
+

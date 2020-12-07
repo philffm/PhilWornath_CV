@@ -74,14 +74,21 @@ async function initAsync() {
   waitingFor(100, 5, '#newproject',  newProjectBtn);
   waitingFor(100, 5, '#share',  shareBtn);
 
-
-  fetchProject();
+if(docPath.includes('project' || 'portfolio')){
+  fetchProject('projects.json',projectdata);
   if (projectUrl){
+    // wait for project header loaded so it's safe to exchange fake url
     waitingFor(100, 5, '.project-header', loadProject );    
-  }else if(docTitle.includes("Projects")) {
+  }else if(docPath.includes("project")) {
     // redirect when no project:
     window.location.href = "./";
   }
+}
+
+if(docTitle.includes('Resume')){
+  fetchProject('hackathons.json');
+  waitingFor(500,5, '.hackathon .item', loadHackathons);
+}else{}
 }
 
 async function dropEvent(eventSelector, eventFunction ){
@@ -321,8 +328,8 @@ async function adjustMenu(){
 }
 
 
-async function fetchProject(){
-  fetch('./projects.json')
+async function fetchProject(input, output, callFunction){
+  fetch('./' + input )
   .then(response => response.json())
   .then(projects => {
       // Do something with your data
@@ -338,6 +345,7 @@ async function fetchProject(){
       }
 
   });
+  callFunction();
 }
 
 async function newProject(){
@@ -405,9 +413,38 @@ async function loadProject(){
   waitingFor(10,30,'article',replaceStuff);
   waitingFor(10,30,'article',document.querySelector('.content-wrap').style.display = "");
 
-
-
 }
+
+async function loadHackathons(){
+
+  let dataSource = projectdata.projects;
+
+  for(i=0; i < dataSource.length; i++){
+    let path = 'hackathons/';
+    newNode = document.querySelector('#temp_item').cloneNode(true);
+    let data = dataSource[i];
+    document.querySelector('#temp_item').after(newNode);
+    newNode.id = data.slug;
+    newNode.querySelector('.time').innerHTML=data.period;
+    newNode.querySelector('.job').innerHTML=data.job[0];
+    newNode.querySelector('.logo img').src= path +  data.slug  + '/'+ data.logo;
+    newNode.querySelector('.challenge h3').innerText= data.title;
+    newNode.querySelector('.desc').innerHTML= data.description;
+    if(data.slides.includes('pdf')){
+      newNode.querySelector('#slides').href= path +  data.slug  + '/' + data.slides;
+      newNode.querySelector('#slides').innerText = "View Pitch ❯";
+    }else{
+      newNode.querySelector('#slides').href= data.slides;
+    }
+    newNode.querySelector('#project').style.background = 'rgb(98, 98, 98)';
+
+    newNode.querySelector('#project').href= data.website;
+
+
+  }
+  document.querySelector('#temp_item').outerHTML="";
+}
+
 
 async function cloneElement(selector,cid,cclass, href, text ){
 
