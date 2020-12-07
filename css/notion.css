@@ -15,6 +15,17 @@
     display: none;
   }
   
+  .page-header-icon.page-header-icon-with-cover,.page-cover-image {
+    display: none!important;
+}
+.table_of_contents {
+	display: flex;
+position: relative;
+overflow: auto;
+align-items: center;
+
+}
+
 .properties  {
     border: 0px;
   }

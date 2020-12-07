@@ -1,0 +1,646 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>KOIOS - A place to learn. A place to earn.</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8b1b39ce-8a82-4c90-a060-6979e1dc23b3" class="page sans"><header><h1 class="page-title">KOIOS - A place to learn. A place to earn.</h1><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Assign</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Category</th><td><span class="selected-value select-value-color-purple">Blockchain</span><span class="selected-value select-value-color-gray">EduTech</span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>My job</th><td><span class="selected-value select-value-color-green">Part-time position</span><span class="selected-value select-value-color-purple">UX Designer</span><span class="selected-value select-value-color-blue">UX Researcher</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>Project URL</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Role Description</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td><span class="selected-value select-value-color-yellow">In progress</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tools</th><td><span class="selected-value select-value-color-default">Airtable</span><span class="selected-value select-value-color-pink">Figma</span><span class="selected-value select-value-color-blue">GitHub</span><span class="selected-value select-value-color-blue">IPFS</span><span class="selected-value select-value-color-orange">Miro</span></td></tr></tbody></table></header><div class="page-body"><h2 id="b343fe51-82a6-4ea5-9729-7cfa351ba19f" class="">KOIOS - what is it?</h2><blockquote id="f3f91533-1484-4352-a31f-4f8eb1c91a90" class=""><em>&quot;Koios is an open </em><strong><em>learning infrastructure</em></strong><em>. A place to learn, teach and connect while earning rewards.&quot;</em></blockquote><p id="b9f06b74-2bd3-4d52-bd1f-93c3e55832aa" class="">
+</p><p id="656ec5ee-4ee3-452c-a6f4-ef520129e934" class="">Initiated by The Hague University of Applied Sciences, this learning platform was created to <strong>serve educational content for students in the minor program &quot;Introduction to Blockchain&quot;</strong> with course sizes of around Ø 300 students. On the long run however, it is planned to expand over an entire network of &quot;Hogescholen&quot; (Universities of Applied Sciences) in The Netherlands. Currently, it is home to 5 minor courses.</p><p id="a69c301a-5485-4064-a71d-fc03d82d02c6" class="">As a UX Designer I was integral part within the process of relaunching the platform. During that process, supported the team with words and deeds, the <strong>creation of user stories</strong>, <strong>extensive user testing, designing the new platform&#x27;s interfaces</strong> and took effort in shaping processes within the Tech team to a higher <strong>UX maturity level</strong>.</p><h2 id="fc6fe861-7383-49f1-b6c9-1d494ea59a62" class="">Changing the state of education for university students</h2><figure id="a3fe9f20-294b-451b-be8a-f0860b12ad68" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_objectives.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_objectives.jpg"/></a></figure><h2 id="2694f4be-13e9-4d27-8316-5b56d3367417" class="">My team </h2><p id="609a522e-6cc4-4e56-9bcd-a1be676d2975" class="">During the process I was not alone - the team behind KOIOS consists of lecturers, lawyers, Blockchain experts, content creators and a dedicated tech team for the platform itself. While I was part of a diverse tech team, my core role was basically the gateway between developers and purely visual designers / content creators.</p><figure id="06c8e647-11c1-4afe-b339-2aa3ab37837d" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_team.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_team.jpg"/></a></figure><h2 id="d2d6944c-0fdd-4a45-9da6-8a8e8c806dc7" class="">Putting everyone on the same page</h2><p id="d640c3e7-f5f7-474d-b9f6-83a93768f722" class="">When I joined the team, there were <strong>only two employees</strong>. While using offline tools might have worked out in this constellation, we decided to move all our assets to a <strong>more collaborative environment.</strong> As this was my first time working collaboratively on <strong>Figma</strong> as well, this came with a strong learning curve. Later I will explain, how together with the development team, we managed go one step further and fully integrate Figma the development process.</p><figure id="20b52e63-0ac5-48fb-8350-d87cb12c812c" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_designsystem.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_designsystem.jpg"/></a></figure><h2 id="59eea38c-8636-4bcb-85df-bf5f6a2ebefb" class="">Process insights</h2><h3 id="5d64a935-2612-4fb1-8d3e-4cbe0e03e9aa" class="">Iterations</h3><p id="80e3e30c-f87a-4e46-8bf0-12aef8d7c207" class="">As befits a clean UX process, we first looked at the needs of our users and started prototyping on paper / whiteboard in very small, iterative pieces. This enabled us to be flexible in the process for changes and the prioritisation of features.</p><figure id="9302143b-beef-42d0-a8b9-a56920a166ef" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_process.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_process.jpg"/></a></figure><h3 id="6fb86ab9-4917-4875-97bc-ab1f117e6fe7" class="">Collaborative Heuristic Evaluation</h3><p id="5ce1f921-2e26-42d7-8c90-06c4184021b6" class="">Before letting the users check out the prototype, it is always clever to test the overall functionality and assessing the service based on a clear framework of heuristics . </p><p id="48b30a47-b16d-484b-8b8b-29b0103dc830" class="">At KOIOS, we used the 10 heurisics from the Nielsen Norman group to make a consistent analysis of the status quo to iron out the biggest problems before user testing and incorporate multiple perspectives from the entire tech team.</p><p id="a4424fa9-1632-4aa8-a16e-bafbf01a5a86" class=""><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">https://www.nngroup.com/articles/ten-usability-heuristics/</a></p><p id="78973741-4714-4e48-8f53-6b954b9ab2a3" class="">In order to make the topic easy to understand for everyone in the team, I built a framework that presents each heuristic aspect in detail and makes it tangible for everyone so that they can easily evaluate and fill it in.</p><figure id="58a5bf0e-3711-44cf-8115-dc5915bcd5bf" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_eval.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_eval.jpg"/></a></figure><h3 id="86ef8240-c7b4-41b8-adb9-6dbb33102a2b" class="">Remote User Testing</h3><p id="49df11c6-87ed-4f20-a2d3-c391b0b2d97a" class="">
+</p><p id="ade0701a-db0f-4b6a-ac99-e77fb7a24a3d" class="">Although we were also able to do some user testing in person, Covid and decentralised teams made this increasingly difficult. Without being in the same room and being able to drink a coffee and thus create a consistent testing environment, it was a real challenge.</p><p id="1f86a504-342f-4f4d-9975-d11b7b23f779" class="">To make this possible in a remote environment, I also developed a framework that ensures a clean flow of remote testing sessions.</p><p id="17c8b93a-c9c9-435a-84ee-74fd36767e15" class="">The sessions were initially conducted via zoom, as it is theoretically also possible to share the smartphone screen. However, this turned out to be too complicated for many participants, why we changed to Microsoft Teams and prompted them to show their screen through the camera.</p><p id="0ff70f4e-53ce-42cb-83d8-b7ad0dd05962" class="">The sessions were very exciting in terms of individual user experiences and problems of individual users with special devices. Although we designed from the beginning for the smallest possible screen (iPhone SE), we found problems with Android devices, for example, whose browser bar took up a lot of space.  One consequence of this was an easy to activate full-screen mode.</p><figure id="a3604290-0833-4373-9517-04e045d8a5c3" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_remote.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_remote.jpg"/></a></figure><p id="ecc856f3-6fb2-467b-a006-7d2b2724fc01" class="">
+</p><figure id="ffbc7f0a-701a-4a62-9531-be789e5ace5e" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_iterate.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_iterate.jpg"/></a></figure><h2 id="c30d3115-757f-4348-b9ca-eab0ae94ca93" class="">Further improvements in collaboration</h2><p id="37ca5200-0ccc-49d0-bb71-9a52208cecf6" class="">Airtable as a project management tool might be great and flexible for project managers. </p><p id="9b182d30-286e-4f7d-bb67-d4bdb95cf9c8" class="">Figma is a great tool for designers. But where can we quickly gather ideas and think ahead? Without sitting at the same table?
+In the process, great ideas often got lost in the Airtable and were never seen again. </p><p id="a8f77205-b16b-4f02-8d81-b931e6d1d55e" class="">One of the consequences we drew from this was that we started using Miro as a collaborative software for <strong>idea collection, flow charts - and ultimately even for low fidelity prototypes</strong>.
+In principle all this is also possible with Figma - but what&#x27;s the problem here? As a team, we realised that we needed something that everyone in the meeting could quickly understand. Miro proved to be a super efficient tool and took our workflow to the next level - especially in unrestrained ideation phases.</p><figure id="e6f76592-955b-4b81-89d4-b0fe570eebe6" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_orga.jpg"><img style="width:900px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/koios_orga.jpg"/></a></figure><p id="50ddec7d-db01-4638-ba5b-a71ea3e0cbff" class="">
+</p><p id="987b6c83-40a1-4217-b0bb-08696efce74c" class="">
+</p><h2 id="cc3813d7-40b6-41bb-a243-006ca93d7a74" class="">A new direction</h2><p id="a5cfb482-aa8d-4e1b-b94c-15c8c8112d67" class="">As part of an ever-changing start-up, old structures may be overturned and new paths may be taken that no one has yet explored.</p><h3 id="431074c3-3f2f-4227-bcee-6180e8b6abfd" class="">Team and processes</h3><p id="012779ef-37d8-4bf7-b52b-07dbdc6b726b" class="">Since we are developing on a whole platform in a team of only four people and are not available to you for a whole week to work on it, we attached great importance to a smooth handoff process right from the start. The classic linear process seemed a bit rigid and left little room for small iterations.</p><h3 id="7170a46f-32c2-4465-9274-8807686bb24e" class="">Independence from Webflow</h3><p id="9d883a31-b0e8-40c2-bf2e-2464819045c9" class="">As a decentralised educational platform, we also wanted to free ourselves from dependencies and external parties. <strong>Webflow was fine for a small team with a visual designer and developer</strong>. But as soon as <strong>tailor-made user experiences</strong> come to play, usually <strong>extensive frameworks</strong> and <strong>huge teams</strong> are usually required.</p><h2 id="2f068ba8-359a-4c47-b6b0-708a2266bd54" class="">Figma API for a fast &amp; streamlined development process</h2><p id="1e9226c0-d62f-4800-b738-b8bcdc9123ff" class="">So our lead developer came up with the idea to use the Figma API to feed the platform itself. This suddenly allowed us to design and see a result only moments later.</p><p id="f4ad0cdc-5e50-4102-97c1-4a32566ff35f" class="">There was only one catch: This requires a <strong>lot of adjustments</strong> and not always all elements are displayed properly.</p><p id="02617413-124d-4c41-a068-ea83ad698374" class="">So we had to work closely together in this respect to make the converter somehow working.</p><p id="8098b910-a98e-4b8a-8f44-21c2674adc88" class="">
+</p><h3 id="67f83da9-c9fc-4266-bdbe-e09894f06439" class="">Custom Tags</h3><p id="1ebe3f40-28b6-4f7e-a7cb-a6c66fb91baa" class="">For some elements there are certain tags required, that trigger certain behaviour in the JavaScript that is assembling everything </p><p id="28449bf0-dd44-44c8-a9ca-28ea1564a099" class="">
+</p><figure id="f2cf04c0-e853-4cd8-9a6d-9923ef9a30e3" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Untitled.png"><img style="width:1177px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Untitled.png"/></a></figure><h2 id="2a595c2e-c444-4459-a6f4-f6c0d08f363c" class="">The workspace</h2><blockquote id="e5817289-4eeb-4449-b02c-55803949f5eb" class="">When production is dependant on the structure of your design, you end up  designing for both the user and the production.</blockquote><h3 id="1611257f-608d-4d97-81c3-f715aeee0264" class="">The difference to UX projects in the past</h3><p id="cc352964-facb-4ede-9637-33a2d5ef31ff" class="">From previous projects I was used to delivering finished screens, after which the project was finished for me. I had <strong>no influence on what happened to the prototypes.
+</strong>Although I have always worked with components and clean layer structures, I didn&#x27;t have to think responsively or prepare the auto-layouts that would work as CSS Flex-box in the live version.</p><h3 id="f07eba87-4047-4f83-8fb1-a7c28a8acbff" class="">Suddenly, I had to structure the prototype for a smooth development process</h3><p id="8307ab64-7299-4b52-852f-6b784be290df" class="">Due to the fact that it was suddenly necessary to structure prototypes correctly and tag them, working in these processes gave me a completely different feeling for structuring prototypes, their components and variants. Although other projects do not yet work according to this process, it helped me on a completely different level: The organisation and multiple use of design assets and building responsive prototypes for different screen sizes.</p><p id="8bd6d93d-8b7f-4518-9233-51a61d3a2dbd" class="">
+</p><h3 id="4ae5217f-b980-4472-82de-45bc076a26c6" class="">High-fidelity is not yet - but that&#x27;s not so bad either.</h3><blockquote id="e905aff5-6e44-449f-84bb-6fe6d8ea818b" class=""><em>Doesn&#x27;t look high fidelity to you? There are two reasons!</em></blockquote><p id="c68039d5-e05d-4e58-a3bf-6ef876075360" class="">With using a converter tool, some highly polished layouts using shadows and such are yet too complicated to implement.</p><p id="ce97351d-46e1-479d-9811-bfcb39df5d06" class="">On the other hand, this carefully simplified, somewhat nerdy design corresponds exactly to the target group we want to address. Just think of <a href="http://dev.to/">dev.to</a> or <a href="http://hackernoon.com/">hackernoon.com</a>.</p><p id="1f747143-1d17-4c55-85f6-2c50b7fc158d" class="">On the other hand, the goal should of course be to adapt the tool in the long term in such a way that designers can live out their high-fidelity designs so that the live version really looks 1:1 to what was designed in Figma.</p><p id="06adceaa-bead-479f-b111-b373c057884c" class="">The reason that we need to make the design work for the converting tool is why currently we are keeping the design as simple as possible.</p><p id="91fa8797-34c4-4eee-97f6-35c2ade228ed" class="">
+</p><figure id="d7c13db6-4371-41af-b341-31d2e62b629c" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Screenshot_2020-12-06_at_22.31.28.jpg"><img style="width:718px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Screenshot_2020-12-06_at_22.31.28.jpg"/></a></figure><p id="872b9d8a-2688-4f77-a316-f2641a7df64d" class="">
+</p><h2 id="b5c2a576-4a07-4fe6-a7aa-d89f3a43c280" class="">Quick iterations: Dark Mode</h2><p id="42137b19-adad-4585-b7e8-e46a035f9797" class="">One of the main characteristics of our target group (students, traders, people interested in finance, techies) is working at night. As our screens in Figma were all designed in light mode and a second version would have required a lot of effort just for dark mode, a CSS filter was the tool of choice. With only a few lines of code we could save ourselves a lot of work. The only further adjustments we had to do were telling every color-neutral element to maintain it&#x27;s color (or: not to be inverted)</p><div id="8e57f51a-701f-4e74-b3fa-8496dfc8ffc9" class="column-list"><div id="ff0539ed-644a-44ba-a953-5fe8a62f9562" style="width:50%" class="column"><figure id="4d4041ac-688d-461e-bc39-7a4983bf9dfb" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Screenshot_2020-12-06_at_22.39.20_copy.jpg"><img style="width:500px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Screenshot_2020-12-06_at_22.39.20_copy.jpg"/></a></figure></div><div id="bf1dd2d1-f8af-4b85-aac8-91afa13dc063" style="width:50%" class="column"><figure id="bf7f050d-a792-49a4-967d-0ad35c50b7fe" class="image"><a href="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Screenshot_2020-12-06_at_22.39.11_copy.jpg"><img style="width:500px" src="KOIOS%20-%20A%20place%20to%20learn%20A%20place%20to%20earn%20a3fe9f20294b451bbe8af0860b12ad68/Screenshot_2020-12-06_at_22.39.11_copy.jpg"/></a></figure></div></div><p id="68059fac-6894-4c5f-85b8-9c7dfdd0f623" class="">
+</p><pre id="7750d9a7-7ae4-4684-a819-156d7cbd6f51" class="code"><code>@include
+&lt;div class=&quot;cta hor&quot;&gt;
+	&lt;a class=&quot;button cta&quot; target=&quot;_blank&quot; href=&quot;https://koios.online&quot;&gt;Visit KOIOS 🦜&lt;/a&gt;
+
+&lt;/div&gt;</code></pre><p id="ea786bf8-faa9-4078-a6be-076bc3fd6d21" class="">
+</p></div></article></body></html>

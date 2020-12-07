@@ -15,7 +15,7 @@
         "marketing"
       ],
       "period": "July 2020 - Ongoing",
-      "content": "Flasq XXXXXXXX",
+      "content": "Challenge 3 Project MagicFlask 2a12b219bb954c74b71efb41fc72bb58",
       "type": "Self-initiated"
     },
     {
@@ -33,7 +33,7 @@
         "marketing"
       ],
       "period": "April 2019 - June 2019",
-      "content": "FWDPay 0529607821ce48089898a27f7ed316d4",
+      "content": "FWDPay 6ef801c79bf548deae731bcef25f5235",
       "type": "University Project"
     },
     {
@@ -59,8 +59,8 @@
       "headhtml": "",
       "slug": "human-technologies",
       "title": "Human Technologies: 8 Weeks of Tinkering",
-      "description": "During my application process at Uber for an internship in product design, I got challenged with a nice take-home assignment.  ",
-      "website": "https://uber.com",
+      "description": "A time I will probably never forget were the last 8 weeks of my 4th semester, where we individually worked on projects mostly related to microelectronics. This enabled us to bring wild ideas to life and had a lasting effect on me. ",
+      "website": "https://ht.philwornath.com",
       "github": "https://github.com/philffm/hci20",
       "logo": "pw.svg",
       "category": [
@@ -71,6 +71,24 @@
       "period": "May 2020 - July 2020",
       "content": "Human Technologies 8 Weeks of Tinkering 423eb02d71584eb185b8cc11636466b8",
       "type": "Internship (Take-home assignment)"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "koios",
+      "title": "KOIOS - A place to learn. A place to earn.",
+      "description": "Following my participation in the Blockchain Minor course, the faculty asked me if I would be interested in participating in an Edtech project. As I have always been interested in problems and challenges in education, I did not have to think long.  The platform is now being used by several hundred students and I am very happy to have embarked on this journey, which has provided me with very helpful learning. ",
+      "website": "https://koios.online",
+      "github": "https://github.com/philffm/hci20",
+      "logo": "koios.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "Feb 2020 - Dec 2020",
+      "content": "KOIOS - A place to learn A place to earn a3fe9f20294b451bbe8af0860b12ad68",
+      "type": "Part-time occupation"
     }
   ]
 }
