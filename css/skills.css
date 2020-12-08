@@ -105,8 +105,8 @@ li.skills.german:after {
 
 li.skills.english:after {
     animation-name: english;
-    content: "English: C1";
-    width: 85%;
+    content: "English: C2";
+    width: 100%;
 
 }
 
