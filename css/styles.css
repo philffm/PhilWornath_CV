@@ -855,6 +855,17 @@ a#koios{
   color: black;
 }
 
+
+a#thuas{
+  background: white;
+  color: black;
+  margin: 2s0px;
+}
+a#thuas:hover{
+  background: white;
+  box-shadow: 0px 7px 0px var(--pink);
+}
+
 .button #learnmore{
   background: #41c4ab;
 }
