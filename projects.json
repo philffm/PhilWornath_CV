@@ -77,7 +77,7 @@
       "headhtml": "",
       "slug": "koios",
       "title": "KOIOS - A place to learn. A place to earn.",
-      "description": "Following my participation in the Blockchain Minor course, the faculty asked me if I would be interested in participating in an Edtech project. As I have always been interested in problems and challenges in education, I did not have to think long.  The platform is now being used by several hundred students and I am very happy to have embarked on this journey, which has provided me with very helpful learning. ",
+      "description": "Following my participation in the Blockchain Minor course, the faculty asked me whether I would be interested in participating in an EdTech project. As I have always been interested in problems and challenges in regards to education, I did not hesistate.  A few months later, the platform is now being used by several hundred students and I am very happy to have embarked on this journey, which has provided me with very helpful learning experiences regarding working more structured, responsive and consistent in my work with Figma, but also taught me, to think more \"engineerish\". ",
       "website": "https://koios.online",
       "github": "https://github.com/philffm/hci20",
       "logo": "koios.svg",
@@ -89,8 +89,28 @@
       "period": "Feb 2020 - Dec 2020",
       "content": "KOIOS - A place to learn A place to earn a3fe9f20294b451bbe8af0860b12ad68",
       "type": "Part-time occupation"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "projectbb",
+      "title": "Project BB: Keeping beaches clean",
+      "description": "During my participation in the Blockchain Minor course,  I was working hand in hand with an assignment giver in The Hague, who in collaboration with TU Delft works on a beach cleaning robot. My role in this project was primarily dedicated to research on Blockchain ecosystems and thinking about various scenarios on how this robot could interact in combination with humans.",
+      "website": "https://project.bb/",
+      "github": "",
+      "logo": "projectbb.jpg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "Feb 2020 - Dec 2020",
+      "content": "BBBot Blockchain enabled robots for a clean beach  fca6199339c54c64bbf2f86ff4e15d2b 3",
+      "type": "Part-time occupation"
     }
   ]
 }
+
+
 
 

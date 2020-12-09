@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>BBBot Blockchain enabled robots for a clean beach experience.</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fca61993-39c5-4c64-bbf2-f86ff4e15d2b" class="page sans"><header><h1 class="page-title">BBBot <em>Blockchain enabled robots for a clean beach experience.</em></h1><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Assign</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Category</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>My job</th><td><span class="selected-value select-value-color-pink">Blockchain Consultant</span><span class="selected-value select-value-color-purple">UX Designer</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>Project URL</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Role Description</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tools</th><td></td></tr></tbody></table></header><div class="page-body"><blockquote id="22131f03-acf9-4bee-9bda-65881d153e5d" class=""><em>Blockchain enabled robots for a clean beach experience.</em></blockquote><p id="f1ce2ab7-1957-4c87-97e8-e54204a0aaf2" class=""><strong>Abstract. </strong>Imagine a decentralized world, where people decide about what affects and surrounds them. A world, where voting counts and active commitment to a community through data is rewarded. Where no single stakeholder profits alone.</p><p id="baca68f9-2fef-41f8-ac62-fa289019ac82" class="">Imagine a beach as part of the commons belonging to no one and everyone at the same time. Who deserves the right to decide over what happens with the beach? Is the ocean involved in that decision process?</p><p id="af767647-ef83-4bc5-875e-0529afb5c8d8" class="">Imagine a lonely beach robot driving around looking for potentially harmful beach waste. A local fish restaurant likes its work and starts tipping the robot. Next up, a person passes by and feeds the robot with litter. Suddenly, the beach bot says “Shhh - This restaurant over there - They sell the best fish. And wait, here is a voucher for you”. The person redeems the voucher and the restaurant tips the robot again. One day, the robot decides to buy another robot.</p><p id="6c8a2b5f-32e8-4845-962b-110d0c86a593" class="">A self-sustaining robot ecosystem for a cleaner beach - would this even work? What are the constraints of centralized systems taking care of beach management and how exactly would a decentralized approach look like?</p><p id="1b2b9913-baa2-418d-9e8f-3776a21d3162" class="">In this advisory report I am going to address these and other central questions, evaluate the feasibility of decentralized, blockchain-based systems and finally deliver further ideas and ways to start a decentralized community of beach cleaning robots..</p><h1 id="60fc8f01-4312-4f97-af11-d8550ae0471a" class=""><strong>Table of Contents</strong></h1><p id="ddced254-5b3f-42a4-ad12-28bf2e38e2f4" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.9e6fc9ip16eu"><strong>Table of Contents</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.9e6fc9ip16eu"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.9e6fc9ip16eu"><strong>3</strong></a></p><p id="b17779ed-7c6d-421c-a042-ec7bc9951570" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.rk3vjyuvfm45"><strong>1.0 Introduction</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.rk3vjyuvfm45"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.rk3vjyuvfm45"><strong>5</strong></a></p><p id="85b375f0-b3d2-45a4-9f3f-47996108651c" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.2guxuzfs0xhv"><strong>2.0 Debriefing</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.2guxuzfs0xhv"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.2guxuzfs0xhv"><strong>6</strong></a></p><p id="01bde6fa-0819-4656-8ccf-8b7c20bd76ed" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.femddd6j2y06">Background information    6</a></p><p id="c6182495-f488-4ef5-bcd3-979eea98405f" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.5ja5s0qraie1">Project leaders    6</a></p><p id="1072d071-d4f0-4597-b0bd-b1413d492044" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.629qzbbswgni">Problem    6</a></p><p id="bb484221-d3d6-4c4f-b23e-2c4792fcb37d" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.cno431e1vn6c">Goal    6</a></p><p id="315eb74b-4a7a-47bd-bcb3-e661800bfe7f" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.5itza2ax8ah8">Deliverables    6</a></p><p id="91d02d4b-6a77-4fd7-940e-2eb7e82ddbc4" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.j7s4r9ng8cl0">Group members    6</a></p><p id="fef1bcb4-9e26-45f7-8ee1-4da7dfce9622" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.qmvljlpa1d2u"><strong>3.0 Research setup</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.qmvljlpa1d2u"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.qmvljlpa1d2u"><strong>7</strong></a></p><p id="684494d8-b94f-440c-a0ef-1ff95ef6f82d" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.dpf8l72demi0">3.1 Research questions    7</a></p><p id="3fb509eb-5e72-46d1-a87f-89b7a3049b8d" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.yud5iydhnwch">3.2 Research methods    7</a></p><p id="ef16c368-9e32-4af4-88cb-9bee18753b1b" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.6pxe9xcm4vjj">3.2.1 Desk Research    7</a></p><p id="5e7de3bc-6b35-41fe-8401-6ece5914bf9d" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.e85c4vxv86qc">3.2.2 Field Research (Interviews)    7</a></p><p id="77491c30-a2c3-40c4-9187-c0f5ee71b9a9" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.yeedl3u9hnvd"><strong>4.0 Research</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.yeedl3u9hnvd"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.yeedl3u9hnvd"><strong>8</strong></a></p><p id="294510c6-031f-4167-bbbc-df2b0b341b5b" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.6q66r1fkr1qg">4.1 Desk Research    8</a></p><p id="8b7b3605-6679-48aa-a439-e14d34283a81" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.dc4f9qq0geym">4.1.1 A product for a clean beach - but what is a beach?    8</a></p><p id="51efebd0-007f-453e-b612-5191deab804d" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.dwpkyytmfdyl">4.1.2 How can distributed sustainability be applied to beach environments?    9</a></p><p id="b30ac67f-78ad-4b9c-903d-c7a55ebadc73" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.hlqsj56yp9ud">4.1.3 Project Terra0 - A self-owned forest    9</a></p><p id="63cae3b1-f701-4950-bb85-ba503a0adc69" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.akepc2atsvt2">Further reading material on the commons:    10</a></p><p id="eef7b731-fb03-4b22-9905-99a1dce4fe89" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.iarvyzluzee3">4.1.4 Decentralized Autonomous Organizations (DAOs)    11</a></p><p id="63be337c-2f92-4c5c-adba-6a767bae6abc" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.f2hxoz7grtn">What are Decentralized Autonomous Organizations?    11</a></p><p id="43dba25d-e1bc-43a3-8e60-552e335cd002" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.ez9w733cbvi3">Requirements for a successful implementation of DAOs    11</a></p><p id="5f76cbca-f608-42bb-a470-811566a901e3" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.n6vq61z0o6e4">Decentralized Flexible Organizations (DFO) - A Solution for the rigidity problem?    12</a></p><p id="401483f3-45fe-465a-a5d2-966c66e612ee" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.6fkcqi9l4ec8">Legal Challenges in DAOs    12</a></p><p id="ac51caf6-53ee-463a-91ff-16fea2ef4f18" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.8cmft4w7u31x">Governing the commons: Smart Contracts based on Ostrom’s Design Principles    13</a></p><p id="5ee95857-7b8e-4541-b7c3-25f217c04c86" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.2amsi19o8jnr">Organizations on a centralized system - what are the constraints?    14</a></p><p id="6dc822cb-e367-472d-8e99-71974516072b" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.206og0ayt2mo">Humans in the decentralized world    14</a></p><p id="14d82e78-9137-4807-97b4-47cfac806fa7" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.rexsgq9wyedt">4.2 Interview Research    15</a></p><p id="193273bd-eceb-46ce-a3f7-7053e2b9fc14" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.4zd43t29lv79">4.2.1 Insights: Interviews with Blockchain experts    15</a></p><p id="64591e18-0f17-4aea-9ed8-479c750ebd87" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.6edeikvpbqzq">4.2.2 Insights: Interviews with potential users    15</a></p><p id="8c9858e1-a5a1-4e1d-a84a-bb140e7bedd2" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.hdmhciauynor">4.3 Problem Statements    16</a></p><p id="fdfb2607-b710-4c67-b077-5871d81ee909" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.vz4c4rwz39ph"><strong>5.0 Implementation / Concept</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.vz4c4rwz39ph"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.vz4c4rwz39ph"><strong>17</strong></a></p><p id="b5871952-7c95-4109-af8d-a3b3f4670720" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.1dyjrtm9keiu">5.1 Phase 1 - 5G Test bed with Blockchain-inspired validation    17</a></p><p id="fb87785c-bb32-4929-8f21-10f6d02a4468" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.p7tymv4g52q1">5.1.1 Selection of users (controllers &amp; validators)    17</a></p><p id="9239f41a-6e5d-4375-ba99-81f334656b83" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.kbo4pjhx1yzx">5.1.2 Security measures    18</a></p><p id="f80ca011-ab52-4fa6-8eb7-c35bd0cb0157" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.24089xdaye6d">5.1.3 Different users, different roles    18</a></p><p id="bcecbb78-2f76-4d4c-8dbb-cc3a7320b49f" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.b7e5hdg8vsrb">5.1.4 An interactive VR gaming experience    18</a></p><p id="46663085-30c3-4410-be30-df7cd3bc0a9e" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.w8c9s36wro29">5.1.5 Validation Process &amp; AI model    19</a></p><p id="2c8554d3-d8d6-4a85-8785-8ea7d31e8443" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.6siebcg9zsj0">5.1.6 Incentives &amp; Rewards    19</a></p><p id="b8c3ee51-af95-4ee8-9a04-d59de020b9e6" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.2lwpbjsjb1rq">5.2 Future vision: Phase 2 - Blockchain-based MVP    20</a></p><p id="ac2a3fe7-5a8a-42cf-ad42-b8263f327663" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.hk3xuwj35ckc">5.2.1 Blockchain protocol    20</a></p><p id="0da0959f-6b96-417a-ad25-da893baa46f6" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.f1fsd19dq0gb">5.2.2 AI on the Blockchain    20</a></p><p id="d88ee0cf-9728-45f6-953d-f1748be9de1a" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.3ywzsujw2pl1">5.2.3 Smart Contract model    20</a></p><p id="9c06b0d2-3f4b-4c9b-876d-4530bafca001" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.12h16ahj16ea">5.2.4 Governance in a DAO / DFO    20</a></p><p id="b7ff04d2-ac72-489f-83ce-89f8ae2d3b40" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.ei7ujp9e147m">5.2.5 Decentralized Application    21</a></p><p id="41344054-5559-4eb0-9e7a-588a9cf60d0c" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.7syexslnxko2">5.2.6 A circular economy on the beach - Tokens, value chain and participants in the system    21</a></p><p id="29d4a453-80f2-4271-88bb-23dde1cd501b" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.3v5bpeblvntr">TrashCoin - A token model for sustainable spending    21</a></p><p id="739f78e1-010f-4074-ad5a-f46bc8ea59cb" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.e5rlerthb0cn">Vendors / local businesses    21</a></p><p id="a35bbac9-c05f-4344-890b-2014b7040fd7" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.m9qjp6zcyo0y">Robot swarm    22</a></p><p id="3b6a43a2-165a-42c4-879c-474da8413347" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.my8ouzwhln9u">Beach visitors    22</a></p><p id="705e6517-abc9-4594-863c-db42c3014b0d" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.lrbbsbjprty5">Investors    23</a></p><p id="ea1423b4-e90a-4669-9798-89eb48e7ab31" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.a352sn3nvftg">Maintenance    23</a></p><p id="d7939635-725b-426a-8f64-09dd36664246" class=""><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.77clixj9ucjd">5.3 Future vision: Phase 3 - Global roll-out    24</a></p><p id="699ce360-70ee-4975-a73e-b06d887ee5f9" class="">6.0 <a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.c9jk9ib6ceep"><strong>Sources</strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.c9jk9ib6ceep"><strong>    </strong></a><a href="https://docs.google.com/document/d/149f_apZjdPUHrTg-wxjwYHFNgYdNeecSIZctpcxYMXA/edit#heading=h.c9jk9ib6ceep"><strong>25</strong></a></p><h1 id="aae10233-9915-4798-813b-0f98026458be" class=""><strong>1.0 Introduction</strong></h1><p id="0cd37bcb-f2b5-44ca-9b0b-7811c2fcef7a" class="">Every year a Beach Summer Challenge is held by TrashUre Hunt. During this challenge, the beach of Scheveningen is cleaned by volunteers. This year, 21 September 2019, 2102 kilos have been. Plastic items such as packaging, straws, scoops and balloons were found during this promotion. Objects were also found that are not by definition waste, such as shoes. Some of these articles never dissolve and are therefore harmful to the environment .</p><p id="cc5bb425-6eee-4f4d-9232-7bd521c71cbf" class="">Such events might herald the start of a movement, but as the EU states in a recent paper</p><p id="87ebc1dc-8074-4498-a2fc-189bf3a8a517" class="">“There is an urgent need to tackle the environmental problems that today cast a long shadow over the production, use and consumption of plastics. The million tonnes of plastic litter that end up in the oceans every year are one of their most visible and alarming signs of these problems, causing growing public concern” [...]</p><p id="49474e0b-862a-42ca-84ff-9f993b446ebf" class="">Single-use plastics items are a major source of plastic leakage into the environment, as they can be difficult to recycle, are often used away from home and littered. They are among the items <strong>most commonly found on beaches</strong>, and represent an estimated 50% of marine litter.”</p><p id="43c101dd-1e50-4929-8f94-d9245ac784a8" class="">Project BB is trying to address this global problem at its source by creating a solution for waste collection on the beaches. They want to develop a beach cleaning robot and thereby make people more aware of throwing away their junk themselves. For this they want to develop a reward system with the help of blockchain.</p><p id="6c231df2-480a-49ed-b7d5-f8613e4239e5" class="">In this paper we will discuss the biggest advantages and challenges in Blockchain based system, evaluate whether there are feasible use cases and provide further advice on where to start.</p><h1 id="870a8fd1-db9a-4a83-9942-b4a37d9dd478" class=""><strong>2.0 Debriefing</strong></h1><h2 id="08523046-24cb-4968-b163-c5a71ceeaed7" class=""><strong>Background information</strong></h2><p id="b7f1e605-bbf0-4dc9-b8c5-2ab42cbcc149" class="">Project BB is a project of the Robo.foundation in The Hague. The Robo.foundation are looking for <strong>opportunities to tackle social issues</strong>. The issue of <strong>polluted beaches</strong> is something you see a lot when traveling abroad, but it is also a local issue. The primary <strong>source of litter is us humans</strong> and they feel like a robotic solution could help clean up the beaches.</p><h2 id="ebf27bc5-f6f6-4ae7-88bc-f64b10060ab5" class=""><strong>Project leaders</strong></h2><p id="13fbccd0-c2d8-461b-8303-d0973a52819f" class="">Martijn Lukaart and Edwin Bos from Robo.foundation.</p><h2 id="a892e775-6dd2-4ce4-ab6f-aa51c3ee79a4" class=""><strong>Problem</strong></h2><p id="4b583d0e-d352-4910-b9fb-612d77a16cf5" class=""><strong>Project BB needs data from humans</strong> to increase its knowledge and help with creating awareness regarding littering behaviour and train their robots towards an automated or even autonomous cleaning process</p><h2 id="83be738b-d372-47a6-8706-e3ae9f8d1ab5" class=""><strong>Goal</strong></h2><p id="0d57035c-1777-4162-974a-1eb1b506d30b" class="">Our objective consists of evaluating the possibilities of a robot-based beach cleaning ecosystem in terms of user involvement as well as fundamental financial-economical and technical questions.</p><p id="0952ff1e-8462-425a-bd51-47072bd4e211" class="">In this paper, we will explore whether building such an ecosystem on a Blockchain could bring any benefits and how such an implementation could be done.</p><h2 id="e93c7b95-cda2-401e-bb2c-4810e28dd8c0" class=""><strong>Deliverables</strong></h2><p id="658b9482-3551-4da6-a8c6-ca5cbf3233d4" class="">A <strong>research report</strong> will be written to show the research done in the field. Afterwards this research will be used to create a concept for the introduction of blockchain infrastructure in the robot, which will be described in a concept report.</p><h2 id="d1bba88f-1e17-471e-aa9f-24442342c36a" class=""><strong>Group members</strong></h2><p id="c10ff1a1-8b7d-4f48-87f5-fb06381505dd" class="">Phil Wornath 18035949</p><p id="f200f1b5-7436-4c1d-b7de-9b90bb3ed600" class="">
+</p><h1 id="43106159-eff5-4680-bfa9-ef71b2150cb6" class=""><strong>3.0 Research setup</strong></h1><h2 id="19a3b322-de53-4834-855d-66e05b22ed41" class=""><strong>3.1 Research questions</strong></h2><ol id="95ea27eb-3c4c-44c0-86d7-3f8417989efd" class="numbered-list" start="1"><li>What are typical characteristics of beach environments?</li></ol><ol id="74126fa5-061e-4dd4-a421-798b6a0e5597" class="numbered-list" start="2"><li>How can distributed sustainability be applied to beach environments?</li></ol><ol id="bd33d459-e90f-4899-bf6c-e8fd02612cf9" class="numbered-list" start="3"><li>Are there any similar projects existing?</li></ol><ol id="2b70e274-2259-4046-a420-e6a2d5ca5a15" class="numbered-list" start="4"><li>Could B.B be controlled as a Decentralized Autonomous Organization?<ol id="3def550f-f4fe-4a13-a998-d00c460919ca" class="numbered-list" start="1"><li>What are DAOs?</li></ol><ol id="c50e4650-7404-4cd8-b1de-6fa0cb1eb9b3" class="numbered-list" start="2"><li>Prerequisites and characteristics for a DAO</li></ol><ol id="18534da7-4e91-47c6-bcf0-dea351584c32" class="numbered-list" start="3"><li>Which drawbacks could we face in a centralized system?</li></ol></li></ol><ol id="3b9248c7-9079-40d2-aa70-7c6c1b47ef00" class="numbered-list" start="5"><li>Can we create a “trash coin” or a share for people that help to recognize litter?<ol id="a753b3ba-0b01-4d11-bac1-095504afd895" class="numbered-list" start="1"><li>Which stakeholders are involved in the ecosystem?</li></ol><ol id="d0f5b966-cff9-4e30-be21-1d21ab0cea66" class="numbered-list" start="2"><li>How might we incentivize participants in the system?</li></ol><ol id="c29e83de-213d-4f12-8978-74ad541cbd74" class="numbered-list" start="3"><li>How do users participate? Only through verification of pictures taken by the robot or also through picture of users / suggestion on certain spots on the beach</li></ol></li></ol><h2 id="74ffce2c-d8b0-48ad-a1ea-903d9af8d7b1" class=""><strong>3.2 Research methods</strong></h2><h3 id="10cb3260-083b-45d5-a885-b224674e8e1a" class="">3.2.1 Desk Research</h3><p id="fe0e352e-6a7a-435e-aa72-9201460ad3d4" class="">During our <strong>desk research phase</strong>, we are going to evaluate different sources, both from the fields Blockchain and Robotics, so that we gain a broad variety of insights. In our research, we are going to include the following types of desk research:</p><ol id="11cb264d-4c0b-408d-90d8-48ca06190b06" class="numbered-list" start="1"><li>Scientific papers</li></ol><ol id="7077ae6f-2c03-47f6-bd18-1c7adb19dd6a" class="numbered-list" start="2"><li>Talks and discussions</li></ol><ol id="8d3324c8-c036-4bff-b388-ebab6cb484ac" class="numbered-list" start="3"><li>Web sources</li></ol><h3 id="16fd1c48-6182-40af-a1f0-3d8699c574e5" class="">3.2.2 Field Research (Interviews)</h3><p id="7b65fa60-cfee-4556-b617-e4c025e196c0" class="">The <strong>face-to-face interviews</strong> are meant to give us more insights regarding the human connection to the product. As we strive for a product, that eventually serves a great purpose and after all carries a high user adoption , we are going to interview both experts in the Blockchain field but also potential users of the technology;</p><ol id="c15abe2c-29e2-49f5-967c-6faf21b59bee" class="numbered-list" start="1"><li>Interview with technological focus</li></ol><ol id="671a5caa-a165-487d-a453-92480b40de9c" class="numbered-list" start="2"><li>Interview with user-focus</li></ol><h1 id="550db85c-cc41-4d2b-8a4a-99aa8990aae1" class=""><strong>4.0 Research</strong></h1><h2 id="9dca900b-8de7-47ea-9404-43e4ba6b026c" class=""><strong>4.1 Desk Research</strong></h2><h3 id="cfa4ecb8-8c3e-4cc4-831d-00c553340ffe" class="">4.1.1 A product for a clean beach - but what is a beach?</h3><p id="e300b70d-9ac2-4662-a424-d395d7d98d6f" class="">Before we start with the actual product, we want to get to know each stakeholder or user of the ecosystem we are working on. Among these stakeholders, one is of exceptionally high importance, although might not be considered by everyone in the first thought: <strong>The beach itself</strong>. But what are typical characteristics of a beach and its surroundings?</p><p id="0e6e6480-5af1-48cc-97d2-be4ce0bd24ae" class="">Maritime experts from Croatia discussed local as well as global challenges in their Conference paper “Social and economic forms of beach managing in Croatia“. Within the paper, they describe beach environments as “natural resources that significantly enrich the tourist offer of countries gifted by nature near the sea. Apart from economic significance, beaches also have <strong>recreational importance</strong>, and are, therefore, <strong>vulnerable to various adverse influences that result from natural changes or manmade activities</strong>. Beach management is <strong>mainly entrusted to authorities</strong> [...]. As beaches are <strong>public goods</strong>, they may be subject to concessions and concession approvals. Beach management [...] is defined by numerous institutional provisions with the aim to protect beaches and their <strong>sustainable use</strong>.”</p><p id="870f8a21-e301-4395-bc02-b97f9a60738e" class="">Overall we found the paper interesting in several ways. Obviously it made us better understand the beach as its own entity. Beaches are <strong>considered to act as a public good</strong>, used for recreational and economic purposes but yet being <strong>dependant on decisions made by a single authority</strong> -  namely the decision makers of each individual country. The question we are asking now is: Why is a public good so depended on central decisions, while the <strong>condition of our nature affects all of us?</strong></p><p id="b5e15e1b-d1a4-4155-9af4-8acadaeadd02" class="">Certain people might argue that the sole visual appearance of beaches is irrelevant hence can be ignored as a problem. Yet the problem we are facing here is rather a global one as waste spread on beaches <strong>most likely also finds a way into the </strong>oceans. Among the most vulnerable types of waste is micro plastic which allegedly was already found on otherwise unspoiled beaches.</p><p id="00e0a181-f10c-4bc7-a712-318abe6a54ca" class="">However, while countries such as The Netherlands might already be doing a great job in keeping their beaches clean, there are countries where beaches or following global environmental measures are less prioritized, ignored or considered financially infeasible by the government. As a result, <strong>those countries suffer from beach litter and thereby contribute to a rising global pollution problem.</strong></p><h3 id="b8d93abf-514f-4d38-8bdf-2eea71d24908" class="">4.1.2 How can distributed sustainability be applied to beach environments?</h3><p id="42cac52d-84ec-4352-9a7c-b8def7ecac50" class="">During our research excursion to the beaches of our world we already faced constraints in terms of management and governance of natural resources.</p><p id="5d9eb42a-d283-4376-9955-f11088f5970d" class="">This problem was described by Garrit Hardin in 1968 as the “Tragedy of the commons” and originated from the theory British economist William Forster Lloyd, described as a situation where <strong>commonly used shared resources are used with different individual objectives</strong> and overall do not follow a common mindset due to the <strong>amount of men solely following their (short-term) interests.</strong> Famous examples are Deforestation, overfishing - and the overproportional pollution of our collectively inhabited planet.</p><p id="a47ce842-1bec-4d47-b62f-90821f2d6878" class="">The only solution Hardin proposed back then was <strong>“Centralized planning”,</strong> which might have been the best approach to go for in 1968. Today, 50 days after Hardin&#x27;s findings, central planning is still the predominant way and thus we are living in a world where countries individually decide about global problems.</p><p id="55522a90-06e5-422f-a952-c2b33a22efe5" class="">With decentralized, distributed systems however, this might be due to change. But how big will those changes be?</p><h3 id="5f362bbc-cd03-43be-8506-7901cb63099e" class="">4.1.3 Project Terra0 - A self-owned forest</h3><p id="b5368588-1079-47f1-8da4-7d8f77ddc5ac" class="">As we found during the research, <strong>beaches are considered as natural resources</strong> and <strong>public goods</strong>. Thus we were curious about finding other projects, where a natural resources are somehow managed and governed.</p><p id="7a49b632-6d54-4877-a1b8-98e7485245ec" class="">“<strong>terra0 is a self-owned forest</strong>; an ongoing art project that strives to set up a prototype of a self-utilization piece of land. terra0 creates a scenario whereby a forest is able to sell licences to <strong>log trees through automated processes</strong>, smart contracts and Blockchain technology. In doing so, this forest accumulates capital. A shift from valorization through third parties to a self-utilization makes it possible for the forest to procure its real exchange value, and <strong>eventually buy (thus own) itself</strong>. The augmented forest, as owner of itself, is in the position to <strong>buy more ground and therefore to expand</strong>.”</p><p id="2b61d13d-ef49-4416-8bd8-815be7d5ae24" class="">A self-owned forest does not even sound unusual, especially when asking the fundamental question of who granted humans to start harvesting forests. The project itself shows, that a feasible implementation of forests as autonomous organization is not too far ahead.</p><p id="a663ac06-5013-4833-9033-80e9f98bef78" class="">Terra0 and other projects that build upon the idea of “the new commons” share a certain mindset of “providing us with a tool to coordinate effort to achieve a collective goal”. Furthermore, such approaches can include a “dedicated token economy” that allows “rewarding and compensating contributors according to work they do for the community.“.</p><h3 id="1008afa5-4277-482e-b1de-4e8697376376" class=""><strong>Further reading material on the commons:</strong></h3><p id="0bf78ad7-24d8-47c9-873b-61a8b29f896f" class=""><a href="https://www.thecommonsjournal.org/articles/10.18352/ijc.477/">https://www.thecommonsjournal.org/articles/10.18352/ijc.477/</a></p><p id="3f70fcab-28db-4284-a976-3432e9b13a5d" class=""><a href="https://medium.com/coinmonks/decentralised-autonomous-co-operatives-dac-and-the-rise-of-the-new-commons-721f5e1a7d3">https://medium.com/coinmonks/decentralised-autonomous-co-operatives-dac-and-the-rise-of-the-new-commons-721f5e1a7d3</a></p><h3 id="8e8299c2-7230-44ba-bec3-6b1eba03473e" class="">4.1.4 Decentralized Autonomous Organizations (DAOs)</h3><p id="cb0f8e07-bd8a-47e5-99fd-9906d72973df" class="">In order to discuss the relevance of DAOs for the project, let us first define the idea behind Decentralized Autonomous Organizations.</p><h3 id="438cb610-f724-454d-af26-8e0dcec3c1e7" class=""><strong>What are Decentralized Autonomous Organizations?</strong></h3><p id="7eed1e8a-6dda-4fa0-bb0c-366838b2f387" class="">Basically speaking, DAOs are <strong>Smart Contracts talking to each other without human intervention.</strong> Smart Contracts are agreements or if-then-statements manifested in code and once approved by all parties able to execute themselves whenever a certain criteria is met.</p><p id="594e6732-c283-4ac7-aad3-518038a97b51" class="">With the implementation of DAOs, “the <strong>rules of a company are set in stone before the company is incorporated and cannot be changed in the future</strong>”. - This also marks one of the biggest challenges within a DAO: Rigidity - “once deployed on ethereum blockchain network could pose a security threat because once it is let loose, no one could change the code”</p><h3 id="57dd7ce5-ac21-492f-a45a-cee7ac757390" class=""><strong>Requirements for a successful implementation of DAOs</strong></h3><p id="dbfed1e2-eb80-4d3b-a884-8844628ffcc4" class="">For a successful implementation of Decentralized Autonomous Organizations, it requires certain ingredients. Those ingredients can be derived from a reference system “Bootstrapping A Decentralized Autonomous Corporation: Part I”  published by Vitalik Buterin in 2013 where he describes a conceptual framework for autonomous agents.</p><ol id="2ed577e2-d724-4d5c-830d-de8faaa7d2b8" class="numbered-list" start="1"><li>At first, we need to make sure the system is <strong>able to run autonomously</strong>. This can be done by Smart Contracts that reflect a sound business logic.<ol id="eba475d0-ff2c-4acc-9d95-34172a5260af" class="numbered-list" start="1"><li>The agent earns enough money to maintain itself</li></ol><ol id="143db2c2-a645-461b-9de2-35382179f446" class="numbered-list" start="2"><li>The agent has an adaptive feedback system (e.g. voting)</li></ol><ol id="fd998be4-7181-48c2-9d76-44bead33560f" class="numbered-list" start="3"><li>The agent can replicate itself</li></ol></li></ol><ol id="1273c47d-a569-4270-b04b-a18ee31854e9" class="numbered-list" start="2"><li>These <strong>Smart Contracts require reliable inputs or external “oracles” as an objective source of observation</strong>. Oracles are external sources that deliver the input for smart contracts and thus are a crucial part within the decision-chain.</li></ol><ol id="302cdfce-2cf9-4892-b590-f844f7d995ef" class="numbered-list" start="3"><li><strong>Furthermore a DAO should contain a fungible, valuable asset</strong> in the form of tokens which can be used to <strong>pay contractors</strong> such as energy providers, insurance, developers, technicians and <strong>reward the community</strong></li></ol><ol id="e2da5b12-d3cd-4df8-9ff1-6098f848b5ba" class="numbered-list" start="4"><li>In order to reach an agreement in itself (swarm of robots) and between users, the <strong>DAO needs a consensus model</strong></li></ol><p id="c6eb54ae-7088-40bb-a35a-6d408f576433" class="">However, translating existing business rules 1:1 to a DAO would not be expedient:</p><p id="b4359d11-470a-43bc-a676-c48275d15653" class="">“Reinventing what we already have on top of new rails controlled by others isn’t creating a new paradigm, it&#x27;s just painting our current paradigm a different colour.” Hence it is recommended to build an ecosystem that utilizes advantages of decentralization while both protects and incentivizes the user.</p><h3 id="5a9c1ae7-ce74-41b6-a438-432114536834" class=""><strong>Decentralized Flexible Organizations (DFO) - A Solution for the rigidity problem?</strong></h3><p id="90656570-db5f-4834-9544-14ce5616b683" class="">The adoption of Decentralized Autonomous Organizations is still in an early stage and although the overall concept suggests feasibility, <strong>there are still constraints, especially in terms of flexibility.</strong></p><p id="22d7355a-87e6-4068-ab35-78fb501e7021" class="">Why flexibility matters? Well, imagine writing a letter on a typewriter. Once the words are written on paper, <strong>there is no way to change or delete them</strong>. This is basically the current state of DAO: <strong>Edits of Smart Contracts are only possible through hard forks</strong>. Hard forks in the end result in overhead in deployment and ongoing effort in maintenance.</p><p id="c31d4e34-e2df-4da7-95fe-408c058624dc" class="">There are however early developments raising hope to improve the deployment speed in DAO projects, while creating an even better suited framework for a real collective governance.</p><p id="29a49345-6b0f-48a0-a3b8-5559317e908d" class="">“<strong>DFO is an open-source proposal for a new standard in the DAO ecosystem</strong>. DFO is based on a new approach of <strong>managing Smart Contracts</strong> as Micro Services to build a new generation of DAOs in which <strong>Token Holders will be able to propose the edit, the kill</strong> and the add for every function of a Decentralized Application and <strong>even rule the front-end using NFTs</strong>.”</p><h3 id="b22c16fb-c5c7-4f04-adc9-3317d1e398c9" class=""><strong>Legal Challenges in DAOs</strong></h3><p id="c65d0705-1bae-482a-a706-9da508f19c8b" class="">Decentral Autonomous Organizations are specials for various reasons: One of them is that they can <strong>self-establish as companies but basically have no national location</strong> . This might be considered as helpful in first place for the sake of borderless operability but “raises questions [...] on what laws a DAO and its shareholders would need to obey.” and depending on the business operated by the DAO poses <strong>challenges in terms of accountability</strong>.</p><h3 id="480b1f66-eee9-4bc2-a41c-eb4494ea0248" class=""></h3><h3 id="65e2d46b-6786-4271-aa11-b280f68aa3af" class=""><strong>Governing the commons: Smart Contracts based on Ostrom’s Design Principles</strong></h3><p id="21a9878e-1bdd-4806-844e-a45ac034b710" class="">Evidence for <strong>self-sustaining communities</strong> date back to the <strong>12th century</strong>, where local communities managed their local high alpine forest in Switzerland and Nepal successfully self-governed natural water irrigation.</p><p id="eba2b10c-2bf6-4383-9b69-bba051fa619c" class="">Now that we walked through the overall theory of DAOs there needs to be a way to translate the <strong>ideas and success factors of self-sustaining communities</strong> (as described in 4.2) into Smart Contracts, right? Well, there is.</p><p id="be27e1c2-01f2-47f4-aef3-dcd5a2675b77" class="">Ellinor Ostrom was the first woman to win a Nobel prize in economics and defined <strong>eight design principles</strong> that can be translated to a set of <strong>smart contracts for a sustainable governance</strong> of the commons and will serve as a base framework for our further ideation.</p><div id="cd11fd2c-22bc-4e34-a6b0-b26da98df261" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Ostrom Design Principle</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span> 1</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Ostrom Smart Contract</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Example</th></tr></thead><tbody><tr id="b2397c8b-428c-4369-929d-dcecb2063c42"><td class="cell-yN&lt;v">1</td><td class="cell-title"><a href="https://www.notion.so/Define-clear-group-boundaries-b2397c8b428c4369929ddcecb2063c42">Define clear group boundaries</a></td><td class="cell-H@yC">1</td><td class="cell-phmw">Token-based Membership</td><td class="cell-?FWL">Membership could provide access to the beach or decision power in the ecosystem</td></tr><tr id="d725213c-49c9-4410-a560-0311eeaef73d"><td class="cell-yN&lt;v">2</td><td class="cell-title"><a href="https://www.notion.so/Match-rules-governing-use-of-common-goods-to-local-needs-and-conditions-d725213c49c94410a5600311eeaef73d">Match rules governing use of common goods to local needs and conditions</a></td><td class="cell-H@yC">2</td><td class="cell-phmw">Rules determined via Blockchain Governance</td><td class="cell-?FWL">Members could propose actions or vote for certain outcomes</td></tr><tr id="4726019d-7876-45ca-8704-150fd5591073"><td class="cell-yN&lt;v">3</td><td class="cell-title"><a href="https://www.notion.so/Ensure-that-those-affected-by-the-rules-can-participate-in-modifying-the-rules-4726019d787645ca8704150fd5591073">Ensure that those affected by the rules can participate in modifying the rules</a></td><td class="cell-H@yC">3</td><td class="cell-phmw">Proposal System for Members</td><td class="cell-?FWL">Members propose changes to the existing smart contracts / dApps</td></tr><tr id="d7070189-2477-4b0d-b057-c86b360e56ef"><td class="cell-yN&lt;v">4</td><td class="cell-title"><a href="https://www.notion.so/Develop-a-system-carried-out-by-community-members-s-behavior-d707018924774b0db057c86b360e56ef">Develop a system, carried out by community members&#x27;s behavior</a></td><td class="cell-H@yC">4</td><td class="cell-phmw">Machine Learning &amp; Monitoring</td><td class="cell-?FWL">Include a trusted monitoring system, either human or external oracle as an objective source of observation. (e.g. drone)</td></tr><tr id="926f6364-1e35-40d3-a100-fb3aded586d5"><td class="cell-yN&lt;v">5</td><td class="cell-title"><a href="https://www.notion.so/Use-graduated-sanctions-for-rule-violators-926f63641e3540d3a100fb3aded586d5">Use graduated sanctions for rule violators</a></td><td class="cell-H@yC">5</td><td class="cell-phmw">Graduated Stake for Rule Violations</td><td class="cell-?FWL">Whenever a rule violation is detected, a self enforcing contract could substract a fee from the deposit of the voter / participant</td></tr><tr id="63146a1d-66ba-4a56-8ab8-f0032e50bbf2"><td class="cell-yN&lt;v">6</td><td class="cell-title"><a href="https://www.notion.so/Provide-accessible-low-cost-means-for-dispute-resolution-63146a1d66ba4a568ab8f0032e50bbf2">Provide accessible, low-cost means for dispute resolution</a></td><td class="cell-H@yC">6</td><td class="cell-phmw">Challenge Response Game for Dispute Resolution</td><td class="cell-?FWL"></td></tr><tr id="9223a918-ddf5-48f1-bb19-a75fd2ef92c5"><td class="cell-yN&lt;v">7</td><td class="cell-title"><a href="https://www.notion.so/Make-sure-the-rule-making-rights-of-community-members-are-respected-by-outside-authorities-9223a918ddf548f1bb19a75fd2ef92c5">Make sure the rule-making rights of community members are respected by outside authorities</a></td><td class="cell-H@yC">7</td><td class="cell-phmw">Censorship Resistance through Decentralization</td><td class="cell-?FWL"></td></tr><tr id="dfb4e136-9717-49ca-b4a9-6ae04af50f9e"><td class="cell-yN&lt;v">8</td><td class="cell-title"><a href="https://www.notion.so/Build-responsibility-for-foverning-the-common-resource-in-nested-tiers-from-lowest-level-dfb4e136971749cab4a96ae04af50f9e">Build responsibility for foverning the common resource in nested tiers from lowest level</a></td><td class="cell-H@yC">8</td><td class="cell-phmw">Hierarchical Nested Contracts</td><td class="cell-?FWL">Smart Contract architectures can be complex structure and reflect a hierarchy in contracts</td></tr></tbody></table></div><h3 id="f4a0a8eb-aeb8-466a-9013-792db7709361" class=""><strong>Organizations on a centralized system - what are the constraints?</strong></h3><p id="0d3f0746-e176-4b94-93b6-80fd9c8f99fe" class="">There are many benefits commonly attributed to centralized systems - such as <strong>flexibility and speed</strong> in particular. However it is a matter of fact that centralized systems always require an intermediary, that can be just as reliable as the central authority behind it.</p><p id="38fcc170-61d1-47c2-a1b3-0486b9daa6fd" class="">Centralized organizations might work just fine in certain legislations but whenever organizations are at risk of manipulation and thus need to be tamper-proof and act independently from outside authorities, a DAO can help. However it should be kept in mind, that all the business rules and processes need to be tested, automated and combined to a set of Smart Contracts.</p><h3 id="7c407825-4f08-4435-a918-f88e8ca8a073" class=""><strong>Humans in the decentralized world</strong></h3><p id="be3b8bfd-ff21-4175-9ef9-9684df82bfaf" class="">During the shift from a centralized to a decentralized world, humans need to learn about new paradigms and also learn to give up old ones, such as accepting and relying on an economy solely based on central decisions and instead bring up respect and responsibility for a commonly owned system governed in a decentralized way. Establishing such an ecosystem thus requires additional education of individuals - because individual users in the ecosystem, as well as external influences would then be the only participants in the system that are not programmable and thus pose a natural threat to the system.</p><h2 id="91615551-3055-4f1d-8e95-e10e314a781e" class=""></h2><h2 id="c749a069-e029-4937-95de-d88cdc453248" class=""><strong>4.2 Interview Research</strong></h2><h3 id="0a5b2a1e-cac1-498d-a2be-08c68c001385" class="">4.2.1 Insights: Interviews with Blockchain experts</h3><ul id="ab625ed9-7f7a-4068-8a14-d83a71fa8652" class="bulleted-list"><li>“An ecosystem that <strong>utilizes user votes to improve the robot’s behaviour </strong>can be implemented using today’s <strong>database technology </strong>and does not require a blockchain”</li></ul><ul id="12469570-3d25-4efb-b07c-886ac107ed8c" class="bulleted-list"><li>“Managing an entire swarm of robots is probably more efficient without a slow Blockchain-based database”</li></ul><ul id="2cd3ea54-103f-47db-8b13-d5168285e22d" class="bulleted-list"><li>“<strong>Users could be rewarded without the Blockchain</strong>, while people / <strong>institutions who benefit from the beach as commodity pay </strong>for its further existence - there is no need for tokenization”</li></ul><ul id="a09d8ec6-2d30-4432-b99f-5282402d00fe" class="bulleted-list"><li>“Without closing every gap and niche cases through according oracle inputs that allow to run the DAO autonomously, you do not need a Blockchain - on the other hand if you have proper oracles as reliable input for smart contracts and a business model behind it , that would allow the system to work and prevents fraudulent actions in any case.</li></ul><ul id="dd6654cc-d6f6-42a9-ba8a-663c4054b9ce" class="bulleted-list"><li>“Of course it is very hard to establish trust, especially in remotely in physical environments like on the beach - but without oracle input, the Blockchain itself cannot solve that”</li></ul><h3 id="1a389438-f89c-46d6-951d-6bc8cc90636f" class="">4.2.2 Insights: Interviews with potential users</h3><ul id="190a8f8c-52d7-4432-aae4-998f70f16789" class="bulleted-list"><li>“<strong>I like the idea of getting rewarded </strong>while sitting at the beach or sitting at home”</li></ul><ul id="601e0269-e19f-4ce6-94ed-41ee80ee6bf8" class="bulleted-list"><li>“Is only the robot taking pictures? If also users can take a photo of the trash - why wouldn’t they remove the trash right away”</li></ul><ul id="6e49e03c-9710-4f91-b035-001c553d4462" class="bulleted-list"><li>“I don&#x27;t quite understand, <strong>who is going to pay </strong>for this”</li></ul><ul id="d4e2ba3d-847a-48fa-8a4c-96c84c9342a8" class="bulleted-list"><li>“I could imagine the cleaning robot may offer “reward services”, so instead of a digital incentive, the user gets rewarded in some physical sense or by recycled goods”</li></ul><ul id="77586040-b7b5-490d-b593-1806f2ec0ab8" class="bulleted-list"><li>“What is the thing about Blockchain? Can’t we just create a Website like Pickup10 with a validating community behind it?”</li></ul><h2 id="f6877e7d-6510-43c1-85a0-6c080e706699" class=""><strong>4.3 Problem Statements</strong></h2><ul id="a7390ef1-995e-4d7c-9b00-92966f6fae13" class="bulleted-list"><li>How do we justify Blockchain Technology for Project BB ?<ul id="81698776-ad4b-46fd-a9bb-bfbc30bc4b74" class="bulleted-list"><li>Why would consider a shared distributed database over a traditional relational database? And how distributed would that database really be?<ul id="7057b3a3-c9f3-40f7-8e18-af7a31c93ff8" class="bulleted-list"><li><strong>Our view: </strong>For the current project aim / test setup, a relational database would do the job, as the performance is better and changes in smart contracts (or “stored procedures” in relational databases) can be deployed more flexible, so it allows more testing</li></ul></li></ul><ul id="723c0efc-cb2f-4cb3-afff-715ff6dc91f8" class="bulleted-list"><li>Are there multiple writers (entities writing to the distributed database) required for the system to work?<ul id="945eba32-2e16-4373-857c-2455536d128e" class="bulleted-list"><li><strong>Our view: </strong>Not really in a small scale operation, where each participant is known and has according rights / permissions to write to the database. This is more likely required, once the system operates on a larger scale (e.g. a global robot swarm ecosystem )</li></ul></li></ul><ul id="f8c3d1af-32a5-40d8-b9fe-47c7c1f478b5" class="bulleted-list"><li>Are there trust problems between the individual entities? Would it be inconceivable to include a TTP (trusted third party) (because e.g. of higher costs, lack of finding a suitable intermediary?)<ul id="969dc301-df25-4a90-b599-79f74f9e90d2" class="bulleted-list"><li><strong>Our view: </strong>There might be trust problems in terms of verifying the validity of trash, but this trust could be given even without a blockchain by creating a community: e.g. using a 5G VR game, where a single user controls the beach bot in order to collect litter and the robot itself (by weighting), as well as the amount of 10 other users verify the provided trash evidence (automated video capture of e.g. 5 seconds), by selecting a frame of the video and highlight the visible trash. This approach would help to train the AI model in the initial stage but could be done without the blockchain, using infrastructure / software hosted by T-Mobile /Robo.foundation</li></ul></li></ul><ul id="49914022-b3b4-41ae-ab50-450ee049606c" class="bulleted-list"><li>Is Reconciliation (proper accounting) needed? / Who is going to fund the project on a long term basis?<ul id="0e806c6c-3afb-432d-afe9-b1f4bdae4f08" class="bulleted-list"><li><strong>Our view:</strong><strong> In the test phase, accounting would work manually . Once we figured out ways to generate value without a trusted third party (e.g. T-Mobile/Robo.foundation) we can implement this process in a smart contract</strong></li></ul></li></ul></li></ul><ul id="8d070e85-8a56-4bc5-96f5-8d3b0381b2ff" class="bulleted-list"><li>How to create a legal framework for a DAO like Project BB<ul id="4109b666-a98d-4595-8547-11a4fb1258ba" class="bulleted-list"><li>Are there any legal restrictions in NL, preventing such a system to run?<ul id="3d87d390-dfce-47c4-a3db-2e469e643a3f" class="bulleted-list"><li><strong>Our view:</strong> The legal liability is unclear</li></ul></li></ul><ul id="7b7d6354-8cf4-4f5b-af38-d02d5a839e5a" class="bulleted-list"><li>Who is liable for a robot causing damage?<ul id="dd9aafcf-142b-4743-b550-d265d84e0d23" class="bulleted-list"><li><strong>Our view:</strong></li></ul></li></ul></li></ul><ul id="90e87030-4acf-42b6-b6f4-8320a436f6c2" class="bulleted-list"><li>What will be the user’s role, once the AI is trained enough to detect beach litter on its own?</li></ul><h1 id="43456dc6-a421-4bf0-942c-d86cb10c309b" class=""><strong>5.0 Implementation / Concept</strong></h1><p id="62089ad3-0a04-4cd9-b705-66c767447d7a" class="">The realization of Project BB as (<strong>self)- sustaining ecosystem with engaged community</strong> could be done in several ways. In the following section we will describe a possible implementation in three incremental phases.</p><h2 id="6e818ce3-df76-4654-990e-6edd29d2a613" class=""><strong>5.1 Phase 1 - 5G Test bed with Blockchain-inspired validation</strong></h2><p id="2e5fd280-a7a2-4cf0-ab5f-9f8876dcd435" class="">During the first test phase, Project BB will be running in a test bed. Users can sign up for the ecosystem using their phone number. After a mandatory identity check or background check of the person (T-Mobile contract), the person would be able to participate in the system.</p><figure id="d1192fc9-ad54-4f5b-93e4-b1bcb9e58dfc" class="image"><a href="https://lh3.googleusercontent.com/kIdYqfXq83YPWFpFeW_XQH2W2t08D97FOdEVXkUq-1eFs7P18XROefY7ZzPPaACpFDiLo6wljBVvAL4WQC47tKKYcGtNckf0DcznNT8FIPge9b6wufLGC1g_P_CHdb7Do1zq1i1c"><img src="https://lh3.googleusercontent.com/kIdYqfXq83YPWFpFeW_XQH2W2t08D97FOdEVXkUq-1eFs7P18XROefY7ZzPPaACpFDiLo6wljBVvAL4WQC47tKKYcGtNckf0DcznNT8FIPge9b6wufLGC1g_P_CHdb7Do1zq1i1c"/></a></figure><p id="6627942b-6e3b-49eb-94d6-8b8e0aed7f83" class=""><strong>Caption 1 : </strong>Initial selection, beach selection and sms verification</p><h3 id="15bedd59-f4ca-4e8f-ad9b-e381cad2cef6" class="">5.1.1 Selection of users (controllers &amp; validators)</h3><p id="ff984a1c-948a-49cf-8253-cccdea02aed1" class="">Whenever the robot is available, users that are logged into high-speed network cells (LTE+ or higher), a random selection of users gets notified for participation. After requesting everyone to check individual connection (speed and latency)  using an online frontend, the group will be separated into one “controller” (user with the best network latency) and  a variable amount  (5 or more) of “validators”.</p><figure id="21f8cfbe-0532-4496-8ac9-879f858708ca" class="image"><a href="https://lh6.googleusercontent.com/Kocp7zOsMBtdwr1tLv-aBz3H1E60d6akGhW4vCaw5GrxPAG-831YljOEOQYVDErdWrj-OcupConlkIkA0FtE8AMXo4D1MOfOiB7OOsFiGKltC_jOsIjnkxPO-MQxx8C6yQa6ZdmM"><img src="https://lh6.googleusercontent.com/Kocp7zOsMBtdwr1tLv-aBz3H1E60d6akGhW4vCaw5GrxPAG-831YljOEOQYVDErdWrj-OcupConlkIkA0FtE8AMXo4D1MOfOiB7OOsFiGKltC_jOsIjnkxPO-MQxx8C6yQa6ZdmM"/></a></figure><p id="9c9a3030-b7be-457a-89bc-49444eff0367" class=""><strong>Caption 2: </strong>Announcement of upcoming challenge + Speed test<strong> </strong>determining the fastest node to participate as “controller”</p><h3 id="424af0f8-76e5-418b-a96c-84c6a98eede5" class="">5.1.2 Security measures</h3><p id="ea94142b-7894-4b7e-8673-3c97597706ce" class="">As a security measure, <strong>users in the directly surrounding cells would be excluded</strong> from the selection process, as they could physically interfere with the robot’s interaction or even intentionally place trash in front of the robot.</p><h3 id="ab5df247-8ad7-451b-bbec-917c98ff2dad" class="">5.1.3 Different users, different roles</h3><p id="94965377-82a5-4836-9053-bdb73321c2f5" class="">Once the minimum amount of participants is reached, the session starts.  The controlling user would then be guided to use a web-app to <strong>control the robot and pick up litter from the ground</strong>. Whenever a user drops out, the next fastest node would be notified.</p><h3 id="89a9f3c4-8c00-4453-ab89-e7cca597497d" class="">5.1.4 An interactive VR gaming experience</h3><p id="b51fb340-5213-41a9-8b54-23c875d7be36" class="">Sometimes there is gamification needed to spark the audience for an idea.</p><p id="61fff9bd-1ef8-4062-afc6-6c305d113f4b" class="">The application frontend could either be implemented as downloadable application or <strong>WebGL mobile web-app</strong> and feature a <strong>VR mode</strong>.</p><p id="896a9745-9ed0-4a7d-874c-c877eef46772" class="">While the controlling user would collect waste from the beach, validating users could either <strong>join the live stream</strong>, earn points in a quiz about the environment and emerging technologies or get notified, once it’s their turn.</p><p id="d75ab73f-e9d1-423d-985b-5f077c4b59fa" class="">Whenever the bot detects increased weight in the embedded container, <strong>5 seconds of video evidence is stored.</strong> Security measures like marking attempts matching the exact weight of one shovel of pure sand as invalid could be implemented.</p><figure id="83a5c21a-56d5-4757-8482-db416ab7485d" class="image"><a href="https://lh5.googleusercontent.com/qv0dHDPr5QN3ItQYLv-mJerZC18dOIzQzgxEo4Kf227_5HJ0zDCf208pA8zS5q6LLxR9qU2jgPdqEWOci8ebnONMNmLMOpgj-Zinwrxg29Xwc6pdBJOzIWcjkCO1FoSVD45LhHVF"><img src="https://lh5.googleusercontent.com/qv0dHDPr5QN3ItQYLv-mJerZC18dOIzQzgxEo4Kf227_5HJ0zDCf208pA8zS5q6LLxR9qU2jgPdqEWOci8ebnONMNmLMOpgj-Zinwrxg29Xwc6pdBJOzIWcjkCO1FoSVD45LhHVF"/></a></figure><p id="68f012d4-3155-4765-a5fb-8b0a4cb2e40f" class=""><strong>Caption 3: </strong>First person robot view (“controller) and validator view (stream live / quiz / notify)</p><h3 id="eaf33ae2-3470-47b8-9987-d346f0059568" class="">5.1.5 Validation Process &amp; AI model</h3><p id="4a44c43b-9c8e-4323-a984-2950e3201e00" class="">In the next step, after a limit of 5 minutes time limit was reached, all video clips would be ready to be reviewed by the validating participants. They would <strong>individually be able to select a frame</strong>, where they sense the litter is <strong>best visible</strong> or decline if they did not see any litter. They could also <strong>tag the type of litter</strong> (e.g. cigarette butt, plastic waste, bottle).</p><p id="50993c21-b0be-4507-a769-e62819fa010d" class="">The <strong>variety of frames as well as tags</strong> provided by validating users will <strong>contribute to an enriched AI model</strong> featuring objects from <strong>different frames and thus perspectives</strong> .</p><h3 id="725a3067-9392-4beb-994d-c83e8227cb28" class="">5.1.6 Incentives &amp; Rewards</h3><p id="444496bd-08e7-46df-9314-70e363076b99" class="">In order to create a success case, the <strong>incentivization of users would be inevitable</strong> and could be done through the <strong>gamification itself</strong>, but also through a scoring system, where the best users of the month could participate in a raffle with either digital rewards such as free mobile data or physical gifts branded by the central party behind the system.</p><h2 id="aa92297a-1dcf-4bd2-8e20-33058aee960b" class=""><strong>5.2 Future vision: Phase 2 - Blockchain-based MVP</strong></h2><p id="157fb333-5a4c-448e-84bb-263f891ae220" class="">Once the user-based training of the AI model including the most common types of waste is done sufficiently, the creation of a decentralized organization can take place.</p><h3 id="e574336e-349a-4687-8ba6-6524722ca3b8" class="">5.2.1 Blockchain protocol</h3><p id="59144f28-75dc-4f4c-9db5-cb7137525559" class="">For the first MVP (minimum viable product) we recommend building the Ethereum network, as it allows the <strong>implementation of Smart Contracts</strong> and connection with dApps (decentralized Apps).</p><p id="fd5ebef3-a2cc-4a7d-aec0-124aa1075456" class="">Besides the mainchain that would be based on a Proof-of-Work consensus we suggest building a 2nd Layer Blockchain to improve transaction speeds and ensure scalability in the future.</p><p id="602de784-5831-4f2e-986b-58aeb44a0c83" class="">One amongst the biggest challenges in integrating an IoT infrastructure to a blockchain is scalability as <strong>every new device becomes a peer in the network</strong>. The optimal network thus would see no difference in the increasing amount of devices and resources to manage. This is why we propose a 2nd layer solution. While the first layer algorithm can utilized as security and dispute-layer, the second layer and connected side chains could act as coordination layer for real time consensus between the robots.</p><h3 id="ed1b0ca4-7ff7-4542-85b4-41d3776a2201" class="">5.2.2 AI on the Blockchain</h3><p id="e61cd968-6075-4149-9041-2991fd89751a" class="">Every peer in the robot swarm might stumble over <strong>different types of beach litter.</strong> This data can be used to <strong>further train the collective AI model</strong> and improve overall productivity. Furthermore  <strong>the organization could trade the gathered data on a Blockchain-based marketplace such as SingularityNET</strong> and vice versa profit from a global pool of algorithms, machine learning tools and data sets.</p><h3 id="bb6dcf85-af7b-499a-b34d-23af5e94aed2" class="">5.2.3 Smart Contract model</h3><p id="33571bf5-64c6-48a7-8b3c-b2817beaad25" class="">For a more efficient development process, we suggest a DFO (Decentralized Flexible Organization) that allows collective governance and due to its architecture is not dependent on hard forks with every single change. In a DFOs, code changes, additions and deletions could be voted and implemented by the community.</p><h3 id="56c993c3-a375-47a1-80a8-8d7d155f2864" class="">5.2.4 Governance in a DAO / DFO</h3><p id="7fe8943d-b6ca-451d-9f3a-613d8de508ff" class="">We want to highlight that an autonomous organization itself does not magically turn the robot into an autonomous vehicle - there needs to be a legal foundation and a set of safety measures fulfilled for the robots themselves, before building the framework of run a swarm of robots as decentralized autonomous organization.</p><p id="aec761e8-f2a4-425f-9364-5e65f36117b1" class="">As creating a fully autonomous organization still carries unanswered questions, as a good way of starting a community-governed project we suggest Aragon, an Ethereum based dApp, that allows creating an own organization in a few minutes and thereby offers interesting templates for user involvement such as voting based on reputation, stake or sole membership. Furthermore it allows a way of crowdfunding for DAOs, that after successful funding releases an according amount of tokens to the participants and serve them with voting rights so they can actively participate in the community.</p><h3 id="9fbff0fa-d4ac-41f7-9902-97f40dda0f6e" class="">5.2.5 Decentralized Application</h3><p id="7e3fafe1-3643-49ae-9dbc-07dbd2cf07ce" class="">While current dApps are usually still centrally hosted and thus <strong>traceable and vulnerable to attacks</strong>, there are ways to store an application in a distributed network or even in different NFTs (non-fungible tokens) pieces of information in the blockchain using the “ROBE” protocol . This approach provides a fully decentralized way to host an application and enables users to access always the newest version with the relevant information present (imagine a set of floppy disks that summarizes data from different volumes).</p><p id="1a074fc7-1a81-47dc-a151-85e69ac80e1d" class="">There could be different dApps / Micro services included for a variety of stakeholders which we explain further in the next section.</p><h3 id="3773199d-3dff-4199-9327-846eb378800a" class="">5.2.6 A circular economy on the beach - Tokens, value chain and participants in the system</h3><h3 id="089fd1df-4f6e-4e74-918d-6625600975b2" class=""><strong>TrashCoin - A token model for sustainable spending</strong></h3><p id="c402154e-d2c4-4c0e-9dd0-f9bcc59ea7e9" class="">With TrashCoin, we want to propose token model and fungible asset, that powers the whole ecosystem and paves the foundation for autonomous agents to fulfill their basic needs as robots and create a way for participants to contribute in the system or convert their hard earned coins in real products.</p><h3 id="4371f000-d573-4c05-9be1-903d5aa63b7d" class=""><strong>Vendors / local businesses</strong></h3><p id="1a111c71-7980-4eed-ab4a-47996be4eba6" class="">Just as proposed in other commons-based ecosystems, we suggest that parties who profit most from the beach environment after all need to pay for the robots operation. We found that the most frequented areas on the beach are surrounded by local businesses / beach pavillions. Those businesses follow a clear objective: Profit from the beach and its customers.</p><p id="e0959374-5827-4002-ac62-b863d786571d" class="">But why would they pay for a beach cleaning robot? We detected a <strong>clear incentive here</strong>:</p><p id="9397905f-f195-4415-9fad-4db421b95df0" class="">Besides their hypothetical interest in a better future, businesses surrounded by a <strong>clean beach would attract more customers</strong>. Thus we could attribute the beach a monetary value, that is increased whenever it is in clean state.</p><p id="194f22ef-6eed-418a-977d-771f36bb5ae9" class="">The businesses exposure could be increased by Installing badge on the local businesses (“TrashCoin - eco friendly restaurant”) and listing the pavillion with according badge in an app or micro service visible to the user.</p><p id="b363dbce-c6ab-49ba-8277-192f8d402286" class="">Furthermore <strong>TrashCoin users could also “pay” in participating businesses</strong> using their earned tokens. Users would get a discount in fiat currency on their order in the local business while a part of the amount would be transferred back to the ecosystem. The paid discount to the user could basically be seen as <strong>“customer acquisition cost / ad spend”</strong> - Imagine the <strong>BB.Bot acting as affiliate</strong> that is able to generate leads for local businesses on the beach and is therefore rewarded.</p><p id="0c08b10b-b573-4b11-862a-b9ab17ec3229" class="">In the next step, robots could be used to deliver goods from local businesses and simultaneously keep the beach clean.</p><p id="075f5d07-a201-4962-b253-b5fd7209e9dc" class=""><strong>Potential dApps / Micro Services for Business owners</strong></p><ul id="aa20bc1d-67d9-48d9-b23c-1efbb5069214" class="bulleted-list"><li>Manage their contribution</li></ul><ul id="795a71d7-f644-4332-ac76-279e98637adf" class="bulleted-list"><li>Track the flow of attracted customers</li></ul><h3 id="fdb275e0-8af5-48b7-8b11-a29be43c4d24" class=""><strong>Robot swarm</strong></h3><p id="216ffe04-6a49-4447-b331-e1d11f076ce5" class="">To continue with yet another integral part of the system: The <strong>autonomous robots need to pay external stakeholders</strong> such as energy suppliers, insurance companies, scheduled or unscheduled maintenance and eventually the <strong>production of new robots for the swarm</strong>. Depending on the demand of the system and interests of other stakeholders they could decide for different options</p><p id="f4a9b190-a34e-4b37-82c6-ccfbaa2f8502" class="">So could we now acquire new local businesses for the ProjectBB ecosystem through intentionally placing beach litter in front of their doorstep? Well this strategy would probably be a better fit for a blockchain-based protection racket scheme and there should be set boundaries for the AI in any case.</p><p id="a868d8d4-19b7-4d82-b075-819990d77d6c" class="">However the logic should be clear here: <strong>Beach cleaning through robot swarms would need to be controlled and prioritized</strong> in different ways:</p><ul id="68b894a1-ee2f-490a-bc73-49b6338c5fd4" class="bulleted-list"><li>Are local business paying their contribution?</li></ul><ul id="0b986ad1-2299-42f1-a74e-13c13b0458dd" class="bulleted-list"><li>Where on the beach did users report their locations / crowded places</li></ul><ul id="d77811c1-198b-4a61-80bd-f70fdfa32115" class="bulleted-list"><li>Is there actual demand?</li></ul><ul id="a97c714b-1534-4454-8ef5-94d69d36a768" class="bulleted-list"><li>How will the demand develop in the next days / weeks / months?</li></ul><ul id="8e7c6389-db62-4006-8209-b2cd26f20eb6" class="bulleted-list"><li>Do we need more robots?</li></ul><p id="e6d9bf8e-4f8b-43df-bc16-144453de3cb3" class="">In concluding words: The intensity of cleaning shifts and further investments would be dependant on the daily contribution through the closest business(es)</p><h3 id="91b23af8-4da2-4294-b234-871f774bcb35" class=""><strong>Beach visitors</strong></h3><p id="b78f3d46-2a99-40b4-b883-ce2afb5e4a64" class="">Users can earn TrashCoins by <strong>providing location data</strong> to the system (possibly crowded and trash prone areas that are then <strong>prioritized by the robots)</strong> and educate themselves on topics such as environmental issues, the new commons and therefore earn TrashCoins.</p><p id="f7d28e4f-a1b2-4742-b0c0-334cc2ec4d34" class="">Furthermore, beach visitors <strong>can interact with the beach bot and feed him with litter</strong>. Whenever the bot is fed by trash other than sea shells or sand, the user can earn a reward by scanning the QR code displayed on the robots screen.</p><p id="3884e333-4691-4a19-8f55-dc422eb84d4d" class="">The system would however include a reward limit. This limit could be set e.g. per unique user, per day, decreasing by half the amount with every transaction. In any case the paid reward could be a fractional amount based on the average contribution in that area.</p><p id="30a42c3e-c744-4538-be02-cde3d6ff7fe3" class="">TrashCoins could then be exchanged in whatever business that needs to pay the robot ecosystem (e.g. Coffee pavilion close to the beach) so users / customers get a discount (further process described above).</p><p id="c1dac58a-ec82-4b35-a975-3e576a642b52" class=""><strong>Possible dApps / Micro services for Beach visitors:</strong></p><ul id="ce4a1feb-d7df-4b0a-9e4d-7d3a74538781" class="bulleted-list"><li>Location (provide location, help the robots in prioritization and receive TrashCoins)</li></ul><ul id="24eb7765-22f4-4ecf-95c4-e71fed1c010a" class="bulleted-list"><li>QR Validator (feed trash and receive TrashCoins for it)</li></ul><ul id="119616ee-c38d-4784-ade4-7119b2f18bfa" class="bulleted-list"><li>Beach guide including map with list of participating local businesses</li></ul><h3 id="78aba36e-f3fb-48a4-bfa9-bd6b83201d40" class=""><strong>Investors</strong></h3><p id="8d3339f7-1ab9-49e8-8694-a72da0490d97" class="">Investors or participants of a crowdfunding campaign could track the efficiency of their co-funded robot swarm and get further investment options. For instance there could be crowdfunding options for more robots, whenever there is a high demand reported in the system. Further things to think of are investments in new markets or the option to withdraw earnings from the equity.</p><h3 id="84e9f8a3-d53d-4767-a9ad-930b2776adb1" class=""><strong>Maintenance</strong></h3><p id="3ccaf126-a3f3-40dc-8995-d249e843b6a7" class=""><strong>Possible dApps / Micro services for Maintenance personnel:</strong></p><ul id="b9fa94b0-658b-4956-b83b-f663f7c8b44a" class="bulleted-list"><li>Maintenance tools for trusted external provider (Show last location of robot, possibly confirmed by other observing robots)</li></ul><h2 id="ff11d89d-d7f9-424d-b43f-00c6d1f3c4d3" class=""><strong>5.3 Future vision: Phase 3 - Global roll-out</strong></h2><p id="e20db68b-9963-42d3-b583-4e2ca2ce6b7b" class="">During our proposed Phase 2 we found that in theory, Project.BB as local project in The Netherlands could result in a success case.</p><p id="33fc9356-07fb-4da5-a3c4-7f719eaed349" class="">Decentralization is described as “the process by which the activities of an organization, particularly those regarding planning and decision making, are distributed or delegated away from a central, authoritative <strong>location</strong> or group.”</p><p id="5d7ea685-0d90-42a5-a57f-9991a3943a40" class="">As the long term objective should be to deliver a  <strong>proof of concept for real decentralized project</strong>, we see the global expansion as the only consequence.</p><p id="0d3785d3-0389-4f54-b379-ba706e71d238" class="">As this vision however exceeds the scope we will cover only two possible use cases here for further discussion</p><p id="76c14a98-f1a7-4237-97da-76fe81980f57" class="">As an opportunity for global roll-out we see the option to <strong>lease robots to other markets during times of low demand</strong>. This low demand lays in the <strong>nature of seasonality</strong> in beach tourism in the Netherlands but <strong>does not affect every country</strong>.</p><p id="908b9345-87ee-473f-815e-9f6089d135ce" class="">During these <strong>low-demand periods</strong>, <strong>developing countries with low payment / fundraising abilities</strong> could then <strong>create a new local community</strong> and <strong>lease a flexible amount of beach cleaning robots</strong>. The transfer would include fees for logistics and a security deposit and take place on the main chain (security).</p><p id="9d98dbeb-51bb-431b-9fd8-4a3a35451440" class="">Present in the new market, the robots could now be enriched by new data and detect new types of litter.</p><p id="2caaebc2-5ce1-4876-8c16-ed7dcfc16c43" class="">But how else could the robots be <strong>self-sustaining in other countries</strong>, when local businesses are not present or cash only - <strong>When the next landfill / waste site is far away</strong> and thus carries a logistical nightmare ? Well, the solution could be <strong>“on-site recycling”</strong>: The robot swarm could buy a recycling algorithm from SingularityNET,  pre-cluster trash in different compartments, and <strong>hire employees to build toys, bracelets from sea shells</strong> and sell them on the local market for fiat currency. However if the robot hired children: Would this be considered as child labour or could a robot be seen as interactive toy and thus playmate in that context? Or can such produce in any case be considered as non-profit good?</p><p id="7ed52310-5cb4-41ba-b296-98f63dfab6fc" class="">We believe that the collected ideas give us a great foundation to question and rethink existing paradigms and eventually pave the way towards a new world where autonomous agents do not take our jobs but rather contribute to a “new commons”, a collectively governed smart circular economy that includes local businesses and humans in ways that never used to be there before.</p><h1 id="5c11061d-d282-4072-a319-6e97c7575f13" class=""><strong>6.0 Sources</strong></h1><p id="b6ce7c6c-7189-4551-93f6-308e8bb1ef19" class="">“A European Strategy for Plastics in a Circular Economy”</p><p id="7386669a-c8c4-4ee7-9aa2-2a086a12f306" class=""><a href="https://ec.europa.eu/environment/circular-economy/pdf/plastics-strategy-brochure.pdf">https://ec.europa.eu/environment/circular-economy/pdf/plastics-strategy-brochure.pdf</a></p><p id="21b7c794-9970-432e-bd53-06c477905b3f" class="">“Aragon -  Organizations of the future run on Aragon”</p><p id="a5cd6f0e-7914-482b-ad43-fc5c463ad7ed" class=""><a href="https://aragon.org/">https://aragon.org</a></p><p id="06110286-a194-42bb-abce-fbdba3812c6b" class="">“Bootstrapping A Decentralized Autonomous Corporation: Part I, Vitalik Buterin”</p><p id="da9f90fe-2d47-4c96-b25f-2e86751adf5b" class=""><a href="https://bitcoinmagazine.com/articles/bootstrapping-a-decentralized-autonomous-corporation-part-i-1379644274">https://bitcoinmagazine.com/articles/bootstrapping-a-decentralized-autonomous-corporation-part-i-1379644274</a></p><p id="8cea0e78-1d55-4a95-91cb-776fa6180a76" class="">“Decentralised Autonomous Co-Operative’s (DAC) and The Rise Of The New ‘Commons’ <a href="https://medium.com/coinmonks/decentralised-autonomous-co-operatives-dac-and-the-rise-of-the-new-commons-721f5e1a7d3">https://medium.com/coinmonks/decentralised-autonomous-co-operatives-dac-and-the-rise-of-the-new-commons-721f5e1a7d3</a></p><p id="37192e81-abc4-4621-9d1d-9a8b707849f1" class="">“Decentralized Autonomous Organization - The Future of Management for Agriculture Sector”</p><p id="23440c59-9cd8-45b9-b00f-e89707284e79" class=""><a href="https://hackernoon.com/decentralized-autonomous-organization-the-future-of-management-f61l830nv">https://hackernoon.com/decentralized-autonomous-organization-the-future-of-management-f61l830nv</a></p><p id="823213fc-8843-4ddd-a9d0-998cc5e763e4" class="">“Decentralized Sustainability Beyond the Tragedy of the Commons with Smart Contracts + AI”</p><p id="610e4d72-b246-413f-8e47-e7ad095850ea" class=""><a href="https://medium.com/@daviddao/decentralized-sustainability-9a53223d3001">https://medium.com/@daviddao/decentralized-sustainability-9a53223d3001</a></p><p id="9a29f2b5-9a3f-4e66-865a-d1129ac6248b" class="">“Fraunhofer demonstrates 5G virtual reality video streaming software” <a href="https://venturebeat.com/2019/04/17/fraunhofer-demonstrates-5g-virtual-reality-video-streaming-software/">https://venturebeat.com/2019/04/17/fraunhofer-demonstrates-5g-virtual-reality-video-streaming-software/</a></p><p id="fb4fad45-10e9-43c8-aeb9-aa517b7ef1ac" class="">“Introducing the Decentralized Flexible Organization”</p><p id="92a7f2c4-e704-4407-9308-52c47868653c" class=""><a href="https://medium.com/risepic/introducing-the-decentralized-flexible-organization-8c9e6fbab6d4">https://medium.com/risepic/introducing-the-decentralized-flexible-organization-8c9e6fbab6d4</a></p><p id="0f374981-c857-4332-bb8b-1643c407d2b7" class="">Kypriotaki et al., 2015</p><p id="9980aeba-b522-410b-8da2-7ce820e5d200" class="">“Object Tracking in Deep Learning”</p><p id="5e53d408-4618-4b56-b201-832efdde20f4" class=""><a href="https://missinglink.ai/guides/computer-vision/object-tracking-deep-learning/">https://missinglink.ai/guides/computer-vision/object-tracking-deep-learning/</a></p><p id="8377890c-5772-42e4-bee2-c2835a39a22e" class="">“Micro-plastic pollution of unspoiled beaches around Rongjiang River estuary” <a href="https://www.researchgate.net/publication/317207141_Micro-plastic_pollution_of_unspoiled_beaches_around_Rongjiang_River_estuary">https://www.researchgate.net/publication/317207141_Micro-plastic_pollution_of_unspoiled_beaches_around_Rongjiang_River_estuary</a></p><p id="2adcc120-809d-42b8-9f99-fd54b2137d0d" class="">“ROBE - Open Source protocol”  <a href="https://github.com/b-u-i-d-l/ROBE">https://github.com/b-u-i-d-l/ROBE</a></p><p id="3efbf2e5-ff0c-44ed-97dd-479614325b28" class="">“Rethinking Blockchain How to design the future of the commons.”</p><p id="eead047f-3615-4d98-891d-f35479e3e626" class=""><a href="https://www.betterplace-lab.org/en/rethinking-blockchain-how-to-design-the-future-of-the-commons">https://www.betterplace-lab.org/en/rethinking-blockchain-how-to-design-the-future-of-the-commons</a></p><p id="13b86081-6eef-4ed3-a299-c4434a2737a6" class="">“Ruim 2.000 kilo minder zwerfafval de zee in” - “More than 2,000 kilos less litter into the sea”</p><p id="80014396-83a3-4a81-b2fe-15f97908d74e" class=""><a href="https://haagsehanden.nl/ruim-2-000-kilo-minder-zwerfafval-de-zee-in-3ae60ac2a687">https://haagsehanden.nl/ruim-2-000-kilo-minder-zwerfafval-de-zee-in-3ae60ac2a687</a></p><p id="01fc5116-f4e2-4de7-951e-07fc1e7da33c" class="">“Social and economic forms of beach managing in Croatia”</p><p id="bd7a3ad7-25c4-49ad-b824-8b20eb52ffa1" class=""><a href="https://www.researchgate.net/publication/271439756_Social_and_economic_forms_of_beach_managing_in_Croatia">https://www.researchgate.net/publication/271439756_Social_and_economic_forms_of_beach_managing_in_Croatia</a></p><p id="aa8bb5b0-88f3-4aac-9bd2-79d4ab694709" class="">“Tired Of Centralized Power? DAOs May Be The Solution”</p><p id="353d0cd8-a9de-4c94-9782-53bb0cd173e6" class=""><a href="https://medium.com/datadriveninvestor/tired-of-centralized-power-daos-may-be-the-solution-da8f2ac0f037">https://medium.com/datadriveninvestor/tired-of-centralized-power-daos-may-be-the-solution-da8f2ac0f037</a></p><p id="e0a6137f-c9c7-4c95-996b-182d0037eb14" class="">“The Tragedy of the Commons”, Garrett Hardin, 1968</p><p id="03aa9c50-3fe8-4e5e-9626-2694c818ee00" class=""><a href="https://science.sciencemag.org/content/162/3859/1243.full">https://science.sciencemag.org/content/162/3859/1243.full</a></p><p id="5f52ef59-3234-4729-be3b-22f0035fa448" class="">Whitepaper: “terra0 Can an augmented forest own and utilise itself?”</p><p id="aaabb3b6-0819-4379-8a8d-8afa5db2b57e" class=""><a href="https://terra0.org/assets/pdf/terra0_white_paper_2016.pdf">https://terra0.org/assets/pdf/terra0_white_paper_2016.pdf</a></p></div></article></body></html>
