@@ -739,7 +739,8 @@ padding: 5px 20px;
 
 
 .project-description {
-  padding-bottom: 10px;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
   border-bottom: grey;
   border-bottom-style: dashed;
   border-bottom-width: medium;
