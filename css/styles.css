@@ -1036,6 +1036,12 @@ div#social {
   justify-content: center;
 
 }
+
+.cta.hor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .button.social {
 
   padding: 10px 15px;
