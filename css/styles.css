@@ -225,7 +225,7 @@ img {
 }
 header, 
 footer, .cta-bottom {
-background-color: white;
+background-color: var(--basegrey);
 
 color: #000000;
 }
@@ -270,7 +270,7 @@ footer .content-wrap {
   width: auto;
   align-self: center;
   padding: 5px 20px;
-  background: var(--basegrey);
+  background: white;
   margin: 10px;
   border-radius: 7px;
   flex-direction: column;
