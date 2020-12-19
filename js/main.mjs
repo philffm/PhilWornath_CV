@@ -73,6 +73,8 @@ async function initAsync() {
   waitingFor(100, 5, '#activity-slot-handle', slotBtn );
   waitingFor(100, 5, '#newproject',  newProjectBtn);
   waitingFor(100, 5, '#share',  shareBtn);
+  waitingFor(100, 5, '#hackathons',  LoadJS('https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'));
+
 
 if(docPath.includes('project' || 'portfolio')){
   fetchProject('projects.json',projectdata);
