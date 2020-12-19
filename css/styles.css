@@ -554,7 +554,7 @@ border-bottom:10px solid #d67bba;
 /* Hackathons
 ------------------------------------*/
 #hackathons{
-    background: white;
+    /* background: white; */
 
 }
 
@@ -584,8 +584,8 @@ border-bottom:10px solid #d67bba;
   border-radius: .5rem;
   margin: 4rem 2rem;
 
-  box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.25);
-  /* border: 4px solid black; */
+  box-shadow: 0px 8px 0px var(--darkgrey);
+    /* border: 4px solid black; */
 }
 
   .hackathon .properties {
@@ -827,23 +827,23 @@ padding-top: 65px;
 }
 
 .project-category {
-  background: var(--darkgrey);
   float: right;
   padding: 10px;
-  font-size: .8em;  
-  color: white;
+  font-size: 1em;
+  color: black;
   text-justify: auto;
   margin: 0 0 0 10px;
   border-radius: .3em;
+  border: 3px solid black;
 }
 
 .project-category::before {
   content: "Category: ";
   font-weight: bold;
+  display: none;
 }
 
 .portfolio-info {
-    margin-top: ;
     padding: 0 10px;
 }
 
@@ -869,8 +869,8 @@ float: right;
 ------------------------------------*/
 
 .button {
-background: var(--nightgrey);
-color: #fff;
+  background: white;
+  color: black;
 cursor: pointer;
 display: inline-block;
 font-size: 20px;
@@ -886,6 +886,12 @@ margin: 10px 5px;
 transition: all .3s ease;
 border: 3px solid black;
 
+}
+
+.button.cta{
+  background: var(--nightgrey);
+  color: #fff;
+  border: 3px solid var(--nightgrey);
 
 }
 
@@ -921,26 +927,46 @@ a#thuas:active{
 
 .button.social {
 font-size: 30px;
-padding: 7px 30px;
+padding: 10px 30px;
 
 margin: 1rem .5rem;}
 
 .button:hover {
-background:var(--cyan);
-color: #FFFFFF;
 transition: all .3s ease;
 
+background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+color: black;
 box-shadow: 0px 7px 0px rgba(0,0,0,0.8);
 
 }
-.button:active {
-  transition: all .1s ease;
 
-  background: black;
-  transform: translate(0px,7px);
-  box-shadow: none;
+
+.button.cta:hover {
+  background:var(--cyan);
+  color: #FFFFFF; 
+  box-shadow: 0px 7px 0px rgba(0,0,0,0.8);
 
   }
+  
+
+
+.button.cta:active, .button:active {
+  transition: all .1s ease;
+  transform: translate(0px,7px);
+  box-shadow: none;
+  color: black;
+  background: white;
+  }
+  .button.cta:active {
+    transition: all .1s ease;
+    transform: translate(0px,7px);
+    box-shadow: none;
+    background: black;
+    color: white;
+
+    }
+  
+
 
 .buttonwrap {
   display: flex;
