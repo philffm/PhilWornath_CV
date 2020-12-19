@@ -15,15 +15,15 @@
 .property-row.property-row-person {
     display: none;
   }
+
+
   .property-row.property-row-text, .property-row.property-row-date {
     display: none;
   }
   .property-row.property-row-url {
     display: none;
   }
-  .property-row.property-row-select {
-    display: none;
-  }
+
   .property-row.property-row-select {
     display: none;
   }
@@ -52,6 +52,12 @@ align-items: center;
     display: flex;
     border: none;
   }
+
+  .properties tr {
+    display: flex;
+    flex-direction: column;
+}
+  
 
   .properties td, .properties th {
     border: none;
@@ -273,7 +279,7 @@ ol > li {
 
 .selected-value {
 	display: inline-block;
-	padding: 0 0.5em;
+	padding: 5px 15px;
 	background: rgba(206, 205, 202, 0.5);
 	border-radius: 3px;
 	margin-right: 0.5em;
