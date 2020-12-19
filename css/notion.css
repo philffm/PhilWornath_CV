@@ -1,4 +1,17 @@
 /* Custom stuff */
+
+
+.project-content header {
+	display: flex;
+	padding: 10px;
+	border: none;
+	margin: 15px 0px;
+	background: none;
+	border-left: 10px solid var(--cyanlight);
+	border-radius: 0;
+  }
+
+
 .property-row.property-row-person {
     display: none;
   }
