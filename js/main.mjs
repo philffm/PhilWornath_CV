@@ -427,7 +427,7 @@ async function loadHackathons(){
     let data = dataSource[i];
     document.querySelector('#temp_item').after(newNode);
     newNode.id = data.slug;
-    newNode.querySelector('.time').innerHTML=data.period;
+    newNode.querySelector('.date').innerHTML=data.period;
     newNode.querySelector('.job').innerHTML=data.job[0];
     newNode.querySelector('.logo img').src= path +  data.slug  + '/'+ data.logo;
     newNode.querySelector('.challenge h3').innerText= data.title;

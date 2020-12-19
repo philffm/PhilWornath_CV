@@ -593,11 +593,14 @@ border-bottom:10px solid #d67bba;
 }
 
   .hackathon .properties {
-    display: flex;
-    align-items: center;
-    margin-top: auto;
-        margin: 5px  ;
-      /* align-self: center; */
+
+      display: flex;
+align-items: center;
+margin-top: auto;
+margin: 10px;
+width: max-content;
+border-radius: 3px;
+overflow: hidden;
 }
 
 .hackathon .desc{
@@ -610,7 +613,8 @@ border-bottom:10px solid #d67bba;
   height: 225px;
 }
 .hackathon .logo {
-  max-height: 100px;
+  
+  height: 85px;
 align-items: center;
 display: flex;
 padding: 0 20px;
@@ -620,10 +624,10 @@ margin: auto;
 
   background: var(--midgrey);
   font-size: medium;
-  padding: 5px 10px;
-  margin-right: 10px;
+  padding: 8px 11px;
+  margin-right: 0px;
   color: white;
-  border-radius: 3px;
+  border-radius: 0px;
 
 }
 .hackathon .cta.hor {
