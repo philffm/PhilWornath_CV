@@ -436,7 +436,7 @@ async function loadHackathons(){
     }else{
       newNode.querySelector('#slides').href= data.slides;
     }
-    newNode.querySelector('#project').style.background = 'rgb(98, 98, 98)';
+    // newNode.querySelector('#project').style.background = 'rgb(98, 98, 98)';
 
     newNode.querySelector('#project').href= data.website;
 
