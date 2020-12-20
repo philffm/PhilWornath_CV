@@ -1,8 +1,10 @@
 var slotState=0;
 var slotTriggerCount=0;
 
-var myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "with the soldering iron", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
-var myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", "Amsterdam", "Santa Cruz de Tenerife", "Zoetermeer", "Utrecht", "Delft", "Rotterdam", "Kijkduin"];
+const myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "with the soldering iron", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
+const myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", "Amsterdam", "Santa Cruz de Tenerife", "Zoetermeer", "Utrecht", "Delft", "Rotterdam", "Kijkduin"];
+var myGifs = [];
+
 var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
 var currentWeather = 'Cloudy';
 var currentLocation;
@@ -163,14 +165,17 @@ async function slotInit(){
       break;
 
       case 3:
-
+        let slotheader = document.querySelector('.slotheader');
         var randActivity = Math.floor(Math.random() * myActivities.length);
         var newActivity = myActivities[randActivity][0] ;
         var s = [Math.floor(Math.random() * myActivities[randActivity].length)];
         if (s == 0){s++}; 
         var subActivity = myActivities[randActivity][s];
+        // inject activity  in p element
         document.querySelector('#activity p').innerText = newActivity + subActivity;
-        
+        // let currentGif = 'cycling2.gif';
+        // slotheader.style.background="url('/img/gifs/" + currentGif + "')";
+
         if (slotTriggerCount>10){
           slotTriggerCount=0;
           slotState++;
