@@ -608,10 +608,18 @@ border-bottom:10px solid #d67bba;
   margin-left: 0;
   /*! border: 4px solid var(--darkgrey); */
   overflow: clip;
-  box-shadow: 0px 8px 0px var(--pink);
+  transition: all .1s ease;
+
+  /* box-shadow: 0px 8px 0px var(--pink); */
   /*! box-shadow: 2px 5px 15px rgba(0, 0, 0, 1); */
 }
 
+.hackathon .item:hover {
+  box-shadow: 0px 7px 0px var(--pink);
+  transition: all .1s ease;
+  transform: translate(0px,-7px);
+
+}
 .hackathon .properties {
   display: flex;
   align-items: center;
@@ -904,7 +912,6 @@ padding: 12px 20px;
 border-radius: 0.25em;
 width: auto;
 white-space: nowrap;
-
 text-decoration: none;
 font-variant: all-small-caps;
 margin: 10px 5px;
@@ -957,11 +964,11 @@ padding: 10px 30px;
 margin: 1rem .5rem;}
 
 .button:hover {
-transition: all .3s ease;
-transform: translate(0px,-7px);
-background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-color: black;
-box-shadow: 0px 7px 0px rgba(0,0,0,0.8);
+  transition: all .3s ease;
+  transform: translate(0px,-7px);
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  color: black;
+  box-shadow: 0px 7px 0px rgba(0,0,0,0.8);
 
 }
 
