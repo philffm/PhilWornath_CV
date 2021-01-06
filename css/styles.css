@@ -98,7 +98,7 @@ padding: 15px;
 overflow: hidden;
 }
 .content-wrap.slim {
-padding: 0 20px;
+padding: 5px 25px;
 }
 .col-narrow {
 width: 25%;
@@ -534,23 +534,23 @@ margin-top: 0;
 }
 
 .card-work, .portfolio-description {
-  
   margin-top: 20px;
   background: white;
-  transition: all .3s ease;
+  transition: all .5s ease;
   margin-bottom: 40px;
   border-radius: 7px;
 }
 
 .portfolio-description{
-  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card-work:hover {
-  box-shadow: 0px 8px 0px var(--midgrey);
+  /* box-shadow: 0px 8px 0px var(--midgrey); */
+  box-shadow: 0 0 70px rgba(221, 221, 221, 0.678);
   transition: box-shadow .5s;
-  transition: all .3s ease;
-transform: translate3D(0,-1px,0) scale(1.025);
+  transition: all .5s ease;
+transform: translate3D(0,-1px,0) scale(1.015);
 
 }
 
@@ -587,7 +587,7 @@ border-bottom:10px solid #d67bba;
   max-width: inherit;
   /* overflow: visible; */
   overflow: scroll;
-  padding: 0 10px;
+  padding: 0 20px;
   display: flex;
   scrollbar-width: thin;
 }
@@ -600,15 +600,15 @@ border-bottom:10px solid #d67bba;
   }
 
   .hackathon h3 {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .hackathon .item {
-  width: 360px;
+  width: 380px;
   background: white;
-  padding: 10px 0 50px 0;
+  padding: 5px 0 50px 0;
   border-radius: .5rem;
-  margin: 3rem 2rem;
+  margin: 3rem 3rem;
     margin-left: 0;
   /*! border: 4px solid var(--darkgrey); */
   /* overflow: clip; */
@@ -619,10 +619,10 @@ border-bottom:10px solid #d67bba;
 }
 
 .hackathon .item:hover {
-  box-shadow: 0px 7px 0px var(--pink);
-
-  transition: all .3s ease;
-  transform: translate3D(0,-1px,0) scale(1.025);
+  /* box-shadow: 0px 7px 0px var(--pink); */
+  /* box-shadow: 0 0 70px #DDD; */
+  /* transition: all .3s ease;
+  transform: translate3D(0,-1px,0) scale(1.025); */
 }
 .hackathon .properties {
   display: flex;
@@ -638,10 +638,10 @@ border-bottom:10px solid #d67bba;
   font-family: Roboto;
   font-style: italic;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 28px;
   margin: 0;
-  height: 250px;
+  height: 200px;
 }
 .hackathon .logo {
   
@@ -722,6 +722,20 @@ margin: 10px;
 width: 25%;
 }
 
+.certificates .item{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0 20px 0 0;
+margin: 0;
+transition: all .5s ease;
+
+}
+.certificates .item:hover{
+transition: all .5s ease;
+transform: translate3D(0,-1px,0) scale(1.05);
+}
 /* Publications 
 ------------------------------------*/
 
@@ -919,7 +933,7 @@ white-space: nowrap;
 text-decoration: none;
 font-variant: all-small-caps;
 margin: 10px 5px;
-transition: all .3s ease;
+transition: all .5s ease;
 border: 3px solid black;
 
 }
@@ -968,11 +982,10 @@ padding: 10px 30px;
 margin: 1rem .5rem;}
 
 .button:hover {
-  transition: all .3s ease;
-  transform: translate(0px,-7px);
+  transition: all .5s ease;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  color: black;
-  box-shadow: 0px 7px 0px rgba(0,0,0,0.8);
+  color: var(--nightgrey);
+  box-shadow: 0px 5px 0px var(--nightgrey);
 
 }
 
@@ -985,17 +998,20 @@ margin: 1rem .5rem;}
   
 
 
-.button.cta:active, .button:active {
+.button:active {
   transition: all .1s ease;
   transform: translate(0px,0px);
   box-shadow: none;
-  color: black;
+  color: var(--nightgrey);
   background: white;
+  transform: translate(0px,7px);
+
   }
   .button.cta:active {
     transition: all .1s ease;
     box-shadow: none;
-    background: black;
+    background: var(--nightgrey);
+    border-color: var(--nightgrey);
     color: white;
     }
   
