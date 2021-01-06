@@ -4,7 +4,7 @@
   
   .timeline {
     position: relative;
-    width: 660px;
+    width: auto;
     padding: 1em 0;
     list-style-type: none;
     display: flex;

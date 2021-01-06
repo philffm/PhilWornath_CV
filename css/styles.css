@@ -583,6 +583,12 @@ border-bottom:10px solid #d67bba;
   max-width: 1250px !important;
   /* overflow: auto; */
 }
+
+#skills .content-wrap {
+  max-width: 1250px !important;
+  overflow: auto;
+}
+
 .hackathon.wrapper {
   max-width: inherit;
   /* overflow: visible; */
@@ -704,6 +710,7 @@ display: flex;
 margin: 2em 0;
 }
 
+
 .card-cert {
 display: flex;
 flex-direction: row;
@@ -727,11 +734,14 @@ width: 25%;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 0 20px 0 0;
-margin: 0;
+margin: 20px auto;
 transition: all .5s ease;
 
 }
+
+.certificates:-moz-last-node {
+  padding: 0;
+    }
 .certificates .item:hover{
 transition: all .5s ease;
 transform: translate3D(0,-1px,0) scale(1.05);
@@ -1160,8 +1170,8 @@ div#social {
 
 .cta.hor {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: initial;
+    align-items: center;
 }
 .button.social {
 
