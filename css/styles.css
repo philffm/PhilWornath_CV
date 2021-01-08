@@ -580,8 +580,8 @@ border-bottom:10px solid #d67bba;
 }
 
 #hackathons .content-wrap {
-  max-width: 1250px !important;
-  /* overflow: auto; */
+  max-width: 1100px !important;
+    /* overflow: auto; */
 }
 
 #skills .content-wrap {
