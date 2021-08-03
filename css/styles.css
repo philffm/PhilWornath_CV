@@ -25,7 +25,7 @@ html {
   --basegrey: #f2f2f2;
   --midgrey: #A1A1A1;
   --darkgrey: #444444;
-  --nightgrey: #343232;
+  --nightgrey: #252525;
 
 
 }
@@ -252,8 +252,9 @@ header {
   z-index: 2;
   padding-top: 65px;
   position: relative;
-  border-bottom: 10px solid #7bd6c5;
-  /* background: linear-gradient(rgb(228, 228, 228,01)10%, rgba(255, 255, 255, 0.5))50%, url(../img/frankfurt.jpg) no-repeat; */
+  border-radius: 3em;
+  background: white;
+  /* border-bottom: 10px solid #7bd6c5; */
   background-size: auto auto, auto auto;
   background-size: cover;
 }
@@ -380,7 +381,7 @@ margin: 5px 0;
 
 .result {
   align-self: center;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  box-shadow: 0px 4px 0 rgb(0 0 0 / 15%);
   border-radius: 10px;
   background-color: rgba(255,255,255,1);
   box-sizing: border-box;
@@ -931,20 +932,20 @@ float: right;
 
 .button, a#github{
   background: white;
-  color: black;
-cursor: pointer;
-display: inline-block;
-font-size: 20px;
-font-weight: 500;
-padding: 12px 20px;
-border-radius: 0.25em;
-width: auto;
-white-space: nowrap;
-text-decoration: none;
-font-variant: all-small-caps;
-margin: 10px 5px;
-transition: all .5s ease;
-border: 3px solid black;
+  color: var(--nightgrey);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 0.25em;
+  width: auto;
+  white-space: nowrap;
+  text-decoration: none;
+  font-variant: all-small-caps;
+  margin: 10px 5px;
+  transition: all .5s ease;
+  border: 3px solid var(--nightgrey);
 
 }
 
@@ -1187,13 +1188,7 @@ div#social {
 
 }
 
-.profile-img{
-  border-style: inherit;
-  display: flex;
 
-  width: 100px;
-  height:100px;
-}
 
 
 .profile-contact {
@@ -1219,7 +1214,7 @@ div#social {
 
 .card-work img {
   max-height: 50%;
-max-width: 50%;
+  max-width: 50%;
 }
 
 
