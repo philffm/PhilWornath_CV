@@ -429,7 +429,7 @@ nav {
   z-index: 11;
   display: flex;
 justify-content: center;
-backdrop-filter: blur(5px);
+backdrop-filter: blur(1px);
 background: #f7f7f7c7;
 
 }
