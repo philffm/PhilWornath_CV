@@ -44,15 +44,17 @@
   
   .direction-l {
     position: relative;
-    width: 300px;
-    float: left;
+    width: auto;
+    /* float: left; */
     text-align: right;
   }
   
   .direction-r {
     position: inherit;
+    width: auto;
+
     /* width: 300px; */
-    float: left;
+    /* float: left; */
   }
   
   .flag-wrapper {

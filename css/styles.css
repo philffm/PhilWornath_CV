@@ -171,7 +171,7 @@ width: 200px;
 
 
 .col-wide.padding {
-padding-left: 26px;
+  padding: 1rem 2rem;
 }
 
 main {
@@ -189,12 +189,12 @@ img {
 
 .profile-img {
 
-  border-radius: 7px;
+  border-radius: 3rem;
   border-style: solid;
   
   border-width: 10px;
   border-color: #7bd6c5;
-  max-width: 200px;
+  max-width: 300px;
   max-height: 200px;
   align-self: center; 
   transition: all .3s ease;
@@ -226,7 +226,7 @@ img {
 
 .profile-info {
   max-width: 400px;
-  margin: 20px;
+  margin: 20px 40px ;
   transition: all .3s ease;
 }
 header, 
@@ -276,7 +276,8 @@ footer .content-wrap {
   justify-items: normal;
   width: auto;
   align-self: center;
-  padding: 5px 20px;
+  
+  padding: 1rem 2rem;
   background: white;
   margin: 10px;
   border-radius: 7px;
@@ -535,11 +536,11 @@ margin-top: 0;
 }
 
 .card-work, .portfolio-description {
-  margin-top: 20px;
+  margin-top: 1rem;
   background: white;
   transition: all .5s ease;
   margin-bottom: 40px;
-  border-radius: 7px;
+  border-radius: 1rem;
 }
 
 .portfolio-description{
@@ -830,7 +831,7 @@ transform: rotate(-5deg);
 z-index: 1;
 background: white;
 border: 0px;
-border-radius: 7px;
+border-radius: 1rem;
 border-style: solid;
 filter: opacity(90%);
 padding: 5px 20px;
@@ -880,8 +881,8 @@ padding-top: 65px;
 .logo-wrapper {
   background: #fff;
   margin: 0px 10px auto;
-  padding: 10px;
-  border-radius: 7px;
+  padding: 1rem;
+  border-radius: .5rem;
 }
 
 .project-category {
@@ -943,11 +944,24 @@ float: right;
   white-space: nowrap;
   text-decoration: none;
   font-variant: all-small-caps;
-  margin: 10px 5px;
+  margin: 10px;
   transition: all .5s ease;
   border: 3px solid var(--nightgrey);
 
 }
+
+.selected-value {
+	display: inline-block;
+	padding: 5px 15px;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+
 
 .button.cta{
   background: var(--nightgrey);
@@ -997,6 +1011,7 @@ margin: 1rem .5rem;}
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   color: var(--nightgrey);
   box-shadow: 0px 5px 0px var(--nightgrey);
+  transform: scale(1.1);
 
 }
 
