@@ -974,7 +974,7 @@ a#project{
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   color: black;
 }
-a#koios{
+a.light{
   background:var(--basegrey);
   color: black;
   border: none;
