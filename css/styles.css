@@ -204,6 +204,8 @@ img {
 .profile-img img {
   filter: grayscale(100%);
   transition: all .3s ease;
+  border-radius: 3rem;
+
 
 }
 
