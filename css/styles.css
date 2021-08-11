@@ -967,7 +967,7 @@ float: right;
 .button.cta{
   background: var(--darkgrey);
   color: #fff;
-  border:none;
+  /* border:none; */
 }
 
 a#project{
