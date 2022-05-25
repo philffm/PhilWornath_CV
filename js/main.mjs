@@ -327,7 +327,9 @@ async function adjustMenu(){
   }else if (docTitle.includes("Portfolio")) {
       document.querySelector('nav#portfolio').style.display="";
   }else if(docPath.includes('project')){
-    document.querySelector('nav#project').style.display="";
+    // document.querySelector('nav#project').style.display="";
+    document.querySelector('main').style.margintop=0;
+    document.querySelector('logoheader').style.display=none;
   }else{document.querySelector('nav#portfolio').style.display="";
 }
 
@@ -374,7 +376,7 @@ async function newProject(){
 async function loadProject(){
   // definitions
   LoadCSS('/css/notion.css');
-  document.querySelector('main').style.marginTop = "25px";
+  // document.querySelector('main').style.marginTop = "25px";
   let dataSource = projectdata.projects[projectID];
   // document.querySelector("#NOTFOUND").outerHTML="";
   var projectPath = '/../../project/'+ projectUrl + '/';
@@ -397,8 +399,8 @@ async function loadProject(){
 
   document.querySelector('div h2 span').innerText = projectTitle;
 
-  document.querySelector('.period').innerHTML = "<strong>Period: </strong>" +projectPeriod;
-  document.querySelector('.type').innerHTML = "<strong>Type: </strong>" +projectType;
+  document.querySelector('.period').innerHTML = "🗓 " +projectPeriod;
+  document.querySelector('.type').innerHTML = "👨🏽‍💻 " + projectType;
 
   document.querySelector('.project-header img.logo').src  = projectLogo;
   document.querySelector('.project-header a.cta').href = projectWebsite;
