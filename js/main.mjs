@@ -187,7 +187,8 @@ async function slotInit(){
             document.querySelector('.slotresults').style.display="none";    
             document.querySelector('.bigwin').style.display="";   
             document.querySelector('.slot #explain').style.display="none";
-
+            document.querySelector('.handle').style.marginBottom=0;
+            
           }else{
 
             slotState--;
