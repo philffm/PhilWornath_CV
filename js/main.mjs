@@ -375,7 +375,6 @@ async function newProject(){
 
 async function loadProject(){
   // definitions
-  LoadCSS('/css/notion.css');
   // document.querySelector('main').style.marginTop = "25px";
   let dataSource = projectdata.projects[projectID];
   // document.querySelector("#NOTFOUND").outerHTML="";
@@ -388,15 +387,31 @@ async function loadProject(){
   let projectType = dataSource.type;
   var dynHeader = dataSource.headhtml;
   var customJS = dataSource.customjs;
+  let projectPrototype = dataSource.prototype;
+  
+  const figEmbed = (sourceID) => {
 
+    let embedTemplate = '<iframe style="border: 0 solid; border-radius: 12px; width="500" height="812" src="' + sourceID + '" allowfullscreen></iframe>'
+    return embedTemplate;
 
+  }
+  
   projectPeriod = projectdata.projects[projectID].period;
   projectContent = projectdata.projects[projectID].content;
   document.title = projectTitle ;
-
+  
+  LoadCSS('/css/notion.css');
   LoadJS(customJS);
   document.querySelector('.dynheader').innerHTML = dynHeader;
+  
+  if(projectPrototype){
+    
+    document.querySelector('.project-prototype').innerHTML = figEmbed(projectPrototype);
+    
+  }
 
+
+  
   document.querySelector('div h2 span').innerText = projectTitle;
 
   document.querySelector('.period').innerHTML = "🗓 " +projectPeriod;

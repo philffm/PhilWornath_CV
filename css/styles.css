@@ -489,6 +489,11 @@ display: flex;
   transition: all .3s cubic-bezier(.17, .65, .25, .90);
 }
 
+.project-prototype {
+  display: flex;
+  justify-content: center;
+}
+
 .nextproject {
   display: flex;
   flex-direction: column;
