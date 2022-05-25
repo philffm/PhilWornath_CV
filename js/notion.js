@@ -10,7 +10,7 @@ const ytEmbed = (sourceID) => {
 }
 
 function replaceStuff(){
-    waitingFor(30,30,'code',replaceCode);
+    waitingFor(20,20,'code',replaceCode);
 
     
 

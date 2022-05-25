@@ -105,7 +105,10 @@ padding: 15px;
 overflow: hidden;
 }
 .content-wrap.slim {
-padding: 5px 25px;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }
 .col-narrow {
 width: 25%;
@@ -193,7 +196,10 @@ img {
 
 /* Header & Footer 
 ------------------------------------*/
-
+.employerLogo {
+  /* margin- 24px 0; */
+  width:50%
+}
 
 .profile-img {
 
