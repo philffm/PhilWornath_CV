@@ -107,6 +107,24 @@
       "period": "Feb 2020 - Dec 2020",
       "content": "BBBot Blockchain enabled robots for a clean beach  fca6199339c54c64bbf2f86ff4e15d2b 3",
       "type": "Part-time occupation"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "strava",
+      "title": "Strava: Experience over metrics -  Opening the platform to everyday cyclists",
+      "description": "asd",
+      "website": "https://strava.com/",
+      "github": "",
+      "logo": "strava.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "Feb 2022",
+      "content": "Strava%20Experience%20over%20metrics%20-%20Opening%20the%20platf%20d1d41775267740c689cddbaaa142796a",
+      "type": "Mini-project"
     }
   ]
 }

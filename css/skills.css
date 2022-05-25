@@ -48,8 +48,8 @@ li.skills:after {
 
 li.skills.adobe:after {
     animation-name: adobe;
-    content: "Design (AI, AE, PR, PS)";
-    width: 85%;
+    content: "Creation (AI, AE, PR, PS)";
+    width: 80%;
 
 }
 
@@ -60,7 +60,7 @@ li.skills.adobe:after {
 
 li.skills.office:after {
     animation-name: office;
-    content: "MS (Word, Excel, PP) ";
+    content: "O365 / G Workspace ";
     width: 75%;
 
 }
@@ -72,16 +72,16 @@ li.skills.office:after {
 
 li.skills.coding:after {
     animation-name: coding;
-    content: "Coding (HTML, CSS, JS)";
-    width: 80%;
+    content: "Coding (JS, Low-Code)";
+    width: 85%;
 
 }
 
 
 li.skills.prototyping:after {
     animation-name: coding;
-    content: "UX Tools (Figma, XD,...)";
-    width: 90%;
+    content: "Design (Figma, XD, Quant)";
+    width: 95%;
 
 }
 
@@ -115,9 +115,9 @@ li.skills.english:after {
     }
 }
 
-li.skills.french:after {
-    animation-name: french;
-    content: "French: A2";
+li.skills.spanish:after {
+    animation-name: spanish;
+    content: "Spanish: A2";
     width: 40%;
 
 }
