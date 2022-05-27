@@ -108,6 +108,7 @@
       "content": "BBBot Blockchain enabled robots for a clean beach  fca6199339c54c64bbf2f86ff4e15d2b 3",
       "type": "Part-time occupation"
     },
+  
     {
       "customjs": "",
       "headhtml": "",
@@ -125,7 +126,26 @@
       "period": "Feb 2022",
       "content": "Strava%20Experience%20over%20metrics%20-%20Opening%20the%20platf%20d1d41775267740c689cddbaaa142796a",
       "type": "Mini-project",
-      "prototype": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FejHKh0wDhCIrFMSC8xxcZg%2FDDD%3Fpage-id%3D698%253A3049%26node-id%3D823%253A4478%26viewport%3D778%252C567%252C0.97%26scaling%3Dscale-down-width%26starting-point-node-id%3D823%253A4069"
+      "prototype": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FejHKh0wDhCIrFMSC8xxcZg%2FDDD%3Fpage-id%3D698%253A3049%26node-id%3D823%253A4069%26viewport%3D778%252C567%252C0.97%26scaling%3Dcontain%26starting-point-node-id%3D823%253A4069"
+    },
+    {
+      "customjs": "",
+      "headhtml": "",
+      "slug": "toogethr",
+      "title": "Toogethr: A Bicycle Bell for the Post-Covid Revitalization Of (Hybrid) Office Life",
+      "description": "",
+      "website": "https://www.toogethr.com/",
+      "github": "",
+      "logo": "toogethr.svg",
+      "category": [
+        "iot",
+        "ux",
+        "marketing"
+      ],
+      "period": "Feb - June 2021",
+      "content": "Toogethr 35f2cac13bc249aa981dcf93c568519b",
+      "type": "Graduation Project (User Experience Design)",
+      "prototype": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FNvEZORafSdV2wno4T65zop%2FToogethr%3Fpage-id%3D823%253A6922%26node-id%3D1504%253A243%26viewport%3D-861%252C-1564%252C0.86%26scaling%3Dcontain%26starting-point-node-id%3D1504%253A243"
     }
   ]
 }

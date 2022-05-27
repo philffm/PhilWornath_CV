@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Toogethr</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e6d9dfb4-bb7c-482d-bc10-e2522fb083e2" class="page sans"><header><h1 class="page-title">Toogethr</h1><table class="properties"><tbody><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td><span class="selected-value select-value-color-red">Not started</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>My job</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Role Description</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tools</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Assign</th><td></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th><td></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>Project URL</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Category</th><td></td></tr></tbody></table></header><div class="page-body"><p id="855e8347-5c4a-4539-9933-eb25b8548eb8" class="">The <strong>post-covid world</strong>: After their long-term social isolation, people <strong>commute to work again</strong>. Thousands of cars on the road, spewing emissions and contributing to global warming. The average occupation level of cars during rush hour is just about 1.2 people per car. While congestion is only an immediate effect, the long term damage of motorised individual transport to our planet is immense. But how might we solve this crisis for society - and their mobility? </p><h2 id="ce30fe97-08b7-420f-bbc1-c06599daa870" class="">The context: Why I chose a graduation company in the mobility field</h2><p id="8e314a32-ce6f-4fea-b415-77be2d1cd3b5" class="">My story with Toogethr started during the pandemic, in which I was spending time Germany  and repeatedly noticed, how intense the commute traffic in Germany was compared to the Netherlands. Bottom line: I was looking into creating meaningful impact, either by facilitating the long-term shift to carpooling for commutes or more people on bicycles. </p><p id="a0f14d96-88ca-4f9a-a7b2-22548b34a27f" class="">Following my observations and thoughts, I reached out to the Creative Director and  agreed on the option to carry out my graduation project there.</p><p id="88e68579-a29f-4917-a25f-406b6ebd865d" class="">Toogethr is a Dutch company, who with their ecosystem offers a suite of solutions for more sustainable commuting: </p><ul id="4baeb490-bf3e-4622-bce4-668f1777599b" class="bulleted-list"><li style="list-style-type:disc"><strong>Parking</strong> 🅿️  A parking management solution as their core product, allowing ways for managing parking lots as well as making corporate parking accessible to the public </li></ul><ul id="e1d0500d-0481-4f28-a276-348b62e09cb3" class="bulleted-list"><li style="list-style-type:disc"><strong>Carpool: </strong>🚙👨‍👩‍👧 An application for planning commuting journeys with colleagues and receive rewards</li></ul><ul id="2fe20b22-df62-4d43-9a03-f51736cfdfb5" class="bulleted-list"><li style="list-style-type:disc"><strong>Cycles </strong>🚴‍♂️ <strong>: </strong>An app where colleagues can pair up for cycling from / to work together, track their journeys and receive rewards</li></ul><h2 id="3f6842aa-e02c-4e6a-b95a-cc90c9508823" class="">The context: Maintain &amp; Revive</h2><p id="678fad2a-28a1-48d8-bf7b-78ca2093e7d7" class="">In the context of a pandemic, my <strong>final graduation project at The Hague University</strong> focused on how to combine and maintain the <strong>increasingly popular modal choice of commuting by bicycle</strong> with the <strong>post-covidal revitalization of (hybrid) office life</strong>.</p><blockquote id="09163496-e6e7-4f8b-b5b1-2677980edabf" class="">Bottom line: Establishing new, sustainable commuting routines while inviting employees to socialise</blockquote><p id="a261c67e-d319-4fa4-8a30-4f00ba090819" class="">Since I have always been critical towards creating “yet another app”, as well as keeping the activation threshold as low as possible, my approach was it to create an ecosystem involving multiple people and touchpoint, while keeping the most impactful touchpoint at a low interaction threshold.</p><p id="04ed67de-e865-4b88-8157-a7bff48f72a4" class="">The result was a <strong>smart bicycle bike bell for the office </strong>that allows employees to subtly notify their colleagues that they are biking home with a simple touch.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0c4d7563-266a-4ac9-b150-3016a4a25400"><div style="font-size:1.5em"><span class="icon">👀</span></div><div style="width:100%">But please look for yourself 👇</div></figure><pre id="2394835f-4fbe-4764-bc88-8880d065ac6a" class="code"><code>@include
+
+&lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;
+  &lt;source src=&quot;ToogethrFietsbel.mov&quot; type=&quot;video/ogg&quot;&gt;
+&lt;/video&gt;</code></pre><h2 id="2a7f689b-e3e4-4d07-92a9-3c06770d4c77" class="">Process Ins👁ghts </h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6158bd92-91d3-43ea-b0c6-3a81608dad78"><div style="font-size:1.5em"><span class="icon">⏳</span></div><div style="width:100%">No time? Feel free to skip this section</div></figure><ul id="a1e71375-0dd4-419d-829b-a400809a07c9" class="toggle"><li><details><summary>The process: Striving For Quantity In Multiple Concepts, Test &amp; Narrowing It Down</summary><h2 id="621ffd25-e415-4fe5-bd8b-7471a34cca6f" class="">The process: Striving for quantity in multiple concepts, test &amp; narrow it down</h2><p id="191697f7-c475-4963-95dd-b4262ae1a48f" class="">
+</p><p id="2bce5187-c4b8-4103-979b-f2cb2a814c5b" class="">For my project I was following the Gartner model, combining Design Thinking, Lean Startup and Agile. </p><figure id="13f1fac6-3622-4e5b-8d68-774055158c8e" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled.png"><img style="width:652px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled.png"/></a></figure><p id="897122b0-10d3-475a-b78b-4bbc3002b2d7" class="">
+</p><h3 id="947d2e8f-806e-4a26-8678-985d3d27fca8" class="">Explorative Research: Studying the culture of carpooling / bicycle commuting through memes</h3><figure id="11dcc4d5-df5b-44db-ae6c-6f4e9516a838" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.38.png"><img style="width:1285px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.38.png"/></a></figure><h3 id="f4569717-351c-434f-8206-78b79fbed5e8" class="">Analysing issues of similar ecosystems within the sharing economy</h3><figure id="c662fda1-bf3a-4094-9202-4c317d6fd57c" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.17.00.png"><img style="width:1351px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.17.00.png"/></a></figure><h3 id="170f2f32-773d-4286-b642-9fa86c645ff0" class="">Distilling Research Fragments to Insights </h3><figure id="811fac64-90f0-4b52-9e14-34683955fb9a" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.03.png"><img style="width:1178px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.03.png"/></a></figure><figure id="45163b4f-58f7-4bbd-a669-176d0d55d121" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.17.37.png"><img style="width:1443px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.17.37.png"/></a></figure><h3 id="78c368b0-1e9c-4225-83c7-64c718beac5a" class="">Meanwhile: Building first low-fidelity concept</h3><figure id="8269c31e-4c5e-4fa0-b915-c2ab4058709a" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.23.png"><img style="width:1386px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.23.png"/></a></figure><p id="821eb05a-0a74-4b24-a59e-2b2d9a1afaf6" class="">
+</p><h3 id="f8e2ab41-e1a2-4599-a25c-212b85729f19" class="">How Might We Questions: Further Ideation using the 5-Why-Method</h3><figure id="fb1907eb-05db-4707-822e-cd51a5b70997" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.13.png"><img style="width:1039px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Screenshot_2022-05-26_at_21.15.13.png"/></a></figure><h2 id="fd4b6714-c01e-4000-a985-715d92d4e449" class="">Low-Fidelity-Prototypes</h2><p id="27fbae31-1795-4ccf-ad4e-ad69d6fa9639" class="">Tool: (digital) Paper </p><figure id="87b42e16-a4ed-4daa-b0d8-42da64b77daa" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%201.png"><img style="width:555px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%201.png"/></a></figure></details></li></ul><h2 id="b8ba695b-7c94-44c0-9c7a-35438ef636b8" class="">How Might We - Questions</h2><blockquote id="7aeda60c-1b80-4fc4-a83b-4b74a4530d3c" class="">How might we improve the employees’ <strong>likelihood</strong> of <strong>cycling to work?</strong></blockquote><blockquote id="066c5c82-94ef-41b7-ac10-e9b1877a77f9" class="">How might we improve the <strong>sense of community</strong> of employees working from the office?</blockquote><p id="37c4bf84-1ae7-43bd-97fa-01ce1f88b4c1" class="">
+</p><h2 id="0035c15a-931a-4b98-b51b-567888cbdcd2" class="">User Stories</h2><div id="545abe8d-c9a9-4df5-b9bc-5a42853365d8" class="column-list"><div id="ead36551-4c80-46a5-9f14-c8828e1e9cc5" style="width:20%" class="column"><p id="e922d825-a123-4f71-9be5-509a3487ff6f" class=""><strong>As a (not yet) cycling  employee</strong></p></div><div id="01a11f12-0355-440b-8526-e190d98074a3" style="width:12.5%" class="column"><h3 id="3b56280b-1bdf-472f-9ade-0b31aaf2fcb1" class="block-color-yellow_background">I need</h3></div><div id="d1271db5-9e10-46a2-bebb-7df87c01880f" style="width:22.5%" class="column"><p id="d3793fd8-992d-4c14-a2b1-b2c6aab8fcef" class="">a better sense of community when cycling to / from work</p></div><div id="0d7f6a87-29b6-4272-983f-fbc69aa6612a" style="width:15.000000000000002%" class="column"><h3 id="87407c26-0985-4b94-b472-7cf2c5e6d87e" class="block-color-blue_background">so I can</h3></div><div id="9f88000b-2a84-468b-90c4-c5a688179149" style="width:30%" class="column"><p id="9bd503b1-66f1-4def-b4f1-a3fe50481e6c" class="">combine sports, joy and networking in the post-covid office time</p></div></div><h2 id="2ae6bed7-33bf-4ed8-8312-0666e31d7b8e" class="">Proposed ecosystem</h2><p id="539751f2-10b9-4552-a874-634592fcd8d8" class="">The bicycle bell is meant to be located easy to access and visible in the office hallway, connected via slack to colleagues working in the same office space. </p><p id="1ac260c4-b98e-409c-8e66-8fbc71476091" class="">When an employee wants to go home, they would leave their desk, ring the bell which would then alert the colleagues. </p><p id="97da19ec-0d16-4b85-9297-5583528136bc" class="">Another way for colleagues to get notified is selecting a preferred day of the week, time slot and building in which they would receive notifications, to lower distractions. </p><p id="bdc6031b-881e-44c5-9a4c-dd1d7d89d60a" class="">This allows more sustainable commuting behaviour, paired with the post covid office socialising we all need. </p><h2 id="b1fc8fee-5587-4ee6-bd33-d9f24e35d8db" class="">Mid-Fidelity Prototypes</h2><p id="d69352ea-1f40-4d0e-b88d-23bca0ef15d5" class="">Tool: Miro</p><p id="1189b51f-bcf0-453d-a259-181244567f0d" class="">
+</p><p id="c13c3e63-8fbe-46c7-99c8-c6ea3c92c838" class="">In this overview the purpose of the system </p><figure id="e707f887-6860-4674-adc8-5d0ec121a10b" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%202.png"><img style="width:672px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%202.png"/></a></figure><p id="119fa62c-b05f-45af-a23f-3aa55061a295" class="">
+</p><p id="be51446f-d660-49ad-98c0-064de0f41ea0" class="">
+</p><h2 id="307433d8-470a-4f98-95fe-49245c56a539" class="">High Fidelity Prototypes</h2><h3 id="bb49879a-23d0-4324-9524-38ab207ae275" class="">Hardware</h3><figure id="8ac43f85-c183-40a5-a392-09c2452ce153" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%203.png"><img style="width:749px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%203.png"/></a></figure><p id="745eee7a-0507-47c2-8bb7-dca593188148" class=""><strong>Smart bicycle bell</strong>, consisting of an ESP32S micro controller, an integrated soldered touch sensor, connected to WiFi and the Slack API.</p><p id="b1161f1f-3882-4de5-b776-f059cf6f4ba0" class="">It was feeling like magic: The moment when the bike bell suddenly came to life as an IoT device and independently started sending messages with generated content to a Slack group - and their members started replying.</p><p id="ffddf668-bce1-4bea-ba0d-fae27c05964b" class="">Further steps were carried out using GitHub Projects, ensuring a good foundation for an agile software &amp; hardware development in the future.</p><figure id="1da8ca7c-8027-4d0d-a393-bc04c2b0e132" class="image"><a href="https://lh6.googleusercontent.com/byeAkxn8giCP9fO29uW-hOp22omHynTfT-B9lXI8qQcJdEVfrDOmX0PTude7n1Mo9fGagx3ABbeHRvkPvB716iFC1-zEqym4Z8tMbqlnegx4OYi_B3xDqNqXqxPAHsZE_njZwQ6lQ1XwodNwlA"><img src="https://lh6.googleusercontent.com/byeAkxn8giCP9fO29uW-hOp22omHynTfT-B9lXI8qQcJdEVfrDOmX0PTude7n1Mo9fGagx3ABbeHRvkPvB716iFC1-zEqym4Z8tMbqlnegx4OYi_B3xDqNqXqxPAHsZE_njZwQ6lQ1XwodNwlA"/></a></figure><p id="b97f2a42-5e12-4345-aced-c64f8c6ccb30" class=""><strong>GitHub projects overview</strong>: A classical kanban board linked to the current issues of the project</p><p id="b311c697-71c5-456e-95bc-d13bc77f920d" class=""><a href="https://github.com/philffm/magicFietsbel/projects/1">😺 GitHub: philffm/magicFietsbel</a></p><h3 id="3d0a1106-54f8-4a3a-9cb6-9a4fced75575" class="">Software: Connection to Slack</h3><div id="33e21bf5-3a39-40f7-a2f6-5af542924de9" class="column-list"><div id="ccacfc40-f79a-4aa6-b0b1-532dff448703" style="width:50%" class="column"><p id="2f23ef57-1287-4342-ac4e-26fc1449e4b3" class="">User interaction has been one of the main challenges. Getting employees to cycle is one aspect - but starting a conversation between them is another. So I started to include conversation starters that facilitate the ride home with more or less stranger colleagues.</p></div><div id="33a7b64c-4685-483f-b94b-8e691c311ceb" style="width:50%" class="column"><figure id="39b4a9e4-da36-49d9-9b69-a8b005b08375" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%204.png"><img style="width:367px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%204.png"/></a></figure></div></div><h3 id="5670967c-cdd0-4c05-9304-6f81af226e05" class="">Software: Standalone Frontend</h3><p id="22b29608-411f-4830-862e-51dcdf21361b" class="">The idea of relying solely on Slack thus became difficult. It might be <strong>one of the most popular office messengers</strong>, but some would have to <strong>maintain the logic around the API connection for each messenger</strong> used by customers to keep the ecosystem running.</p><p id="547d8a9d-ba5c-42dc-99de-982fa454b66e" class="">I therefore decided to come up with an alternative to it that would be completely independent from the Slack bot and instead take the form of a <strong>universal  app.</strong></p><p id="db59308e-8b5e-4567-bf33-521211a875bf" class="">This would allow us to bring notifications either to the <strong>smartphone, the browser or to a browser extension </strong>on the employees’ computer with only one codebase.</p><p id="5263b9af-8211-4ad0-8c0d-97e9f7b3f9e9" class="">
+</p><figure id="378da5ac-f570-49e1-a883-66afe5066cb3" class="image"><a href="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%205.png"><img style="width:1113px" src="Toogethr%2013f1fac636224e5b8d68774055158c8e/Untitled%205.png"/></a></figure><p id="48f57ced-c97f-48f7-a56a-e839ec0e3860" class="">
+</p><h3 id="8e91162b-3986-40b2-b7b6-867f3bda4b25" class="">Demo</h3></div></article></body></html>

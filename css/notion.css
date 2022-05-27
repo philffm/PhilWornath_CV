@@ -539,6 +539,13 @@ blockquote {
 .highlight-red_background {
 	background: rgb(251,228,228);
 }
+
+div[class*=".block-color"] {
+	padding: 4px;
+	border-radius: 4px;	
+}
+  
+
 .block-color-default {
 	color: inherit;
 	fill: inherit;

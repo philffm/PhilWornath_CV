@@ -2,7 +2,7 @@ var slotState=0;
 var slotTriggerCount=0;
 
 const myActivities = [["👨🏽‍💻Coding and ", "☕️","🍵"],["🚴‍♀️ Cycling and ", "UX Podcasts","Tech Podcasts"], ["👂Listening to ", "UX Podcasts", "Tech Podcasts"],["🤓 Reading ", "Stackoverflow", "dev.to posts", "Hackernoon posts", "E-books"], ["🕵🏽‍♀️ Conducting ", "User tests", "Interviews"], ["🤖 Tinkering ", "Arduino", "Raspberry Pi", "with the soldering iron", "with ESP32"], ["👀 Watching ", "Online courses", "Tech YouTubers"], ["🏗 Building ", "Figma components ❖ ", "Design libraries", "HiFi Prototypes", "Testing setup", "Hardware prototypes"], ["🏃‍♀️Joining ", "Tech Meetups", "Design Meetups", "Tech Conferences","a Hackathon"]];
-const myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Sofia" ,"Berlin", "Amsterdam", "Santa Cruz de Tenerife", "Lombok", "Utrecht", "Rotterdam", "Kijkduin"];
+const myLocations = ["Den Haag", "Frankfurt","Las Palmas", "Valencia" ,"Berlin", "Amsterdam", "Santa Cruz de Tenerife", "Lombok", "Utrecht", "Rotterdam", "Kijkduin"];
 var myGifs = [];
 
 var currentCity = myLocations[Math.floor(Math.random() * myLocations.length)];
@@ -391,7 +391,7 @@ async function loadProject(){
   
   const figEmbed = (sourceID) => {
 
-    let embedTemplate = '<iframe style="border: 0 solid; border-radius: 12px; width="500" height="812" src="' + sourceID + '" allowfullscreen></iframe>'
+    let embedTemplate = '<iframe style="border: 0 solid; border-radius: 12px;" width="400" height="812" src="' + sourceID + '" allowfullscreen></iframe>'
     return embedTemplate;
 
   }
