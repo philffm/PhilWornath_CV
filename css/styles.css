@@ -650,17 +650,17 @@ border-bottom:10px solid #d67bba;
 
 .hackathon .item {
   width: 380px;
-  background: white;
-  padding: 5px 0 50px 0;
-  border-radius: .5rem;
-  margin: 3rem 3rem;
-    margin-left: 0;
-  /*! border: 4px solid var(--darkgrey); */
+  background: #ffffffe6;
+  gap: 12px;
+  padding: 24px;
   /* overflow: clip; */
+  display: flex;
+  border-radius: 12px;
   transition: all .1s ease;
-
   /* box-shadow: 0px 8px 0px var(--pink); */
-  /*! box-shadow: 2px 5px 15px rgba(0, 0, 0, 1); */
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 /* 
 .hackathon .item:hover {
@@ -669,14 +669,14 @@ border-bottom:10px solid #d67bba;
   /* transition: all .3s ease;
   transform: translate3D(0,-1px,0) scale(1.025); */
 
-.hackathon .properties {
-  display: flex;
-  align-items: center;
-  margin-top: auto;
-  margin: 10px;
-  width: max-content;
-  border-radius: 3px;
-  overflow: hidden;
+
+  .hackathon .properties {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    width: max-content;
+    border-radius: 3px;
+    overflow: hidden;
 }
 
 .hackathon .desc{
@@ -690,11 +690,16 @@ border-bottom:10px solid #d67bba;
 }
 .hackathon .logo {
   
-  height: 85px;
-align-items: center;
-display: flex;
-padding: 0 20px;
-margin: auto;
+  height: 32px;
+  /* align-items: center; */
+  display: flex;
+  /* padding: 0 20px; */
+  /* margin: auto; */
+}
+
+
+.hackathon img {
+  height: 32px
 }
 .item .catlabel{
 
@@ -716,8 +721,9 @@ margin: auto;
   flex-direction: column;
   width: 330px;
   /* border: 4px solid; */
-  margin: 15px;
+  /* margin: 15px; */
   margin-top: auto;
+  margin-bottom: 24px;
   border-radius: .5em;
 }
 
