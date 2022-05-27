@@ -291,7 +291,7 @@ async function addStyle(styleString) {
 
 async function initFonts(){
     LoadCSS("https://fonts.gstatic.com");
-    LoadCSS("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap");
+    LoadCSS("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;1,100&display=swap");
 }
 
 
