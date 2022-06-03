@@ -980,8 +980,7 @@ float: right;
   background: white;
   color: var(--nightgrey);
   cursor: pointer;
-  display: flex;
-  /* flex-wrap: wrap; */
+  display: inline-block;
   font-size: 20px;
   font-weight: 500;
   padding: 12px 20px;
