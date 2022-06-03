@@ -980,7 +980,8 @@ float: right;
   background: white;
   color: var(--nightgrey);
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 20px;
   font-weight: 500;
   padding: 12px 20px;
@@ -1219,7 +1220,7 @@ nav .full {
 }
 
 .col-narrow {
-  width: auto;
+  width: min-content;
   float: none;
 }
 .col-wide {
