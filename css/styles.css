@@ -981,7 +981,7 @@ float: right;
   color: var(--nightgrey);
   cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   font-size: 20px;
   font-weight: 500;
   padding: 12px 20px;
