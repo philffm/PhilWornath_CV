@@ -436,7 +436,7 @@ margin: 5px 0;
     display: flex;
     position: relative;
     flex-direction: column;
-    margin: 15px;
+    /* margin: 15px; */
 }
 
 .item .label {
@@ -573,7 +573,7 @@ margin-top: 0;
 }
 
 .card-work, .portfolio-description {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   background: white;
   transition: all .5s ease;
   margin-bottom: 40px;
@@ -632,7 +632,9 @@ border-bottom:10px solid #d67bba;
   max-width: inherit;
   /* overflow: visible; */
   overflow: scroll;
-  padding: 0 20px;
+  border-radius: 12px;
+  gap: 24px;
+  /* padding: 0 20px; */
   display: flex;
   scrollbar-width: thin;
 }
@@ -650,7 +652,7 @@ border-bottom:10px solid #d67bba;
 
 .hackathon .item {
   width: 380px;
-  background: #ffffffe6;
+  background: #ffffffc6;
   gap: 12px;
   padding: 24px;
   /* overflow: clip; */
@@ -910,8 +912,7 @@ padding: 10px 0;
 }
 
 .portfolio-section,.cv-section,.project-section {
-padding-top: 65px;
-
+  padding-top: 24px;
 }
 
 
