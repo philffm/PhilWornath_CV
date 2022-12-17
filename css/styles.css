@@ -357,6 +357,19 @@ margin: 5px 0;
   gap: 12px;
   margin-bottom: -51px;
 }
+
+img#explainthing {
+  /* transform: rotateY(45deg); */
+	animation: rotateAnimation 3s linear infinite;
+
+}
+
+@keyframes rotateAnimation {
+	0% {transform: rotateY(0deg);}
+	50% {transform: scale(1.2) rotateX(20deg) translate(0, 10px);}
+	100% {transform: scale(1) rotateX(0deg);}
+	/* to {transform: rotateY(0deg);} */
+}
 .slot-handle  {
   display: flex;
   transform-origin: bottom;
@@ -408,6 +421,8 @@ margin: 5px 0;
   padding: 20px;
   flex-direction: inherit;
   transition: all .3s ease;
+  gap: 24px;
+
 
 }
 
@@ -446,7 +461,7 @@ margin: 5px 0;
   font-size: large;
 }
 .winselection {
-  gap: 12px;
+  gap: 20px;
   display: flex;
 }
 
