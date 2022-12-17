@@ -365,8 +365,8 @@ img#explainthing {
 }
 
 @keyframes rotateAnimation {
-	0% {transform: rotateY(0deg);}
-	50% {transform: scale(1.2) rotateX(20deg) translate(0, 10px);}
+	0% {transform: rotateX(0deg);}
+	50% {transform: scale(1.15) rotateX(30deg) translate(0, 10px);}
 	100% {transform: scale(1) rotateX(0deg);}
 	/* to {transform: rotateY(0deg);} */
 }
