@@ -472,6 +472,7 @@ nav {
   /* background: rgba(0, 0, 0, 0.8); */
   position: fixed;
   top: 0;
+  top: 0;
   width: 100%;
   z-index: 11;
   display: flex;
