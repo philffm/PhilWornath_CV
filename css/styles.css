@@ -94,8 +94,9 @@ quoteline {
 font-size: 35px;
 }
 quote {
-font-style: italic;
-font-size: 1.7em;
+  font-style: italic;
+  font-size: 1.7em;
+  font-weight: 600;
 }
 
 .button.cta span {
