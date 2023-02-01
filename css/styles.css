@@ -1004,8 +1004,7 @@ float: right;
 /* Buttons
 ------------------------------------*/
 
-.button, a#github{
-    background: white;
+.button{
     color: var(--nightgrey);
     cursor: pointer;
     display: inline-flex;
@@ -1024,6 +1023,9 @@ float: right;
     border: 3px solid var(--darkgrey);
     border-inline-style: solid;
     align-items: center;
+}
+a#github{
+      color: white;
 }
 
 .selected-value {
@@ -1173,13 +1175,13 @@ a.back {
 }
 
 
-
+/* 
 .buttonwrapper {
   display: flex;
   flex-direction: column;
   margin-left: 25px;
 
-}
+} */
 .linkarea {
   display: flex;
   margin-left: auto;
