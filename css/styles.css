@@ -1005,7 +1005,7 @@ float: right;
 ------------------------------------*/
 
 .button, a#github{
-    /* background: white; */
+    background: white;
     color: var(--nightgrey);
     cursor: pointer;
     display: inline-flex;
