@@ -197,7 +197,7 @@ width: 200px;
   white-space: nowrap;
   position: relative;
   background: repeating-linear-gradient(135deg, #d67bd037, #d67bd037 10px, #fff 10px, #fff 20px);
-  background-size: 70%;
+  background-size: 80%;
   background-position:left center;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -210,7 +210,9 @@ width: 200px;
   content: 'Portfolio outdated - stay tuned for a relaunch in Q2 2023';
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 10%;
+  /* width: 600px; */
+  text-align: center;
   
   transform: translateY(-50%);
   color: #000000;
@@ -219,7 +221,7 @@ width: 200px;
 }
 
 @keyframes marquee {
-  50% {background-position: center;}
+  100% {background-position: right;}
 
 }
 
