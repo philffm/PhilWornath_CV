@@ -213,11 +213,12 @@ width: 200px;
   left: 10%;
   /* width: 600px; */
   text-align: center;
-  
   transform: translateY(-50%);
-  color: #000000;
-  font-style: italic;
-  font-family: Arial, sans-serif;
+  color: #383838;
+  /* font-style: italic; */
+  /* font-family: Arial, sans-serif; */
+  font-size: larger;
+  font-weight: 900;
 }
 
 @keyframes marquee {
