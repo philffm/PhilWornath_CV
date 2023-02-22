@@ -211,6 +211,7 @@ width: 200px;
   position: absolute;
   top: 10%;
   left: 10%;
+  background: white;
   /* width: 600px; */
   text-align: center;
   transform: translateY(-50%);
