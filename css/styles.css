@@ -207,7 +207,7 @@ width: 200px;
 }
 
 .construction::after {
-  content: 'portfolio tbd Q2 2023 - just ask for my current projects :)';
+  content: 'portfolio update tbd Q2 2023 - just ask for my current projects :)';
   position: absolute;
   top: 10%;
   left: 10%;
@@ -1326,6 +1326,13 @@ div#social {
 
   padding: 10px 15px;
 }
+
+
+.construction::after {
+  top: 30%;
+  font-size: small;
+}
+
 
 /* Profile area
 ------------------------------------*/
