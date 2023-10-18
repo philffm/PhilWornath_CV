@@ -252,6 +252,23 @@ img {
   width:50%
 }
 
+.logo-75 {
+  width: 75%;
+}
+
+.logo-66 {
+  width: 66%;
+}
+
+.logo-50 {
+  width: 50%;
+}
+
+.logo-25 {
+  width: 25%;
+}
+
+
 .sep {
   width: auto
 }
@@ -1275,8 +1292,7 @@ h2 {
   margin-top: 20px;
   display: unset;
   width: fit-content;
-
-
+  transform: skew(-15deg);
 }
 
 .info-wrapper{
