@@ -9,6 +9,8 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    margin: 10%;
+
 }
   
   .timeline:before {
@@ -92,6 +94,8 @@
     border: 11px solid rgb(219, 134, 194);
     z-index: 10;
     left: -25px;
+    border-radius: 50%;
+
   }
   
   .direction-r .flag:before {
