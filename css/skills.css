@@ -61,7 +61,7 @@ li.skills.adobe:after {
 
 li.skills.office:after {
     animation-name: office;
-    content: "O365 / G Workspace ";
+    content: "Office Tools (O365 / G Workspace)";
     width: 75%;
 
 }
@@ -73,16 +73,23 @@ li.skills.office:after {
 
 li.skills.coding:after {
     animation-name: coding;
-    content: "Coding (JS, Low-Code)";
+    content: "Coding (JS, VueJS, React, Low-Code Solutions)";
     width: 85%;
 
 }
 
 
-li.skills.prototyping:after {
+li.skills.uxui:after {
     animation-name: coding;
-    content: "UX (Figma, XD, Quant UX)";
+    content: "UX (Figma, XD, Quant UX (UX Research), Paper)";
     width: 95%;
+
+}
+
+li.skills.ai:after {
+    animation-name: coding;
+    content: "AI (LLM / GenAI / Prompting)";
+    width: 80%;
 
 }
 
