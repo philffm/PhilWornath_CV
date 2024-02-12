@@ -1046,6 +1046,7 @@ float: right;
     border: 3px solid var(--darkgrey);
     border-inline-style: solid;
     align-items: center;
+    outline: var(--cyan) 4px;
 }
 a#github{
       color: white;
