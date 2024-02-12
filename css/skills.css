@@ -81,14 +81,14 @@ li.skills.coding:after {
 
 li.skills.uxui:after {
     animation-name: coding;
-    content: "UX (Figma, XD, Quant UX (UX Research), Paper)";
+    content: "UX (Figma, XD, Quant UX, Research, Paper)";
     width: 95%;
 
 }
 
 li.skills.ai:after {
     animation-name: coding;
-    content: "AI (LLM / GenAI / Prompting)";
+    content: "AI (LLMs, GenAI, Prompting)";
     width: 80%;
 
 }
