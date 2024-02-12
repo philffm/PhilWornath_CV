@@ -1097,7 +1097,6 @@ a#thuas:active{
 .button.social {
 font-size: 30px;
 padding: 10px 20px;
-
 margin: 1rem .5rem;}
 
 .button:hover {
@@ -1214,11 +1213,33 @@ a.back {
 /* Media Queries
 -------------------------*/
 
-@media (max-width: 830px){
-header {
-  padding-top: 100px;
 
-}
+
+@media (max-width: 830px){
+  header {
+    padding-top: 100px;
+    
+  }
+  
+  h1 {
+    font-size: 32px ;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+  /* h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    display: unset;
+    width: fit-content;
+    transform: skew(-15deg);
+  }
+   */
+  h3 {
+    font-size: 18px;
+  }
+  
 
 .col-narrow.portfolio-info {
   display: none;
@@ -1227,9 +1248,20 @@ header {
   padding-top: 100px;
   flex-direction: column;
 }
+.slot-handle  {
+  width: 50px;
+}
+
 
 .slot{
   flex-flow: wrap;
+  justify-content: flex-end;
+
+}
+
+.handle {
+  margin-top: -80px;
+
 }
 
 .winselection {
@@ -1245,13 +1277,6 @@ header {
 }
 .result p {
   font-size: smaller;
-}
-h2 {
-  font-size: 30px;
-  margin-top: 20px;
-  display: unset;
-  width: fit-content;
-  transform: skew(-15deg);
 }
 
 .info-wrapper{
@@ -1276,7 +1301,7 @@ nav .full {
 }
 
 .col-narrow {
-  width: min-content;
+  /* width: min-content; */
   float: none;
 }
 .col-wide {
@@ -1292,10 +1317,17 @@ div#social {
 
 }
 
+
+.button{
+  font-size: 16px;
+  padding: 10px 15px;
+  margin: 10px 5px;
+}
 .cta.hor {
   display: flex;
-  flex-direction: initial;
+  flex-direction: column;
     align-items: center;
+    gap: 8px;
 }
 .button.social {
 
