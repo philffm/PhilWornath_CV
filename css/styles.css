@@ -91,7 +91,8 @@ margin: .8em 0;
 }
 
 section {
-  padding: 32px;
+  padding: 12px 32px;
+
 }
 
 quoteline {
@@ -1409,8 +1410,8 @@ div.challenge > div.cta.hor {
 }
 
 .card-work {
-	margin: 20px 25px;
-	border-radius: 0px;
+	/* margin: 20px 25px; */
+	/* border-radius: 0px; */
 	background: white;
 	transition: all 0s ease;
 }

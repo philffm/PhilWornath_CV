@@ -72,7 +72,7 @@
     background: white;
     padding: 15px 10px;
     border-radius: 7px;
-    
+    margin-left: 12px;
     text-align: left;
   }
   
@@ -160,10 +160,24 @@
 
 
     .flag-wrapper {
-        display: flex;
-        flex-flow: column;
+
+      display: flex;
+      /* flex-flow: unset; */
+      justify-content: flex-start;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: flex-start;
+    
+    }
+
+    .flag, .time-wrapper {
+      margin-left: 12px;
     }
         
+ .flag-wrapper::before {
+        margin-top: -24px !important;
+    }
 
 
     .time-wrapper {
