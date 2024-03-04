@@ -303,7 +303,7 @@ margin: 0;
 /* Header styles only */
 header {
   z-index: 2;
-  padding-top: 65px;
+  padding-top: 100px;
   position: relative;
   border-radius: 3em;
   background: white;
@@ -501,25 +501,32 @@ img#explainthing {
 -------------------------*/
 nav {
   text-align: center;
-  /* background: rgba(0, 0, 0, 0.8); */
   position: fixed;
   top: 0;
-  top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 12px auto;
+  /* max-width: 950px; */
+  padding: 12px 12px;
+  width: min-content;
   z-index: 11;
   display: flex;
-justify-content: center;
-backdrop-filter: blur(1px);
-background: #f7f7f7de;
-
+  backdrop-filter: blur(4px);
+  background: #ffffffa6;
+  border-radius: 24px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4px;
 }
+
 nav a {
-display: inline-block;
-padding: 20px 20px;
-text-decoration: none;
-text-transform: uppercase;
-color: rgb(0, 0, 0);
-/* background: #f7f7f7a1; */
+  display: inline-block;
+  text-wrap: nowrap;
+  padding: 20px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  /* background: #f7f7f7a1; */
 }
 
 nav .min {
@@ -569,12 +576,13 @@ a#portfolio{
   transition: all .3s cubic-bezier(.17, .65, .25, .90);
   color: white;
   background:var(--cyanlight);
+  border-radius: 24px;
   }
  a#portfolio:hover{
-background: var(--cyanlight);
-transform: rotateX(30deg);
-transition: all .3s cubic-bezier(.17, .65, .25, .90);
-transform: translate3D(0,-1px,0) scale(1.2);
+  background: var(--cyanlight);
+  transform: rotateX(30deg);
+  transition: all .3s cubic-bezier(.17, .65, .25, .90);
+  transform: translate3D(0,-1px,0) scale(1.15);
 }
 
 
@@ -659,12 +667,6 @@ border-bottom:10px solid #d67bba;
 
 /* Hackathons
 ------------------------------------*/
-#hackathons{
-    /*! background: white; */
-
-    border-top: 10px solid var(--pink);
-    /*! border-bottom: 10px solid var(--pink); */
-}
 
 #hackathons .content-wrap {
   max-width: 1100px !important;
@@ -981,7 +983,7 @@ padding: 10px 0;
 }
 
 .portfolio-section,.cv-section,.project-section {
-  padding-top: 24px;
+  padding-top: 54px;
 }
 
 
@@ -1324,6 +1326,9 @@ a.back {
 
 .portfolio-section,.cv-section {
   padding-top: 64px;
+}
+nav {
+  gap: 0;
 }
 nav .full {
   display: none;

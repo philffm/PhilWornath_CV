@@ -18,7 +18,6 @@ if (docTitle.includes("Resume")){
     renderPage('portfolio_content.html');
 }else if (docPath.includes("project")){
     header = false;
-
     renderPage('project_content.html');
 }
 
@@ -31,7 +30,6 @@ function renderPage(whichContent) {
     // if(docPath.includes("project")){
     //     basePath= '../';
     // }
-    
 
     document.write('<div w3-include-html="' + basePath +'menu.html"></div>');
     if (header == true){
@@ -49,4 +47,5 @@ function renderPage(whichContent) {
     w3.includeHTML();
 
 }
+
 
