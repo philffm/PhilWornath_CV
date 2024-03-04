@@ -27,10 +27,6 @@ pageDetails = {}
 
 function renderPage(whichContent) {
 
-    // if(docPath.includes("project")){
-    //     basePath= '../';
-    // }
-
     document.write('<div w3-include-html="' + basePath +'menu.html"></div>');
     if (header == true){
         document.write('<div w3-include-html="' + basePath +'header.html"></div>');
