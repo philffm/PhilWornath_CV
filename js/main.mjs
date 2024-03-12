@@ -501,7 +501,27 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.title.includes('Resume')) {
     fetchProject('hackathons.json');
     waitingFor(500, 5, '.hackathon .item', loadHackathons);
+    loadHackathons();
   }
+});
+
+
+function scalePageTo(percentage) {
+  const scaleFactor = percentage / 100;
+  const newWidth = window.innerWidth * scaleFactor;
+  const newHeight = window.innerHeight * scaleFactor;
+
+  // Calculate the top and left positions to center the window
+  const top = (window.screen.height - newHeight) / 2;
+  const left = (window.screen.width - newWidth) / 2;
+
+  // Set the new window size and position
+  window.resizeTo(newWidth, newHeight);
+  window.moveTo(left, top);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  scalePageTo(90);
 });
 
 
