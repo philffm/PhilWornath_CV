@@ -497,4 +497,12 @@ async function cloneElement(selector,cid,cclass, href, text ){
   ele.after(clone);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.title.includes('Resume')) {
+    fetchProject('hackathons.json');
+    waitingFor(500, 5, '.hackathon .item', loadHackathons);
+  }
+});
+
+
 initAsync();
