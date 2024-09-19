@@ -539,13 +539,13 @@ nav a {
 }
 
 a.navi:hover {
-  padding: 20px 16px 5px;  
-  border-bottom: 15px solid var(--cyanlight);
+  padding: 8px 16px 8px;  
+  border-bottom: 12px solid var(--cyanlight);
   /* transform: scale3d(1.1, 1.1, 1.1); */
   transition: all .3s cubic-bezier(.17, .65, .25, .90);
   /* transform: ; */
   /* move 20 px up */
-  transform: translate3D(0,-4px,0) skew(-16deg);
+  /* transform: translate3D(0,-4px,0) skew(-16deg); */
 }
 nav .min {
   display: none;
@@ -603,16 +603,16 @@ a#portfolio{
 
 
 a#edu:hover{
-  border-bottom: 15px solid var(--pink);
+  border-bottom: 12px solid var(--pink);
 }
 
 a#pub:hover {
-  border-bottom: 15px solid #9b9b9b;
+  border-bottom: 12px solid #9b9b9b;
 
 }
 
 .navi.aboutnav a:hover, .navi.contactnav a:hover {
-  border-bottom: 15px solid #9b9b9b;
+  border-bottom: 12 px solid #9b9b9b;
 
 }
 
@@ -1075,9 +1075,38 @@ float: right;
     border-inline-style: solid;
     align-items: center;
 }
+
+.button:hover {
+  transition: all .5s ease;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  color: var(--nightgrey);
+  /* box-shadow: 0px 5px 0px var(--darkgrey); */
+  box-shadow: -4px 5px 0px var(--darkgrey);
+  transform: scale(1.025) translate3D(4px, -6px, 4px);
+  
+}
+
+.button:active {
+  transition: all .1s ease;
+  /* transform: translate(0px,0px); */
+  transform: scale(.98) translate3D(-4px, 6px, 4px);
+  box-shadow: none;
+  color: var(--nightgrey);
+  background: white;
+}
+
+.button #learnmore{
+  background: #41c4ab;
+}
+
+.button.social {
+font-size: 30px;
+padding: 10px 20px;
+margin: 1rem .5rem;}
+
 a#github{
       color: white;
-}
+    }
 
 .selected-value {
 	display: inline-block;
@@ -1118,7 +1147,7 @@ a#thuas{
 }
 a#thuas:hover{
   background: white;
-  box-shadow: 0px 7px 0px var(--pink);
+  box-shadow: -4px 7px 0px var(--pink);
 }
 
 a#thuas:active{
@@ -1126,24 +1155,6 @@ a#thuas:active{
   box-shadow: 0px 0px 0px var(--pink);
 }
 
-.button #learnmore{
-  background: #41c4ab;
-}
-
-.button.social {
-font-size: 30px;
-padding: 10px 20px;
-margin: 1rem .5rem;}
-
-.button:hover {
-  transition: all .5s ease;
-  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-  color: var(--nightgrey);
-  box-shadow: 0px 5px 0px var(--darkgrey);
-  transform: scale(1.025);
-	/* animation: rotateAnimation2 2s linear infinite; */
-
-}
 @keyframes rotateAnimation2 {
 	0% {transform: rotateX(0deg);}
 	100% {transform: scale(1) rotateX(0deg);}
@@ -1163,24 +1174,14 @@ margin: 1rem .5rem;}
   }
   
 
-
-.button:active {
+.button.cta:active {
   transition: all .1s ease;
-  transform: translate(0px,0px);
   box-shadow: none;
-  color: var(--nightgrey);
-  background: white;
-  transform: translate(0px,7px);
-
+  background: var(--nightgrey);
+  border-color: var(--nightgrey);
+  color: white;
   }
-  .button.cta:active {
-    transition: all .1s ease;
-    box-shadow: none;
-    background: var(--nightgrey);
-    border-color: var(--nightgrey);
-    color: white;
-    }
-  
+
 
 
 .buttonwrap {

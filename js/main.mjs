@@ -157,7 +157,6 @@ async function slotInit(){
       case 1:
 
         document.querySelector('#location p').innerText = currentWeather.name + ', ' + currentWeather.sys.country ;
-
         // document.querySelector('#location p').innerText = currentLocation;
         slotState++;
       break;
