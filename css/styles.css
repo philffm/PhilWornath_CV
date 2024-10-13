@@ -1080,7 +1080,6 @@ float: right;
   transition: all .5s ease;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   color: var(--nightgrey);
-  /* box-shadow: 0px 5px 0px var(--darkgrey); */
   box-shadow: -4px 5px 0px var(--darkgrey);
   transform: scale(1.025) translate3D(4px, -6px, 4px);
   
@@ -1088,7 +1087,6 @@ float: right;
 
 .button:active {
   transition: all .1s ease;
-  /* transform: translate(0px,0px); */
   transform: scale(.98) translate3D(-4px, 6px, 4px);
   box-shadow: none;
   color: var(--nightgrey);
@@ -1197,6 +1195,23 @@ display: inline;
 #social ul li a {
 width: 50px;
 }
+
+
+/* Style the custom cursor */
+#customCursor {
+  z-index: 10000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+  mix-blend-mode: difference;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.1s ease, width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+  opacity: 0.8;
+}
+
+
 
 
 /* Project

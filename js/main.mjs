@@ -116,6 +116,56 @@ async function dropEvent(eventSelector, eventFunction ){
   
 }
 
+document.querySelectorAll('.button').forEach(button => {
+  const buttonRect = button.getBoundingClientRect();
+  
+  button.addEventListener('mousemove', async (e) => {
+    await moveButtonMagnetically(button, e, buttonRect);
+  });
+
+  button.addEventListener('mouseleave', async () => {
+    await resetButton(button);
+  });
+});
+
+async function moveButtonMagnetically(button, event, buttonRect) {
+  const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+  const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+
+  const distanceX = event.clientX - buttonCenterX;
+  const distanceY = event.clientY - buttonCenterY;
+
+  const maxDistance = 100; // Max distance for magnetic effect
+  const moveX = Math.min(Math.max(distanceX, -maxDistance), maxDistance) * 0.1;
+  const moveY = Math.min(Math.max(distanceY, -maxDistance), maxDistance) * 0.1;
+
+  // Ensure smooth animation with requestAnimationFrame
+  await new Promise(resolve => {
+    requestAnimationFrame(() => {
+      button.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+
+      // Adjust horizontal shadow based on distanceX
+      const shadowX = Math.min(Math.max(distanceX * 0.05, -8), 8);
+      const shadowY = 5; // Fixed shadow height
+      button.style.boxShadow = `${shadowX}px ${shadowY}px 0px var(--darkgrey)`;
+
+      resolve();
+    });
+  });
+}
+
+async function resetButton(button) {
+  // Ensure smooth reset animation with requestAnimationFrame
+  await new Promise(resolve => {
+    requestAnimationFrame(() => {
+      button.style.transform = `translate(0px, 0px) scale(1)`;
+      button.style.boxShadow = `-4px 5px 0px var(--darkgrey)`;
+      resolve();
+    });
+  });
+}
+
+
 
 async function slotInit(){
     //w3.hide('.profile-info')
@@ -224,16 +274,9 @@ async function slotInit(){
 
     }
 
-
-
-
   }
 
-
-
- 
-  
-
+   
 
 function getAPI(){
       // Call the API
@@ -522,6 +565,11 @@ function scalePageTo(percentage) {
 document.addEventListener('DOMContentLoaded', function() {
   scalePageTo(90);
 });
+
+
+// button listener for hover that moves the .button class magnetically to the curser - also adjust the horizontal shadow between -8 and +8px
+
+
 
 
 initAsync();
