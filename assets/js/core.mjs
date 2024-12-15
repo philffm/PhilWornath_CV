@@ -1,6 +1,9 @@
 import { adjustMenu } from './ui.mjs';
 import { loadWeather } from './modules/weather.mjs';
-import { initProjects, loadHackathons } from './project.mjs';
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await initAsync();
+});
 
 async function initAsync() {
   adjustMenu();
@@ -8,5 +11,3 @@ async function initAsync() {
   initProjects();
   loadHackathons();
 }
-
-initAsync();
