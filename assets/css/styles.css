@@ -1635,7 +1635,6 @@ a.back {
 
 .chipcontainer {
   display: block;
-
 }
 
 .chip {
@@ -1655,6 +1654,7 @@ a.back {
   z-index: 1;
   /* Raise chips above others */
   transition: background-color 0.3s ease, transform 0.3s ease;
+  user-select: none;
 }
 
 .chip:hover {
