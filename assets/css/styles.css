@@ -26,6 +26,8 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
 li::after {
   font-size: 12px;
 }
@@ -95,6 +97,18 @@ a {
   font-weight: 400;
   color: var(--nightgrey);
 
+}
+
+a:focus-visible {
+  outline: 4px solid var(--cyanlight);
+  outline-offset: 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cta-bottom a:focus {
+  /* none */
+  outline: none;
 }
 
 strong {
@@ -1661,7 +1675,6 @@ a.back {
   background-color: var(--cyanlight);
   z-index: 10;
   transform: scale(1.05);
-  /* Raise on hover to prevent overlap */
 }
 
 
