@@ -38,10 +38,16 @@ li::after {
   --basegrey: #f2f2f2;
   --midgrey: #A1A1A1;
   --darkgrey: #545454;
-
   --nightgrey: #373737;
 
 
+  /* Tech Stack Colors */
+  --php-color: #7289da;
+  --js-color: #f1e05a;
+  --python-color: #007bff;
+  --vue-color: #42b883;
+  --sqlite-color: #003b57;
+  --css-color: #663399;
 }
 
 @font-face {
@@ -392,6 +398,10 @@ footer .content-wrap {
   flex-direction: row;
   /* align-items: center; */
   gap: 20px;
+}
+
+.flex {
+  display: flex;
 }
 
 .info {
@@ -777,7 +787,6 @@ a#pub:hover {
   width: -webkit-fill-available;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   min-height: 60px;
 }
 
@@ -1624,47 +1633,69 @@ a.back {
   justify-content: space-between;
 }
 
+.chipcontainer {
+  display: block;
+
+}
+
 .chip {
-  flex: 1 1 calc(25% - 10px);
-  /* Adjust the percentage to control the number of items per row */
   display: inline-block;
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  margin-right: 8px;
   font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--nightgrey);
+  flex: 0 1 auto;
+  margin-right: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
   background-color: var(--white);
+  color: var(--nightgrey);
   border-radius: 16px;
-  position: relative;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
   text-align: center;
+  position: relative;
+  /* Ensure stacking context */
+  z-index: 1;
+  /* Raise chips above others */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .chip:hover {
   background-color: var(--cyanlight);
-  transform: translateY(-2px);
+  z-index: 10;
+  transform: scale(1.05);
+  /* Raise on hover to prevent overlap */
 }
+
 
 .chip::after {
   content: attr(title);
   position: absolute;
-  bottom: 100%;
+  top: 120%;
   left: 50%;
+  width: max-content;
+  max-width: 250px;
+  overflow-wrap: break-word;
   transform: translateX(-50%);
   background-color: var(--darkgrey);
   color: var(--white);
   padding: 12px;
   border-radius: 5px;
-  white-space: nowrap;
+  white-space: wrap;
   opacity: 0;
-  transition: opacity 0.3s ease;
   pointer-events: none;
   font-size: 1rem;
-  z-index: 10;
+  z-index: 3;
+}
+
+@media (max-width: 830px) {
+  .chip::after {
+    max-width: 150px;
+    font-size: 0.8rem;
+  }
 }
 
 .chip:hover::after {
   opacity: 1;
+}
+
+.chip:not([title])::after {
+  content: none;
 }
