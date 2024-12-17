@@ -1671,7 +1671,8 @@ a.back {
   user-select: none;
 }
 
-.chip:hover {
+.chip:hover,
+.chip:active {
   background-color: var(--cyanlight);
   z-index: 10;
   transform: scale(1.05);
@@ -1705,7 +1706,8 @@ a.back {
   }
 }
 
-.chip:hover::after {
+.chip:hover::after,
+.chip:active::after {
   opacity: 1;
 }
 
