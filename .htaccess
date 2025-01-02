@@ -1,0 +1,13 @@
+# Enable RewriteEngine for RewriteRules
+RewriteEngine On
+
+# Block access to .git directory
+RewriteRule ^\.git(/|$) - [F,L]
+
+# Block access to .vscode directory
+RewriteRule ^\.vscode(/|$) - [F,L]
+
+# Allow access to all other files and directories
+<FilesMatch ".*">
+    Require all granted
+</FilesMatch>
