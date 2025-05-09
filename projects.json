@@ -25,7 +25,7 @@
       "title": "FWDpay - Redefining employee expense management",
       "description": "In collaboration with FWDpay, a startup originated from a bunq hackathon,  I was exploring several solutions in the field expense management.  ",
       "website": "https://fwdpay.to",
-    "github": "",
+      "github": "",
       "logo": "fwdpay.png",
       "category": [
         "iot",
@@ -108,7 +108,6 @@
       "content": "BBBot Blockchain enabled robots for a clean beach  fca6199339c54c64bbf2f86ff4e15d2b 3",
       "type": "Part-time occupation"
     },
-  
     {
       "customjs": "",
       "headhtml": "",
@@ -126,7 +125,7 @@
       "period": "Feb 2022",
       "content": "Strava%20Experience%20over%20metrics%20-%20Opening%20the%20platf%20d1d41775267740c689cddbaaa142796a",
       "type": "Mini-project",
-      "prototype": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FejHKh0wDhCIrFMSC8xxcZg%2FDDD%3Fpage-id%3D698%253A3049%26node-id%3D823%253A4069%26viewport%3D778%252C567%252C0.97%26scaling%3Dcontain%26starting-point-node-id%3D823%253A4069"
+      "prototype": "https://embed.figma.com/proto/tjxWeoj6EGYUSBm389FdTE/%F0%9F%92%81%F0%9F%8F%BD%E2%80%8D%E2%99%82%EF%B8%8F-Portfolio?node-id=4407-32759&scaling=scale-down&content-scaling=fixed&page-id=1089%3A699&starting-point-node-id=4407%3A32759&show-proto-sidebar=1&embed-host=share"
     },
     {
       "customjs": "",
@@ -149,7 +148,3 @@
     }
   ]
 }
-
-
-
-
